@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Income Vault | Find Your Online Business Path</title>
+<style>
+/* ─── RESET & ROOT ─────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --p:#5B4AE8;--pd:#4338CA;--pl:#F5F3FF;
+  --g:#10B981;--gl:#ECFDF5;--gd:#059669;
+  --t:#111827;--tm:#374151;--ts:#6B7280;
+  --bg:#F8F7FE;--w:#fff;--bd:#E5E7EB;
+  --r:12px;--rl:18px;
+  /* Dynamic path color — overridden by JS */
+  --pc:#5B4AE8;--pcl:#F5F3FF
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--t);line-height:1.6;min-height:100vh
+}
+
+/* ─── CONFETTI ──────────────────────────────────────────── */
+@keyframes cfall{from{transform:translateY(-10px) rotate(0);opacity:1}to{transform:translateY(100vh) rotate(540deg);opacity:0}}
+.cp{position:fixed;z-index:9999;pointer-events:none;animation:cfall linear forwards;border-radius:50%}
+
+/* ─── NAV ───────────────────────────────────────────────── */
+nav{
+  background:var(--w);border-bottom:1px solid var(--bd);
+  padding:12px 20px;position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between
+}
+.logo{font-size:18px;font-weight:700;color:var(--p);letter-spacing:-.5px}
+.logo b{color:var(--t)}
+.ntag{font-size:11px;color:var(--p);background:var(--pl);padding:4px 10px;border-radius:20px;font-weight:600}
+
+/* ─── PROGRESS BAR ──────────────────────────────────────── */
+.pbar{height:3px;background:#e4e1fb}
+.pf{height:100%;background:var(--p);transition:width .6s cubic-bezier(.4,0,.2,1);width:2%}
+
+/* ─── PAGE TRANSITIONS ──────────────────────────────────── */
+.pg{display:none}.pg.on{display:block;animation:pgin .4s ease}
+@keyframes pgin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.w{max-width:660px;margin:0 auto;padding:0 20px}
+
+/* ─── HERO ──────────────────────────────────────────────── */
+.hero{padding:36px 20px 20px;text-align:center;max-width:660px;margin:0 auto}
+.eyebrow{
+  display:inline-block;font-size:11px;font-weight:700;color:var(--p);
+  background:var(--pl);padding:5px 14px;border-radius:20px;
+  margin-bottom:14px;letter-spacing:.07em;text-transform:uppercase
+}
+.hero h1{
+  font-size:clamp(22px,4.5vw,38px);font-weight:700;line-height:1.2;
+  margin-bottom:10px;letter-spacing:-.6px;color:#0D0A2E
+}
+.hero h1 em{font-style:normal;color:var(--p)}
+.hero>p{font-size:15px;color:var(--ts);max-width:400px;margin:0 auto 20px}
+
+/* ─── SOCIAL PROOF BADGES (replaces fake stats) ─────────── */
+.trust-badges{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+  margin:0 auto 22px;max-width:500px
+}
+.tbadge{
+  display:flex;align-items:center;gap:6px;font-size:12px;
+  color:var(--tm);background:var(--w);border:1px solid var(--bd);
+  border-radius:20px;padding:5px 12px;font-weight:500
+}
+.tbadge span{font-size:14px}
+
+/* ─── BRAND POSITIONING SECTION ─────────────────────────── */
+.brand-section{
+  background:var(--w);border:1px solid var(--bd);border-radius:var(--rl);
+  max-width:660px;margin:0 auto 28px;padding:24px 26px;text-align:left
+}
+.brand-section .bs-label{
+  font-size:10px;font-weight:700;color:var(--p);text-transform:uppercase;
+  letter-spacing:.09em;margin-bottom:10px
+}
+.brand-section h3{
+  font-size:clamp(16px,2.8vw,20px);font-weight:700;color:#0D0A2E;
+  margin-bottom:10px;line-height:1.3;letter-spacing:-.3px
+}
+.brand-section p{font-size:14px;color:var(--tm);line-height:1.7;margin-bottom:0}
+.brand-divider{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.bd-pill{
+  font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;
+  background:var(--pl);color:var(--p)
+}
+
+/* ─── PATH CARDS ─────────────────────────────────────────── */
+.slbl{
+  text-align:center;font-size:11px;font-weight:700;color:#9CA3AF;
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px
+}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:660px;margin:0 auto}
+@media(max-width:480px){.paths{grid-template-columns:1fr}}
+.pc{
+  background:var(--w);border:1.5px solid #DDD8FE;border-radius:var(--rl);
+  padding:16px 18px;cursor:pointer;text-align:left;
+  transition:border-color .2s,transform .18s,box-shadow .18s;width:100%
+}
+.pc:hover{border-color:var(--p);transform:translateY(-2px);box-shadow:0 6px 24px rgba(91,74,232,.13)}
+.pctag{
+  display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:10px;margin-bottom:5px;text-transform:uppercase;
+  letter-spacing:.04em;background:var(--pl);color:var(--p)
+}
+.pc .ico{font-size:22px;margin-bottom:6px;display:block}
+.pc .pt{font-size:14px;font-weight:600;margin-bottom:2px}
+.pc .ps{font-size:12px;color:var(--ts);line-height:1.45}
+.pc.wide{grid-column:1/-1}
+.hfoot{text-align:center;font-size:12px;color:#9CA3AF;margin-top:14px;padding-bottom:36px}
+
+/* ─── ASSET / EMAIL PAGE ────────────────────────────────── */
+.atop{padding:34px 20px 0;max-width:660px;margin:0 auto;text-align:center}
+.pcrumb{
+  display:inline-flex;align-items:center;gap:6px;font-size:13px;
+  font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:16px;
+  background:var(--pcl);color:var(--pc)
+}
+.atop h2{font-size:clamp(18px,3.5vw,26px);font-weight:700;letter-spacing:-.4px;margin-bottom:8px}
+.atop>p{font-size:14px;color:var(--ts);max-width:400px;margin:0 auto 20px}
+
+/* Document preview card */
+.doc{
+  background:var(--w);border:1px solid var(--bd);border-radius:var(--rl);
+  max-width:660px;margin:0 auto 18px;overflow:hidden
+}
+.dh{padding:18px 22px;display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid var(--bd)}
+.dico{
+  width:44px;height:54px;border-radius:6px;display:flex;
+  align-items:center;justify-content:center;font-size:22px;
+  flex-shrink:0;background:var(--pcl)
+}
+.dbrand{font-size:10px;font-weight:700;color:var(--pc);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.dtitle{font-size:15px;font-weight:700;color:var(--t);margin-bottom:2px}
+.dsub{font-size:12px;color:var(--ts)}
+.dlock{
+  margin-left:auto;background:var(--bg);border:1px solid var(--bd);
+  padding:5px 10px;border-radius:var(--r);font-size:11px;color:var(--ts);
+  white-space:nowrap;flex-shrink:0;align-self:flex-start
+}
+.dc{padding:14px 22px}
+.dclbl{font-size:10px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.di{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--bd)}
+.di:last-child{border-bottom:none}
+.dinum{
+  width:20px;height:20px;border-radius:50%;background:var(--pcl);color:var(--pc);
+  font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0
+}
+.ditext{font-size:13px;font-weight:500;color:var(--t)}
+.blurrow{height:11px;background:#E5E7EB;border-radius:3px;flex:1}
+.diltag{
+  font-size:10px;color:var(--ts);background:var(--bg);padding:1px 6px;
+  border-radius:8px;border:1px solid var(--bd);flex-shrink:0
+}
+
+/* Email capture card */
+.ecard{
+  background:var(--w);border:2px solid var(--pc);border-radius:var(--rl);
+  padding:22px;max-width:660px;margin:0 auto 12px
+}
+.ecard h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.ecard>p{font-size:14px;color:var(--ts);margin-bottom:16px}
+.erow{display:flex;gap:8px;flex-wrap:wrap}
+.erow input{
+  flex:1;min-width:180px;padding:11px 14px;border:1.5px solid var(--bd);
+  border-radius:var(--r);font-size:15px;outline:none;transition:border-color .2s;
+  background:var(--bg);color:var(--t)
+}
+.erow input:focus{border-color:var(--pc);background:var(--w)}
+.btnp{
+  color:#fff;border:none;padding:11px 18px;border-radius:var(--r);
+  font-size:15px;font-weight:600;cursor:pointer;background:var(--pc);
+  transition:opacity .2s;white-space:nowrap
+}
+.btnp:hover{opacity:.88}
+.priv{font-size:11px;color:#9CA3AF;text-align:center;margin-top:8px}
+
+/* ─── LOADER ─────────────────────────────────────────────── */
+.ldr{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:72vh;padding:40px 20px;text-align:center
+}
+.licon{font-size:46px;margin-bottom:22px;animation:lpulse 1.4s ease-in-out infinite}
+@keyframes lpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.ltitle{font-size:21px;font-weight:600;color:var(--t);margin-bottom:6px}
+.lsub{font-size:14px;color:var(--ts);margin-bottom:28px}
+.lsteps{text-align:left;max-width:280px;margin:0 auto 22px}
+.lsi{
+  display:flex;align-items:center;gap:9px;padding:7px 0;
+  font-size:13px;color:var(--ts);opacity:0;transition:opacity .35s,color .35s
+}
+.lsi.done{opacity:1;color:var(--gd)}.lsi.act{opacity:1;color:var(--t)}
+.lsidot{
+  width:16px;height:16px;border-radius:50%;flex-shrink:0;
+  font-size:10px;display:flex;align-items:center;justify-content:center
+}
+.lsi.done .lsidot{background:var(--gl);color:var(--gd)}
+.lsi.act .lsidot{background:var(--pcl);color:var(--pc);animation:lspin .9s linear infinite}
+@keyframes lspin{to{transform:rotate(360deg)}}
+.lbar{width:280px;height:4px;background:#E5E7EB;border-radius:4px;overflow:hidden;margin:0 auto}
+.lbarf{height:100%;background:var(--p);border-radius:4px;width:0%;transition:width .5s ease}
+
+/* ─── FULL ASSET + QUIZ ──────────────────────────────────── */
+.aul{
+  max-width:660px;margin:0 auto 24px;background:var(--w);
+  border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden
+}
+.auh{padding:13px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:10px}
+.auh h3{font-size:15px;font-weight:600}
+.aubadge{background:var(--gl);color:var(--gd);font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;margin-left:auto}
+.aub{padding:16px 20px}
+.aus{display:flex;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--bd)}
+.aus:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ausn{
+  width:28px;height:28px;background:var(--pc);color:#fff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0
+}
+.aust h4{font-size:13px;font-weight:600;margin-bottom:3px}
+.aust p{font-size:12px;color:var(--ts);line-height:1.55}
+.autip{
+  font-size:11px;color:var(--pc);background:var(--pcl);
+  padding:4px 9px;border-radius:7px;margin-top:6px;display:inline-block
+}
+.dl{height:1px;background:var(--bd);max-width:660px;margin:0 auto 20px}
+.qwrap{max-width:660px;margin:0 auto;padding:32px 20px 36px}
+.qtag{font-size:11px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.qtxt{
+  font-size:clamp(17px,3.2vw,23px);font-weight:600;letter-spacing:-.3px;
+  margin-bottom:18px;line-height:1.3;color:#0D0A2E
+}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qo{
+  background:var(--w);border:1.5px solid var(--bd);border-radius:var(--r);
+  padding:12px 15px;cursor:pointer;text-align:left;
+  transition:border-color .2s,background .2s;
+  display:flex;align-items:center;gap:11px;width:100%
+}
+.qo:hover{border-color:var(--pc);background:var(--pcl)}
+.qoico{
+  width:34px;height:34px;border-radius:var(--r);background:var(--pcl);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px
+}
+.qot{font-size:14px;font-weight:500;color:var(--t)}.qos{font-size:12px;color:var(--ts);margin-top:2px}
+
+/* ─── RESULT PAGE ────────────────────────────────────────── */
+.rw{max-width:660px;margin:0 auto;padding:36px 20px 60px}
+.reye{
+  display:inline-block;font-size:11px;font-weight:700;color:var(--gd);
+  background:var(--gl);padding:5px 14px;border-radius:20px;
+  margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em
+}
+.rw h2{font-size:clamp(19px,3.5vw,27px);font-weight:700;letter-spacing:-.4px;margin-bottom:7px}
+.rw>p{font-size:14px;color:var(--ts);margin-bottom:18px}
+
+/* Offer card */
+.ocard{background:var(--w);border:2px solid var(--pc);border-radius:var(--rl);padding:20px 22px;margin-bottom:16px}
+.otag{
+  display:inline-block;font-size:10px;font-weight:700;color:var(--pc);
+  background:var(--pcl);padding:3px 10px;border-radius:20px;
+  margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em
+}
+.ocard h3{font-size:18px;font-weight:700;margin-bottom:9px}
+.owhy{
+  font-size:13px;color:var(--tm);background:#f7f5ff;
+  border-left:3px solid var(--pc);padding:10px 13px;
+  border-radius:0 var(--r) var(--r) 0;margin-bottom:16px;line-height:1.65
+}
+.perks{margin-bottom:18px}
+.prk{display:flex;align-items:flex-start;gap:7px;font-size:13px;margin-bottom:7px;color:var(--tm)}
+.pk{
+  width:16px;height:16px;background:var(--gl);color:var(--gd);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px
+}
+.ctabtn{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  width:100%;padding:14px;background:var(--pc);color:#fff;border:none;
+  border-radius:var(--r);font-size:15px;font-weight:600;cursor:pointer;
+  text-decoration:none;transition:opacity .2s
+}
+.ctabtn:hover{opacity:.88}
+
+/* Alternatives grid */
+.albl{font-size:11px;font-weight:700;color:var(--ts);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px;margin-top:20px}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:480px){.ag{grid-template-columns:1fr}}
+.aa{
+  background:var(--w);border:1px solid var(--bd);border-radius:var(--r);
+  padding:11px 14px;text-decoration:none;display:block;transition:border-color .2s
+}
+.aa:hover{border-color:var(--pc)}
+.aan{font-size:13px;font-weight:600;color:var(--t)}
+.aas{font-size:11px;color:var(--ts);margin-top:2px}
+.rbtn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:100%;padding:10px;background:transparent;color:var(--ts);
+  border:1px solid var(--bd);border-radius:var(--r);font-size:13px;
+  cursor:pointer;margin-top:9px;transition:background .2s
+}
+.rbtn:hover{background:var(--w)}
+
+/* Sticky summary bar */
+.sticky-bar{
+  background:var(--w);border:1px solid var(--bd);border-top:2px solid var(--pc);
+  border-radius:var(--r);padding:14px 18px;margin-top:20px;
+  display:flex;align-items:center;gap:12px
+}
+.sb-text{flex:1}
+.sb-t{font-size:14px;font-weight:600;color:var(--t)}
+.sb-s{font-size:12px;color:var(--ts)}
+.sb-btn{
+  background:var(--pc);color:#fff;border:none;padding:10px 18px;
+  border-radius:var(--r);font-size:13px;font-weight:600;cursor:pointer;
+  text-decoration:none;flex-shrink:0;white-space:nowrap;transition:opacity .2s
+}
+.sb-btn:hover{opacity:.88}
+
+/* ─── PINTEREST TIP BOX ──────────────────────────────────── */
+.pin-tip{
+  background:var(--w);border:1px solid var(--bd);
+  border-left:3px solid #E60023;border-radius:0 var(--r) var(--r) 0;
+  padding:10px 14px;margin-top:14px;font-size:12px;color:var(--ts);line-height:1.5
+}
+.pin-tip strong{color:#E60023}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer{
+  border-top:1px solid var(--bd);padding:28px 20px 20px;
+  text-align:center;background:var(--w)
+}
+.footer-links{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;
+  margin-bottom:12px
+}
+.footer-links a{
+  font-size:13px;color:var(--ts);text-decoration:none;font-weight:500;
+  transition:color .2s
+}
+.footer-links a:hover{color:var(--p)}
+.footer-disc{
+  font-size:11px;color:#9CA3AF;max-width:520px;margin:0 auto 10px;line-height:1.6
+}
+.footer-copy{font-size:11px;color:#C4C9D4}
+
+/* ─── MODALS ─────────────────────────────────────────────── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+  z-index:500;align-items:center;justify-content:center;padding:20px
+}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:var(--w);border-radius:var(--rl);max-width:520px;width:100%;
+  max-height:80vh;overflow-y:auto;padding:28px 24px;position:relative
+}
+.modal-close{
+  position:absolute;top:14px;right:16px;background:none;border:none;
+  font-size:20px;cursor:pointer;color:var(--ts);line-height:1
+}
+.modal-box h2{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--t)}
+.modal-box p,.modal-box li{font-size:13px;color:var(--tm);line-height:1.7;margin-bottom:8px}
+.modal-box ul{padding-left:18px;margin-bottom:10px}
+.modal-box a{color:var(--p)}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <div class="logo">Income<b>Vault</b></div>
+  <div class="ntag">Free Business Roadmaps</div>
+</nav>
+<div class="pbar"><div class="pf" id="pf"></div></div>
+
+<!-- ─────────────────────────────────────────────────────────
+     PAGE 0: HERO
+     ──────────────────────────────────────────────────────── -->
+<div class="pg on" id="pg0">
+  <div class="hero">
+    <div class="eyebrow">✦ Free Personalized Roadmap — Takes 60 Seconds</div>
+    <h1>Which <em>Online Business Path</em><br>Is Right For You in 2026?</h1>
+    <p>Choose your situation below and get a free step-by-step roadmap built for your exact goals and experience level.</p>
+
+    <!-- Trust badges — genuine, no fake numbers -->
+    <div class="trust-badges">
+      <div class="tbadge"><span>🛡️</span> Built on GoHighLevel</div>
+      <div class="tbadge"><span>🌍</span> Beginner-friendly</div>
+      <div class="tbadge"><span>🎯</span> Personalized paths</div>
+      <div class="tbadge"><span>⚡</span> Free to explore</div>
+    </div>
+  </div>
+
+  <!-- ─── BRAND POSITIONING ─── -->
+  <div class="brand-section w">
+    <div class="bs-label">What is Income Vault?</div>
+    <h3>Most people fail online because they follow random advice, random tools, and random business models.</h3>
+    <p>Income Vault helps you discover the online business path that best fits your goals, experience, and lifestyle — then connects you with the systems and resources to build it faster. Every recommendation is built around the real GoHighLevel ecosystem.</p>
+    <div class="brand-divider">
+      <div class="bd-pill">For beginners</div>
+      <div class="bd-pill">For creators</div>
+      <div class="bd-pill">For agencies</div>
+      <div class="bd-pill">For power users</div>
+    </div>
+  </div>
+
+  <!-- ─── PATH SELECTION ─── -->
+  <div class="w" style="margin-bottom:8px">
+    <div class="slbl">↓ Choose your path to get started</div>
+    <div class="paths">
+      <button class="pc" onclick="pickPath('beginner')">
+        <div class="pctag" style="background:#ECFDF5;color:#059669">Free to start</div>
+        <span class="ico">🌱</span>
+        <div class="pt">Beginner — New to Online Income</div>
+        <div class="ps">No experience yet. Build something real and start earning online from scratch.</div>
+      </button>
+      <button class="pc" onclick="pickPath('creator')">
+        <div class="pctag" style="background:#FFFBEB;color:#D97706">Digital products</div>
+        <span class="ico">🎯</span>
+        <div class="pt">Creator — Launch a Digital Product</div>
+        <div class="ps">You have skills or knowledge you want to package into something you can sell.</div>
+      </button>
+      <button class="pc" onclick="pickPath('biz')">
+        <div class="pctag" style="background:#EFF6FF;color:#2563EB">Scale faster</div>
+        <span class="ico">📈</span>
+        <div class="pt">Business Owner — Scale Online</div>
+        <div class="ps">You have a business and want funnels + automation to grow it faster with less effort.</div>
+      </button>
+      <button class="pc" onclick="pickPath('agency')">
+        <div class="pctag" style="background:#F5F3FF;color:#7C3AED">Recurring revenue</div>
+        <span class="ico">🏢</span>
+        <div class="pt">Agency / Freelancer — Serve Clients</div>
+        <div class="ps">You do marketing for businesses and want to scale with better systems and retainers.</div>
+      </button>
+      <button class="pc wide" onclick="pickPath('pro')">
+        <div class="pctag">Already using GHL</div>
+        <span class="ico">⚡</span>
+        <div class="pt">GHL Power User — Level Up</div>
+        <div class="ps">Already inside GHL. You want certifications, annual savings, or passive affiliate income.</div>
+      </button>
+    </div>
+    <div class="hfoot">Powered by GoHighLevel — used by businesses across 140+ countries</div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────
+     PAGE 1: ASSET PREVIEW + EMAIL CAPTURE
+     ──────────────────────────────────────────────────────── -->
+<div class="pg" id="pg1">
+  <div class="atop">
+    <div class="pcrumb" id="pcrumb">🌱 Beginner Path</div>
+    <h2 id="aheadline">Your free roadmap is almost ready</h2>
+    <p id="asubhead">Enter your email to unlock the full guide instantly — completely free.</p>
+  </div>
+  <div class="w" style="margin-top:16px">
+    <div class="doc">
+      <div class="dh">
+        <div class="dico" id="dico">📄</div>
+        <div>
+          <div class="dbrand">Income Vault — Free Guide</div>
+          <div class="dtitle" id="dtitle">Roadmap</div>
+          <div class="dsub" id="dsub">2026 Edition</div>
+        </div>
+        <div class="dlock">🔒 Locked</div>
+      </div>
+      <div class="dc">
+        <div class="dclbl">What's inside</div>
+        <div id="previtems"></div>
+      </div>
+    </div>
+    <div class="ecard">
+      <h3>📬 Where should we send your free guide?</h3>
+      <p>Enter your email and unlock instant access — no spam, ever.</p>
+      <div class="erow">
+        <input type="email" id="einp" placeholder="your@email.com">
+        <button class="btnp" onclick="submitEmail()">Unlock Free Access →</button>
+      </div>
+      <div class="priv">🔒 100% private. Unsubscribe anytime. Zero spam.</div>
+    </div>
+    <div class="pin-tip">
+      <strong>Pinterest tip:</strong> Share this page with <code>?path=beginner</code> (or agency/creator/biz/pro) to send visitors directly to their matching path.
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────
+     LOADER 1: Unlocking roadmap
+     ──────────────────────────────────────────────────────── -->
+<div class="pg" id="pg-l1">
+  <div class="ldr">
+    <div class="licon">🔓</div>
+    <div class="ltitle">Unlocking your roadmap...</div>
+    <div class="lsub">Personalizing your free guide — just a moment</div>
+    <div class="lsteps" id="ls1"></div>
+    <div class="lbar"><div class="lbarf" id="lb1"></div></div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────
+     PAGE 2: FULL ROADMAP + QUIZ
+     ──────────────────────────────────────────────────────── -->
+<div class="pg" id="pg2">
+  <div class="w" style="padding-top:24px">
+    <div style="background:var(--g);color:#fff;padding:10px 16px;border-radius:var(--r);text-align:center;font-size:13px;font-weight:500;margin-bottom:18px">
+      ✅ Your roadmap is unlocked — read it, then answer 1 quick question below
+    </div>
+    <div class="aul">
+      <div class="auh">
+        <h3 id="aultitle">Roadmap</h3>
+        <div class="aubadge">✓ Unlocked</div>
+      </div>
+      <div class="aub" id="aulbody"></div>
+    </div>
+  </div>
+  <div class="dl"></div>
+  <div class="qwrap">
+    <div class="qtag">One quick question ↓</div>
+    <div class="qtxt" id="qtxt"></div>
+    <div class="qopts" id="qopts"></div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────
+     LOADER 2: Analyzing match
+     ──────────────────────────────────────────────────────── -->
+<div class="pg" id="pg-l2">
+  <div class="ldr">
+    <div class="licon">🧠</div>
+    <div class="ltitle">Analyzing your profile...</div>
+    <div class="lsub">Finding the best match for your goals and situation</div>
+    <div class="lsteps" id="ls2"></div>
+    <div class="lbar"><div class="lbarf" id="lb2"></div></div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────
+     PAGE 3: PERSONALIZED RESULT
+     ──────────────────────────────────────────────────────── -->
+<div class="pg" id="pg3">
+  <div class="rw">
+    <div class="reye">✦ Personalized Match Found</div>
+    <h2 id="rtitle">Your best match</h2>
+    <p id="rsub">Based on your path and goal, here's exactly why this is a strong next step for your situation.</p>
+    <!-- Offer card injected by JS -->
+    <div id="offercard"></div>
+    <!-- Sticky summary bar injected by JS -->
+    <div id="stickbar"></div>
+    <div class="albl">Also worth exploring</div>
+    <div class="ag" id="altgrid"></div>
+    <button class="rbtn" onclick="restart()">↩ Retake the quiz — explore a different path</button>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────────────
+     FOOTER
+     ──────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-links">
+    <a href="#" onclick="openModal('modal-privacy');return false;">Privacy Policy</a>
+    <a href="#" onclick="openModal('modal-terms');return false;">Terms of Use</a>
+    <a href="#" onclick="openModal('modal-contact');return false;">Contact</a>
+    <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener">Powered by GoHighLevel</a>
+  </div>
+  <p class="footer-disc">
+    Some links on this website may be affiliate links, which means we may earn a commission at no additional cost to you if you choose to purchase through them. We only recommend resources we believe are genuinely useful.
+  </p>
+  <p class="footer-copy">© 2026 IncomeVault. All rights reserved.</p>
+</footer>
+
+<!-- ─────────────────────────────────────────────────────────
+     MODALS: Privacy, Terms, Contact
+     ──────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-privacy" onclick="closeModalOnOverlay(event,'modal-privacy')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-privacy')">✕</button>
+    <h2>Privacy Policy</h2>
+    <p>Last updated: January 2026</p>
+    <p>IncomeVault ("we", "our", "us") respects your privacy. This policy explains how we handle information collected through this website.</p>
+    <ul>
+      <li><strong>Information collected:</strong> When you submit your email, it is used solely to deliver your requested roadmap and relevant follow-up resources. We do not sell or share your email with third parties.</li>
+      <li><strong>Cookies &amp; analytics:</strong> We may use standard analytics tools to understand how visitors interact with this site. No personally identifiable data is stored in cookies.</li>
+      <li><strong>Affiliate links:</strong> This site contains affiliate links. Clicking them may result in a commission earned by IncomeVault at no additional cost to you.</li>
+      <li><strong>Unsubscribe:</strong> You may opt out of any email communication at any time via the unsubscribe link in any email we send.</li>
+    </ul>
+    <p>For privacy questions, contact us at <a href="mailto:domilogics@gmail.com">domilogics@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-terms" onclick="closeModalOnOverlay(event,'modal-terms')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-terms')">✕</button>
+    <h2>Terms of Use</h2>
+    <p>Last updated: January 2026</p>
+    <p>By accessing IncomeVault, you agree to the following terms:</p>
+    <ul>
+      <li><strong>Educational purpose:</strong> All content on this site is provided for informational and educational purposes only. Nothing on this site constitutes financial, legal, or business advice.</li>
+      <li><strong>No income guarantees:</strong> Results vary by individual effort, experience, and market conditions. We make no guarantees of income or business success.</li>
+      <li><strong>Affiliate disclosure:</strong> This site participates in affiliate programs. We may earn commissions on purchases made through links, at no extra cost to you.</li>
+      <li><strong>Intellectual property:</strong> All site content is the property of IncomeVault and may not be reproduced without permission.</li>
+      <li><strong>Modifications:</strong> We reserve the right to update these terms at any time.</li>
+    </ul>
+    <p>For questions, contact <a href="mailto:domilogics@gmail.com">domilogics@gmail.com</a>.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-contact" onclick="closeModalOnOverlay(event,'modal-contact')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-contact')">✕</button>
+    <h2>Contact Us</h2>
+    <p>Have a question, feedback, or partnership inquiry? We'd love to hear from you.</p>
+    <p><strong>Email:</strong> <a href="mailto:domilogics@gmail.com">domilogics@gmail.com</a></p>
+    <p>We typically respond within 1–2 business days. For GoHighLevel support questions, please visit <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener">GoHighLevel support</a> directly.</p>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   INCOME VAULT — Core JavaScript
+   ════════════════════════════════════════════════════════════
+   Structure:
+     1. AFFILIATE LINKS (O object) — edit URLs here
+     2. PATH DATA (P object)       — edit roadmap content here
+     3. UTILITY FUNCTIONS
+     4. FLOW LOGIC
+   ════════════════════════════════════════════════════════════ */
+
+/* ─── 1. AFFILIATE OFFER LINKS ───────────────────────────────
+   Update URLs here without touching anything else.
+   ─────────────────────────────────────────────────────────── */
+const O = {
+  challenge: {
+    name: 'GHL 5-Day Free Challenge',
+    tag: 'Best for total beginners',
+    why: 'You\'re brand new — the smartest move is to start completely free. This 5-day live challenge walks you through building your first funnel step-by-step. You\'ll see real results before spending a single dollar.',
+    perks: [
+      'Free to start — zero financial commitment',
+      'Daily live coaching from active GHL experts',
+      'Build your first working funnel inside GHL by Day 5',
+      'Discover the income model that fits your lifestyle'
+    ],
+    url: 'http://gohighlevel.com/5dc?fp_ref=dominic-32',
+    cta: 'Join the Free 5-Day Challenge →'
+  },
+  trial: {
+    name: '30-Day Trial + Bootcamp',
+    tag: 'Most popular starting point',
+    why: 'A full 30-day extended trial paired with a structured bootcamp means you don\'t just get access — you get guided through every feature until you\'re genuinely capable. A high-value way to begin.',
+    perks: [
+      '30-day extended trial — 3× longer than standard',
+      'Bootcamp: funnels, CRM, email, automations and more',
+      'Active builder community for real-time support',
+      'Start building real skills while you still have full access'
+    ],
+    url: 'https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32',
+    cta: 'Claim 30-Day Trial + Bootcamp →'
+  },
+  chris: {
+    name: 'Digital Product Launch Workshop',
+    tag: 'Fastest path to your first sale',
+    why: 'This workshop shows you how to turn any skill, knowledge, or story into a digital product you can launch and sell — built entirely on GoHighLevel from Day 1. Ideal if you want a clear blueprint over figuring it out alone.',
+    perks: [
+      'Complete step-by-step system — zero guesswork',
+      'Built on GHL from Day 1 — no extra tools needed',
+      'Works even without an existing audience or following',
+      'Clear launch framework you can follow immediately'
+    ],
+    url: 'https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32',
+    cta: 'Explore the Digital Launch Workshop →'
+  },
+  saas: {
+    name: 'GoHighLevel Pro Trial',
+    tag: 'Top pick for agencies and scalers',
+    why: 'The Pro plan unlocks white-labeling, SaaS mode, and sub-account management — everything you need to sell GHL as your own software product and build predictable monthly recurring revenue.',
+    perks: [
+      'White-label GHL as your own branded software product',
+      'Build predictable MRR vs unpredictable project income',
+      'Full client management and automation suite included',
+      'Scales from your first client to a full agency operation'
+    ],
+    url: 'https://www.gohighlevel.com/protrial?fp_ref=dominic-32',
+    cta: 'Start Your Pro Trial →'
+  },
+  cert: {
+    name: 'GHL Certification Program',
+    tag: 'Close bigger, better-paying clients',
+    why: 'The GHL Certification signals verified mastery. Certified partners are recognized inside the GHL marketplace and command stronger positioning when pitching to higher-value clients.',
+    perks: [
+      'Official GHL credential recognized on the platform',
+      'Positions you as a verified platform expert',
+      'Deep-dive mastery across every GHL module',
+      'Clear differentiator in a competitive agency market'
+    ],
+    url: 'https://www.gohighlevel.com/?fp_ref=dominic-32',
+    cta: 'Explore GHL Certification →'
+  },
+  annual: {
+    name: 'GHL Annual Plan',
+    tag: 'Best long-term financial decision',
+    why: 'If you\'re committed to GoHighLevel, staying on monthly billing means paying more over time. The annual plan locks in a lower effective rate and lets you redirect savings directly into growth.',
+    perks: [
+      'Lower effective monthly cost vs month-to-month billing',
+      'Starter or Unlimited — pick your current scale level',
+      'All core GHL features included at either tier',
+      'Simplifies your billing and long-term planning'
+    ],
+    url: 'https://gohighlevel.com/annual?fp_ref=dominic-32',
+    cta: 'Switch to the Annual Plan →'
+  },
+  affiliate: {
+    name: 'GHL Sub-Affiliate Program',
+    tag: 'Build passive recurring income',
+    why: 'If you already use and value GHL, you can earn recurring monthly commissions by sharing it. Every subscriber you refer contributes to ongoing passive income that stacks over time.',
+    perks: [
+      'Recurring monthly commissions — not one-time payouts',
+      'Real-time dashboard to track referrals and commissions',
+      'Marketing assets and resources provided',
+      'Works alongside any other business or income stream'
+    ],
+    url: 'https://www.gohighlevel.com/?fp_ref=dominic-32',
+    cta: 'Learn About the Affiliate Program →'
+  },
+  saasupgrade: {
+    name: 'SaaS Upgrade — Agency Unlimited',
+    tag: 'Unlock white-label SaaS mode',
+    why: 'The SaaS upgrade unlocks white-labeling and sub-account reselling — turning GHL into a product you can sell under your own brand with your own pricing.',
+    perks: [
+      'White-label GHL under your brand and domain',
+      'Sell software access to unlimited clients',
+      'Full SaaS mode: your pricing, your margins',
+      'Agency Unlimited includes every pro feature'
+    ],
+    url: 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32',
+    cta: 'Explore the SaaS Upgrade →'
+  },
+  unlimited: {
+    name: 'GoHighLevel Unlimited Upgrade',
+    tag: 'Remove all platform limits',
+    why: 'The Unlimited upgrade removes account and contact limits, making it the right move when your client base or contacts are growing and you need room to scale without restrictions.',
+    perks: [
+      'Unlimited contacts and sub-accounts',
+      'Full platform access with no caps',
+      'Ideal for growing agencies and active marketers',
+      'One upgrade — no recurring per-client fees'
+    ],
+    url: 'https://www.gohighlevel.com/297upgrade?fp_ref=dominic-32',
+    cta: 'Explore Unlimited Upgrade →'
+  },
+  ai: {
+    name: 'GHL AI Employee',
+    tag: 'Automate client communication with AI',
+    why: 'GHL\'s AI Employee handles conversations, appointment booking, and lead follow-up automatically — saving hours per week and improving response speed across your client accounts.',
+    perks: [
+      'AI-powered lead conversations and follow-ups',
+      'Automated appointment scheduling without manual input',
+      'Works 24/7 across all your client sub-accounts',
+      'Reduces manual workload for you and your team'
+    ],
+    url: 'https://www.gohighlevel.com/ai?fp_ref=dominic-32',
+    cta: 'Explore GHL AI Employee →'
+  }
+};
+
+/* Ordered list of offer keys for the "Also explore" section */
+const AK = ['challenge','trial','chris','saas','cert','annual','affiliate'];
+
+/* ─── 2. PATH DATA ───────────────────────────────────────────
+   Each path defines:
+     label, color, light (bg), ico, name, sub
+     prev[]  — document preview items (b:true = locked/blurred)
+     steps[] — full roadmap steps shown after email unlock
+     qText   — question asked after reading the roadmap
+     qOpts[] — answer options linking to offer keys (k)
+   ─────────────────────────────────────────────────────────── */
+const P = {
+  beginner: {
+    label: '🌱 Beginner Path', color: '#10B981', light: '#ECFDF5',
+    ico: '🌱', name: 'Beginner Online Income Roadmap', sub: '2026 Edition · 6-step system',
+    prev: [
+      {t:'Understand the 3 online income models', b:false},
+      {t:'Pick the right model for your lifestyle', b:false},
+      {t:'Set up your free digital home base', b:true},
+      {t:'Launch your first offer with zero audience', b:true},
+      {t:'Your 30-day traffic system', b:true},
+      {t:'Scale what works, cut what doesn\'t', b:true}
+    ],
+    steps: [
+      {n:1, h:'Understand the 3 online income models',
+       p:'Services, Products, and Systems (affiliate/SaaS). Each has a different time-to-income curve. Beginners often do best starting with Systems — lower barrier, faster path to first results.',
+       tip:'GoHighLevel supports all 3 from one platform'},
+      {n:2, h:'Pick the model that fits your lifestyle',
+       p:'No team? Start with affiliate or digital products. Want recurring income? Explore SaaS reselling. Have a skill? Services first, then productize it later.'},
+      {n:3, h:'Set up your digital home base',
+       p:'A landing page + email list is your entire foundation. No website, no logo, no big investment needed. One clear offer + email capture = you\'re officially building something.'},
+      {n:4, h:'Launch your first offer with zero audience',
+       p:'Pinterest, TikTok, YouTube Shorts — three strong zero-cost traffic channels in 2026. Consistency matters more than perfection in the early days.',
+       tip:'Pinterest pins can drive passive traffic for months after posting'},
+      {n:5, h:'Your 30-day action plan',
+       p:'Week 1: Pick model + page. Week 2: Create content. Week 3: Analyze what\'s getting clicks. Week 4: Double down on what\'s working + start email follow-up.'},
+      {n:6, h:'Scale what works, eliminate the rest',
+       p:'Most beginners fail by doing too many things at once. Pick ONE traffic source, ONE offer, and build real depth in that before expanding.'}
+    ],
+    qText: 'What\'s your top priority this week?',
+    qOpts: [
+      {i:'🆓', t:'Explore GoHighLevel for free — zero commitment', s:'I want to see what\'s possible before investing anything', k:'challenge'},
+      {i:'📅', t:'Get 30 full days of structured training', s:'I\'m ready to commit time and actually build something', k:'trial'},
+      {i:'📦', t:'Launch a digital product and start selling fast', s:'I want a proven blueprint — zero to first sale', k:'chris'}
+    ]
+  },
+
+  creator: {
+    label: '🎯 Creator Path', color: '#F59E0B', light: '#FFFBEB',
+    ico: '🎯', name: 'Digital Product Launch Blueprint', sub: '2026 Edition · 6-step launch system',
+    prev: [
+      {t:'Find your most profitable idea in 24 hours', b:false},
+      {t:'Validate demand before building anything', b:false},
+      {t:'Package your knowledge into a $97–$197 offer', b:true},
+      {t:'Build the sales page that converts', b:true},
+      {t:'Pre-launch content strategy', b:true},
+      {t:'Day-by-day launch calendar', b:true}
+    ],
+    steps: [
+      {n:1, h:'Find your most profitable idea in 24 hours',
+       p:'List 10 problems you\'ve solved in the last 2 years. Cross with Pinterest and Google search trends. The overlap usually points to a validated product idea.'},
+      {n:2, h:'Validate before you build anything',
+       p:'Post 3 content pieces about your topic. If people save, comment, or message you — demand is confirmed. Build only after you see signals.',
+       tip:'Pinterest saves are one of the strongest validation signals available'},
+      {n:3, h:'Package at the right price point',
+       p:'$27–$47: impulse buys (checklists, templates). $97–$197: transformation products (courses, blueprints). Starting at $97 filters serious buyers and positions your offer higher.'},
+      {n:4, h:'Build the sales page that converts',
+       p:'Headline = transformation. Bullets = what\'s inside. One piece of proof. One clear call to action. GoHighLevel includes conversion-tested templates — customize one in an afternoon.'},
+      {n:5, h:'Pre-launch content strategy',
+       p:'7 days before launch: 5 teaser posts showing the problem your product solves. Build a small waitlist. Create genuine anticipation before anything goes live.'},
+      {n:6, h:'Day-by-day launch calendar',
+       p:'Day 1: Announce. Day 2: Transformation story. Day 3: Behind the scenes. Day 4: Proof. Day 5: Urgency. Day 6: Last chance. Day 7: Close.'}
+    ],
+    qText: 'Where are you on your product journey?',
+    qOpts: [
+      {i:'💡', t:'I have an idea but haven\'t built anything yet', s:'Need a step-by-step system from concept to first sale', k:'chris'},
+      {i:'🚀', t:'I have a product but need better tools to sell it', s:'Ready to build funnels and automate my sales process', k:'trial'},
+      {i:'📈', t:'I\'m already selling and want to scale', s:'I want recurring revenue + a SaaS add-on model', k:'saas'}
+    ]
+  },
+
+  biz: {
+    label: '📈 Business Owner Path', color: '#3B82F6', light: '#EFF6FF',
+    ico: '📈', name: 'Online Business Growth System', sub: '2026 Edition · 5 automation modules',
+    prev: [
+      {t:'Audit: where you\'re leaking money right now', b:false},
+      {t:'The 5 automations that replace a full-time VA', b:false},
+      {t:'Build a funnel that runs while you sleep', b:true},
+      {t:'Email sequences that close cold leads', b:true},
+      {t:'Recurring revenue add-ons for any niche', b:true}
+    ],
+    steps: [
+      {n:1, h:'Audit: where you\'re leaking money',
+       p:'Many businesses lose a significant share of leads from slow follow-up. Improving response speed and consistency can meaningfully lift conversions without adding new leads.'},
+      {n:2, h:'5 automations worth setting up first',
+       p:'1) Instant lead response 2) Appointment booking 3) No-show re-engage 4) Review request 5) 30-day referral ask. All 5 can run inside GHL with one setup.',
+       tip:'GoHighLevel automates all 5 out of the box — no extra tools needed'},
+      {n:3, h:'Build a funnel that runs in the background',
+       p:'Three pages: Landing → Thank-you → Follow-up offer. GoHighLevel includes conversion-tested templates — pick one and customize it in an afternoon.'},
+      {n:4, h:'Email sequences that re-engage cold leads',
+       p:'Most sales happen after multiple follow-ups. A structured email sequence over 14 days can revive leads that went quiet after the first contact.'},
+      {n:5, h:'Recurring revenue add-ons for any niche',
+       p:'Retainer: monthly maintenance + reporting. SaaS: resell GHL as your own tool. Membership: community + content. Any of the 3 turns one-time clients into predictable monthly income.'}
+    ],
+    qText: 'What\'s your biggest bottleneck right now?',
+    qOpts: [
+      {i:'⚙️', t:'Better tools + automation for lead follow-up', s:'Losing leads because my follow-up is manual or slow', k:'trial'},
+      {i:'💰', t:'Add recurring monthly revenue to my business', s:'Build a SaaS or retainer model on top of what I do', k:'saas'},
+      {i:'🗓️', t:'Lock in annual pricing and simplify billing', s:'All-in long-term — I want to eliminate the monthly bill', k:'annual'}
+    ]
+  },
+
+  agency: {
+    label: '🏢 Agency Path', color: '#8B5CF6', light: '#F5F3FF',
+    ico: '🏢', name: 'Agency Automation & SaaS Scaling Framework', sub: '2026 Edition · 5 growth phases',
+    prev: [
+      {t:'Package your agency as a monthly subscription', b:false},
+      {t:'White-label GoHighLevel as your own product', b:false},
+      {t:'Client onboarding — automated in 48 hours', b:true},
+      {t:'Pricing: $297 to $997/month per client', b:true},
+      {t:'Get certified and close enterprise accounts', b:true}
+    ],
+    steps: [
+      {n:1, h:'Package your agency as a subscription',
+       p:'Stop charging per project. Bundle services + software into a retainer. This shift moves you from unpredictable income to reliable, predictable monthly recurring revenue.'},
+      {n:2, h:'White-label GHL as your own product',
+       p:'Agency Unlimited lets you brand GoHighLevel completely — your logo, domain, and pricing. Clients pay you monthly for software access, and you set the margin.',
+       tip:'The SaaS upgrade activates full white-label and reselling capabilities'},
+      {n:3, h:'Automate client onboarding in 48 hrs',
+       p:'GHL workflows can auto-send welcome emails, book onboarding calls, deliver credentials, and set up sub-accounts with no manual work required on your end.'},
+      {n:4, h:'Pricing: $297 to $997/month per client',
+       p:'Starter: $297/mo (tools). Growth: $497/mo (tools + strategy). Premium: $997/mo (tools + reporting + builds). Charge for outcomes, not just software access.'},
+      {n:5, h:'Certification helps close better clients',
+       p:'The GHL Certification signals verified platform mastery. Certified partners have a clear credibility advantage when pitching to higher-value, longer-term contracts.'}
+    ],
+    qText: 'What\'s your most urgent agency goal?',
+    qOpts: [
+      {i:'🔁', t:'Launch or grow my white-label SaaS revenue', s:'Turn GHL into a product I sell monthly under my brand', k:'saasupgrade'},
+      {i:'🎓', t:'Get certified and attract higher-value clients', s:'Build the credibility that commands premium positioning', k:'cert'},
+      {i:'📅', t:'Switch to annual and reinvest the savings', s:'All-in on GHL — let\'s eliminate the monthly bill', k:'annual'}
+    ]
+  },
+
+  pro: {
+    label: '⚡ Power User Path', color: '#5B4AE8', light: '#EEF2FF',
+    ico: '⚡', name: 'Advanced GHL Mastery & Passive Income Kit', sub: '2026 Edition · 4 advanced tracks',
+    prev: [
+      {t:'Certification: position as the go-to expert', b:false},
+      {t:'Annual plan: the full ROI calculation', b:false},
+      {t:'Sub-affiliate income: build passive commissions', b:true},
+      {t:'Advanced automation blueprints', b:true}
+    ],
+    steps: [
+      {n:1, h:'Certification: become the go-to GHL expert',
+       p:'The GHL Certification isn\'t just a credential — it\'s a business development asset. Certified experts have stronger positioning in the marketplace and can confidently pitch enterprise clients.',
+       tip:'Certified partners have a clear differentiator when pitching premium contracts'},
+      {n:2, h:'Annual plan: the full ROI calculation',
+       p:'Unlimited annual saves you the equivalent of multiple monthly payments. If you\'re committed to GoHighLevel long-term, the annual plan is the straightforward financial decision.'},
+      {n:3, h:'Sub-affiliate income: build passive commissions',
+       p:'Every person you refer who stays subscribed pays you a recurring commission monthly. A small number of active referrals can create meaningful passive income that compounds over time.'},
+      {n:4, h:'Advanced automation blueprints',
+       p:'Lead nurture → appointment → show → close → upsell — all in one connected workflow. Build it once, run it in the background without ongoing manual input.'}
+    ],
+    qText: 'What do you want to unlock next?',
+    qOpts: [
+      {i:'🎓', t:'Get certified and charge premium rates', s:'Official credential that positions me above the competition', k:'cert'},
+      {i:'💳', t:'Switch to annual and reduce my monthly cost', s:'I\'m committed to GHL — let\'s cut the monthly bill', k:'annual'},
+      {i:'💸', t:'Build passive income as a sub-affiliate', s:'Earn recurring commissions from every GHL referral I make', k:'affiliate'}
+    ]
+  }
+};
+
+/* ─── 3. STATE ───────────────────────────────────────────── */
+let state = { path: null, offerKey: null };
+
+/* ─── 4. INIT ────────────────────────────────────────────── */
+function init() {
+  /* Support deep-linking: ?path=beginner etc. */
+  const p = new URLSearchParams(window.location.search).get('path');
+  if (p && P[p]) pickPath(p);
+}
+
+/* ─── UTILITY: Color theme ───────────────────────────────── */
+function setColor(c, l) {
+  document.documentElement.style.setProperty('--pc', c);
+  document.documentElement.style.setProperty('--pcl', l);
+}
+
+/* ─── UTILITY: Progress bar ──────────────────────────────── */
+function setBar(p) {
+  document.getElementById('pf').style.width = p + '%';
+}
+
+/* ─── UTILITY: Show page ─────────────────────────────────── */
+function showPage(id) {
+  document.querySelectorAll('.pg').forEach(p => p.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ─── UTILITY: Animated loader ───────────────────────────── */
+function runLoader(pgId, stepsId, barId, steps, dur, cb) {
+  const se = document.getElementById(stepsId);
+  const be = document.getElementById(barId);
+  se.innerHTML = steps.map((s, i) => `
+    <div class="lsi" id="si-${stepsId}-${i}">
+      <div class="lsidot" id="sd-${stepsId}-${i}">○</div>
+      <span>${s.t}</span>
+    </div>`).join('');
+  be.style.width = '0%';
+  let idx = 0;
+  const intv = dur / (steps.length + 0.5);
+  const tick = setInterval(() => {
+    if (idx > 0) {
+      const el = document.getElementById(`si-${stepsId}-${idx - 1}`);
+      if (el) { el.className = 'lsi done'; document.getElementById(`sd-${stepsId}-${idx - 1}`).textContent = '✓'; }
+    }
+    if (idx < steps.length) {
+      const el = document.getElementById(`si-${stepsId}-${idx}`);
+      if (el) { el.className = 'lsi act'; document.getElementById(`sd-${stepsId}-${idx}`).textContent = '◌'; }
+    }
+    be.style.width = Math.min(((idx + 1) / (steps.length + 0.5)) * 100, 95) + '%';
+    idx++;
+    if (idx > steps.length) { clearInterval(tick); be.style.width = '100%'; setTimeout(cb, 300); }
+  }, intv);
+}
+
+/* ─── UTILITY: Confetti burst ───────────────────────────── */
+function confetti() {
+  const cols = ['#5B4AE8','#10B981','#F59E0B','#EC4899','#3B82F6','#8B5CF6','#EF4444'];
+  for (let i = 0; i < 80; i++) {
+    const el = document.createElement('div');
+    const c = cols[i % cols.length];
+    const sz = 5 + Math.random() * 7;
+    el.className = 'cp';
+    el.style.cssText = `left:${Math.random() * 100}vw;top:-12px;width:${sz}px;height:${sz}px;background:${c};border-radius:${Math.random() > .5 ? '50%' : '2px'};animation-duration:${1.2 + Math.random() * 1.8}s;animation-delay:${Math.random() * 0.5}s;`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3500);
+  }
+}
+
+/* ─── FLOW: Pick a path ──────────────────────────────────── */
+function pickPath(key) {
+  state.path = key;
+  const d = P[key];
+  setColor(d.color, d.light);
+  setBar(28);
+
+  document.getElementById('pcrumb').textContent = d.label;
+  document.getElementById('aheadline').textContent = '🎁 Your free ' + d.name + ' is ready';
+  document.getElementById('asubhead').textContent = 'Enter your email to unlock the full guide — completely free.';
+  document.getElementById('dico').textContent = d.ico;
+  document.getElementById('dtitle').textContent = d.name;
+  document.getElementById('dsub').textContent = d.sub;
+  document.getElementById('previtems').innerHTML = d.prev.map((it, i) => `
+    <div class="di">
+      <div class="dinum">${i + 1}</div>
+      ${it.b
+        ? '<div style="flex:1;display:flex;align-items:center;gap:6px"><div class="blurrow"></div></div><div class="diltag">🔒 Locked</div>'
+        : '<div class="ditext">' + it.t + '</div>'
+      }
+    </div>`).join('');
+  showPage('pg1');
+}
+
+/* ─── FLOW: Submit email & unlock roadmap ────────────────── */
+function submitEmail() {
+  const v = document.getElementById('einp').value.trim();
+  if (!v || !v.includes('@')) { alert('Please enter a valid email address.'); return; }
+  setBar(55);
+
+  /*
+   * ─── CONNECT YOUR EMAIL SERVICE HERE ────────────────────
+   * fetch('YOUR_WEBHOOK_URL', {
+   *   method: 'POST',
+   *   headers: { 'Content-Type': 'application/json' },
+   *   body: JSON.stringify({ email: v, path: state.path })
+   * });
+   * ────────────────────────────────────────────────────────
+   */
+
+  runLoader('pg-l1', 'ls1', 'lb1', [
+    { t: 'Verifying your access...' },
+    { t: 'Personalizing your roadmap...' },
+    { t: 'Preparing your free guide...' }
+  ], 2400, () => { confetti(); renderAsset(); showPage('pg2'); });
+  showPage('pg-l1');
+}
+
+/* ─── FLOW: Render roadmap steps ────────────────────────── */
+function renderAsset() {
+  const d = P[state.path];
+  document.getElementById('aultitle').textContent = d.name;
+  document.getElementById('aulbody').innerHTML = d.steps.map(s => `
+    <div class="aus">
+      <div class="ausn">${s.n}</div>
+      <div class="aust">
+        <h4>${s.h}</h4>
+        <p>${s.p}</p>
+        ${s.tip ? '<div class="autip">💡 ' + s.tip + '</div>' : ''}
+      </div>
+    </div>`).join('');
+  document.getElementById('qtxt').textContent = d.qText;
+  document.getElementById('qopts').innerHTML = d.qOpts.map(o => `
+    <button class="qo" onclick="pickOffer('${o.k}')">
+      <div class="qoico">${o.i}</div>
+      <div><div class="qot">${o.t}</div><div class="qos">${o.s}</div></div>
+    </button>`).join('');
+}
+
+/* ─── FLOW: Pick an offer & run match loader ─────────────── */
+function pickOffer(key) {
+  state.offerKey = key;
+  setBar(82);
+  runLoader('pg-l2', 'ls2', 'lb2', [
+    { t: 'Scoring your answers...' },
+    { t: 'Matching to top resources...' },
+    { t: 'Calculating best path...' },
+    { t: 'Finalizing your recommendation...' }
+  ], 2800, () => { renderResult(key); showPage('pg3'); });
+  showPage('pg-l2');
+}
+
+/* ─── FLOW: Render personalized result ───────────────────── */
+function renderResult(key) {
+  setBar(100);
+  const o = O[key];
+  const d = P[state.path];
+  setColor(d.color, d.light);
+
+  document.getElementById('rtitle').textContent = 'Your best match: ' + o.name;
+  document.getElementById('rsub').textContent = 'Based on your path and goal, here\'s why this is a strong next step for your situation.';
+
+  /* Main offer card */
+  document.getElementById('offercard').innerHTML = `
+    <div class="ocard">
+      <div class="otag">⭐ Recommended for you</div>
+      <h3>${o.name}</h3>
+      <div class="owhy">${o.why}</div>
+      <div class="perks">${o.perks.map(p => `<div class="prk"><div class="pk">✓</div><span>${p}</span></div>`).join('')}</div>
+      <a href="${o.url}" target="_blank" rel="noopener" class="ctabtn">${o.cta}</a>
+    </div>`;
+
+  /* Summary sticky bar */
+  document.getElementById('stickbar').innerHTML = `
+    <div class="sticky-bar">
+      <div class="sb-text">
+        <div class="sb-t">Ready to get started?</div>
+        <div class="sb-s">${o.name} — your personalized pick</div>
+      </div>
+      <a href="${o.url}" target="_blank" rel="noopener" class="sb-btn">${o.cta.split(' ').slice(0, 2).join(' ')} →</a>
+    </div>`;
+
+  /* Alternative offers grid */
+  document.getElementById('altgrid').innerHTML = AK.filter(k => k !== key).slice(0, 4).map(k => `
+    <a href="${O[k].url}" target="_blank" rel="noopener" class="aa">
+      <div class="aan">${O[k].name}</div>
+      <div class="aas">${O[k].tag}</div>
+    </a>`).join('');
+}
+
+/* ─── FLOW: Restart quiz ─────────────────────────────────── */
+function restart() {
+  state = { path: null, offerKey: null };
+  setColor('#5B4AE8', '#F5F3FF');
+  setBar(2);
+  document.getElementById('einp').value = '';
+  showPage('pg0');
+}
+
+/* ─── MODAL HELPERS ──────────────────────────────────────── */
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOnOverlay(e, id) {
+  if (e.target === document.getElementById(id)) closeModal(id);
+}
+
+/* ─── BOOT ───────────────────────────────────────────────── */
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
