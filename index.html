@@ -6,11 +6,10 @@
   <title>Income Vault | The Operating System for Modern Online Businesses</title>
   <style>
     /* ════════════════════════════════════════════════════════════
-       INCOME VAULT 2.0 — PREMIUM PINTEREST FUNNEL
-       Luxury SaaS Aesthetic + High-Converting Funnel Experience
+       INCOME VAULT 3.0 — DARK FUTURISTIC SaaS FUNNEL
+       Enterprise Design + Aggressive Email Capture + All 12 Links
        ════════════════════════════════════════════════════════════ */
 
-    /* ─── RESET & ROOT ─────────────────────────────────────── */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,25 +17,19 @@
     }
 
     :root {
-      /* Brand Colors */
-      --primary: #5B4AE8;
-      --primary-dark: #4338CA;
-      --primary-light: #F5F3FF;
-      --secondary: #10B981;
-      --accent: #F59E0B;
-      --danger: #EF4444;
-      --text: #111827;
-      --text-mid: #374151;
-      --text-light: #6B7280;
-      --text-lighter: #9CA3AF;
-      --bg: #F8F7FE;
-      --white: #fff;
-      --border: #E5E7EB;
-      --radius: 12px;
-      --radius-lg: 18px;
-      --shadow-sm: 0 2px 8px rgba(91, 74, 232, 0.08);
-      --shadow: 0 6px 24px rgba(91, 74, 232, 0.13);
-      --shadow-lg: 0 12px 48px rgba(91, 74, 232, 0.18);
+      --dark-bg: #0a0e27;
+      --dark-card: #111729;
+      --dark-border: #1e2844;
+      --accent-cyan: #00D9FF;
+      --accent-purple: #7B3FF2;
+      --accent-pink: #FF006E;
+      --text-white: #FFFFFF;
+      --text-light: #C4D0E3;
+      --text-muted: #8B9CB8;
+      --green: #00D97F;
+      --yellow: #FFD60A;
+      --shadow: 0 0 30px rgba(0, 217, 255, 0.1);
+      --glow: 0 0 20px rgba(123, 63, 242, 0.3);
     }
 
     html {
@@ -45,8 +38,8 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--white);
-      color: var(--text);
+      background: var(--dark-bg);
+      color: var(--text-white);
       line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
@@ -56,7 +49,7 @@
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -64,34 +57,12 @@
       }
     }
 
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
     @keyframes glow {
       0%, 100% {
-        box-shadow: 0 0 20px rgba(91, 74, 232, 0.3);
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.3), inset 0 0 20px rgba(0, 217, 255, 0.1);
       }
       50% {
-        box-shadow: 0 0 30px rgba(91, 74, 232, 0.5);
+        box-shadow: 0 0 40px rgba(0, 217, 255, 0.5), inset 0 0 30px rgba(0, 217, 255, 0.15);
       }
     }
 
@@ -100,25 +71,16 @@
         transform: translateY(0px);
       }
       50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px);
       }
     }
 
-    @keyframes pulse-scale {
+    @keyframes pulse-neon {
       0%, 100% {
-        transform: scale(1);
+        opacity: 1;
       }
       50% {
-        transform: scale(1.05);
-      }
-    }
-
-    @keyframes shimmer {
-      0% {
-        background-position: -1000px 0;
-      }
-      100% {
-        background-position: 1000px 0;
+        opacity: 0.8;
       }
     }
 
@@ -128,34 +90,34 @@
 
     /* ─── NAV ───────────────────────────────────────────────── */
     nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
+      background: rgba(17, 23, 41, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 16px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      backdrop-filter: blur(10px);
     }
 
     .logo {
       font-size: 18px;
-      font-weight: 700;
-      color: var(--primary);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       letter-spacing: -0.5px;
-    }
-
-    .logo b {
-      color: var(--text);
     }
 
     .nav-tag {
       font-size: 11px;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 5px 12px;
+      color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid var(--accent-cyan);
+      padding: 6px 12px;
       border-radius: 20px;
       font-weight: 600;
     }
@@ -163,7 +125,7 @@
     /* ─── PROGRESS BAR ──────────────────────────────────────── */
     .progress-bar {
       height: 3px;
-      background: #e4e1fb;
+      background: rgba(30, 40, 68, 0.5);
       position: fixed;
       top: 0;
       left: 0;
@@ -173,9 +135,10 @@
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
       transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       width: 2%;
+      box-shadow: var(--shadow);
     }
 
     /* ─── CONTAINER ──────────────────────────────────────── */
@@ -186,28 +149,40 @@
     }
 
     .container-sm {
-      max-width: 720px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     /* ─── HERO SECTION ──────────────────────────────────────── */
     .hero {
-      padding: 60px 20px 40px;
+      padding: 80px 20px 60px;
       text-align: center;
-      background: linear-gradient(135deg, rgba(91, 74, 232, 0.05) 0%, rgba(245, 158, 11, 0.02) 100%);
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, rgba(123, 63, 242, 0.05) 0%, rgba(0, 217, 255, 0.02) 100%);
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
+      top: -30%;
+      right: -10%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(91, 74, 232, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(123, 63, 242, 0.1) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -215,30 +190,30 @@
     .eyebrow {
       display: inline-block;
       font-size: 12px;
-      font-weight: 600;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 6px 14px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid var(--accent-cyan);
+      padding: 8px 16px;
       border-radius: 20px;
-      margin-bottom: 16px;
-      letter-spacing: 0.07em;
+      margin-bottom: 18px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       animation: fadeInUp 0.6s ease-out;
     }
 
     .hero h1 {
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 700;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 16px;
-      letter-spacing: -0.8px;
-      color: var(--text);
+      margin-bottom: 18px;
+      letter-spacing: -1px;
       animation: fadeInUp 0.6s ease-out 0.1s both;
     }
 
     .hero h1 em {
       font-style: normal;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -247,44 +222,10 @@
     .hero > p {
       font-size: 16px;
       color: var(--text-light);
-      max-width: 500px;
-      margin: 0 auto 28px;
-      animation: fadeInUp 0.6s ease-out 0.2s both;
-      line-height: 1.7;
-    }
-
-    /* ─── TRUST BADGES ──────────────────────────────────────── */
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin: 0 auto 32px;
       max-width: 600px;
-      animation: fadeInUp 0.6s ease-out 0.3s both;
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--text-mid);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 6px 12px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .trust-badge:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-
-    .trust-badge span {
-      font-size: 14px;
+      margin: 0 auto 36px;
+      animation: fadeInUp 0.6s ease-out 0.2s both;
+      line-height: 1.8;
     }
 
     /* ─── CTA BUTTONS ───────────────────────────────────────── */
@@ -295,9 +236,9 @@
       gap: 8px;
       padding: 14px 28px;
       border: none;
-      border-radius: var(--radius);
+      border-radius: 10px;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.3s ease;
@@ -305,103 +246,88 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+      color: var(--dark-bg);
+      box-shadow: var(--glow);
+      border: 1px solid var(--accent-cyan);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 0 50px rgba(0, 217, 255, 0.6);
     }
 
     .btn-secondary {
-      background: var(--white);
-      color: var(--primary);
-      border: 2px solid var(--primary);
+      background: rgba(123, 63, 242, 0.2);
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
     }
 
     .btn-secondary:hover {
-      background: var(--primary-light);
+      background: rgba(123, 63, 242, 0.4);
+      box-shadow: var(--glow);
     }
 
     .btn-outline {
       background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
     }
 
     .btn-outline:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
+      background: rgba(0, 217, 255, 0.1);
+      box-shadow: var(--glow);
     }
 
-    .btn-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 32px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      border: none;
-      border-radius: var(--radius);
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-      box-shadow: var(--shadow);
+    /* ─── CTA GRID ──────────────────────────────────────────── */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+      animation: fadeInUp 0.6s ease-out 0.3s both;
     }
 
-    .btn-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    /* ─── QUIZ TRIGGER ──────────────────────────────────────── */
-    .quiz-trigger {
-      background: var(--white);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius-lg);
-      padding: 32px 24px;
+    .cta-card {
+      background: rgba(30, 40, 68, 0.5);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 20px;
       text-align: center;
-      margin: 40px auto;
-      max-width: 600px;
-      animation: fadeInUp 0.6s ease-out 0.4s both;
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
-    .quiz-trigger::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+    .cta-card:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.05);
+      box-shadow: var(--glow);
     }
 
-    .quiz-trigger h3 {
-      font-size: 20px;
+    .cta-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .cta-title {
+      font-size: 15px;
       font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
+      color: var(--text-white);
+      margin-bottom: 6px;
     }
 
-    .quiz-trigger p {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 20px;
+    .cta-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
     }
 
-    .quiz-trigger .btn {
-      margin-top: 10px;
+    .cta-card .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 13px;
     }
 
     /* ─── SECTION STYLING ───────────────────────────────────── */
@@ -410,19 +336,12 @@
       position: relative;
     }
 
-    @media (max-width: 768px) {
-      section {
-        padding: 50px 20px;
-      }
-    }
-
     section h2 {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700;
-      line-height: 1.2;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
       margin-bottom: 16px;
-      color: var(--text);
-      letter-spacing: -0.6px;
+      letter-spacing: -1px;
     }
 
     section > p {
@@ -430,43 +349,44 @@
       color: var(--text-light);
       max-width: 600px;
       margin: 0 auto 48px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     /* ─── WHY SWITCHING SECTION ────────────────────────────── */
     .why-switching {
-      background: linear-gradient(135deg, rgba(91, 74, 232, 0.05) 0%, transparent 100%);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(123, 63, 242, 0.05) 0%, transparent 100%);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
     }
 
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
       margin-top: 48px;
     }
 
     .why-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      background: rgba(30, 40, 68, 0.6);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
       padding: 28px;
       transition: all 0.3s ease;
       animation: fadeInUp 0.6s ease-out;
     }
 
     .why-card:hover {
-      border-color: var(--primary);
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.05);
+      box-shadow: var(--glow);
       transform: translateY(-4px);
-      box-shadow: var(--shadow);
     }
 
     .why-card h3 {
       font-size: 18px;
       font-weight: 700;
       margin-bottom: 12px;
-      color: var(--text);
+      color: var(--text-white);
     }
 
     .why-card p {
@@ -476,9 +396,9 @@
     }
 
     .stat-number {
-      font-size: 32px;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      font-size: 36px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -487,44 +407,15 @@
 
     /* ─── DASHBOARD SECTION ────────────────────────────────── */
     .dashboard-section {
-      background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #1a1a2e 100%);
-      color: white;
+      background: linear-gradient(135deg, rgba(123, 63, 242, 0.08) 0%, rgba(0, 217, 255, 0.03) 100%);
+      border: 1px solid var(--dark-border);
+      border-radius: 20px;
       position: relative;
       overflow: hidden;
     }
 
-    .dashboard-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(91, 74, 232, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .dashboard-section::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: 10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
     .dashboard-section h2 {
-      color: white;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dashboard-section > p {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--text-white);
       position: relative;
       z-index: 1;
     }
@@ -532,18 +423,18 @@
     .dashboard-visual {
       position: relative;
       z-index: 2;
-      margin-top: 60px;
+      margin-top: 48px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
 
     .dashboard-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(17, 23, 41, 0.8);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-lg);
-      padding: 20px;
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 12px;
+      padding: 24px;
       animation: float 3s ease-in-out infinite;
     }
 
@@ -559,76 +450,32 @@
       animation-delay: 1.5s;
     }
 
-    .dashboard-card h4 {
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
     .dashboard-metric {
-      font-size: 28px;
-      font-weight: 700;
-      color: white;
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 8px;
     }
 
     .dashboard-label {
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* ─── FLOW SECTION ────────────────────────────────────── */
-    .flow-section {
-      background: var(--white);
-    }
-
-    .flow-diagram {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 48px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .flow-step {
-      background: var(--white);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 20px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--text);
-      position: relative;
-      animation: fadeInUp 0.6s ease-out;
-    }
-
-    .flow-arrow {
-      text-align: center;
-      font-size: 24px;
-      color: var(--primary);
-      margin: -8px 0;
-      animation: float 2s ease-in-out infinite;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     /* ─── CALCULATOR SECTION ────────────────────────────────── */
-    .calculator-section {
-      background: linear-gradient(135deg, rgba(91, 74, 232, 0.08) 0%, rgba(245, 158, 11, 0.03) 100%);
-    }
-
     .calculator-wrapper {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      background: rgba(30, 40, 68, 0.6);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
       padding: 40px;
       max-width: 700px;
       margin: 0 auto;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--glow);
     }
 
     .calculator-tools {
@@ -643,33 +490,31 @@
       align-items: center;
       gap: 8px;
       padding: 10px 14px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid var(--dark-border);
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
       font-size: 13px;
       font-weight: 500;
+      color: var(--text-light);
     }
 
     .tool-toggle:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.1);
     }
 
     .tool-toggle.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .tool-toggle input {
-      cursor: pointer;
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(123, 63, 242, 0.2));
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
     }
 
     .calculator-results {
-      background: var(--bg);
-      border-radius: var(--radius);
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 12px;
       padding: 24px;
       margin-top: 32px;
     }
@@ -678,8 +523,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--dark-border);
     }
 
     .result-row:last-child {
@@ -694,63 +539,23 @@
 
     .result-value {
       font-size: 18px;
-      font-weight: 700;
-      color: var(--primary);
+      font-weight: 800;
+      color: var(--accent-cyan);
     }
 
     .savings {
       font-size: 20px;
-      color: var(--secondary);
+      color: var(--green);
+      font-weight: 800;
     }
 
-    /* ─── FOOTER ─────────────────────────────────────────────── */
-    footer {
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      padding: 40px 20px 20px;
-      text-align: center;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px 20px;
-      margin-bottom: 16px;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-
-    .footer-disc {
-      font-size: 12px;
-      color: var(--text-lighter);
-      max-width: 600px;
-      margin: 0 auto 12px;
-      line-height: 1.6;
-    }
-
-    .footer-copy {
-      font-size: 11px;
-      color: #C4C9D4;
-    }
-
-    /* ─── MODALS ─────────────────────────────────────────────── */
+    /* ─── EMAIL CAPTURE MODAL (AGGRESSIVE) ──────────────────── */
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
       z-index: 1000;
       align-items: center;
       justify-content: center;
@@ -763,22 +568,23 @@
     }
 
     .modal-box {
-      background: var(--white);
-      border-radius: var(--radius-lg);
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
       max-width: 500px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      padding: 32px;
+      padding: 40px;
       position: relative;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-      animation: slideInUp 0.3s ease-out;
+      box-shadow: 0 0 60px rgba(0, 217, 255, 0.3);
+      animation: slideInUp 0.4s ease-out;
     }
 
     @keyframes slideInUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(50px);
       }
       to {
         opacity: 1;
@@ -794,32 +600,74 @@
       border: none;
       font-size: 24px;
       cursor: pointer;
-      color: var(--text-light);
+      color: var(--text-muted);
       transition: color 0.3s ease;
       line-height: 1;
     }
 
     .modal-close:hover {
-      color: var(--text);
+      color: var(--accent-cyan);
     }
 
     .modal-header {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .modal-header h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-white);
       margin-bottom: 8px;
     }
 
     .modal-header p {
       font-size: 14px;
       color: var(--text-light);
+      line-height: 1.6;
     }
 
-    /* ─── QUIZ MODAL ─────────────────────────────────────────── */
+    /* ─── EMAIL FORM ────────────────────────────────────────── */
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .email-form input {
+      padding: 14px 16px;
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid var(--dark-border);
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--text-white);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .email-form input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .email-form input:focus {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.1);
+      box-shadow: var(--glow);
+    }
+
+    .email-form .btn-primary {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .privacy-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    /* ─── QUIZ MODAL ────────────────────────────────────────── */
     .quiz-step {
       display: none;
     }
@@ -830,16 +678,16 @@
     }
 
     .quiz-step h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--text);
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-white);
     }
 
     .quiz-step p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-light);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .quiz-options {
@@ -849,151 +697,130 @@
     }
 
     .quiz-option {
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid var(--dark-border);
+      border-radius: 10px;
       padding: 14px 16px;
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: left;
       font-weight: 500;
       font-size: 14px;
+      color: var(--text-light);
     }
 
     .quiz-option:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.1);
     }
 
     .quiz-option.selected {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(123, 63, 242, 0.2));
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
     }
 
     .quiz-progress {
       display: flex;
-      gap: 4px;
-      margin-bottom: 24px;
+      gap: 6px;
+      margin-bottom: 28px;
     }
 
     .progress-dot {
       height: 4px;
       flex: 1;
-      background: var(--border);
+      background: var(--dark-border);
       border-radius: 2px;
       transition: background 0.3s ease;
     }
 
     .progress-dot.active {
-      background: var(--primary);
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
     }
 
     .quiz-buttons {
       display: flex;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .quiz-buttons .btn {
       flex: 1;
     }
 
-    /* ─── EMAIL CAPTURE MODAL ────────────────────────────────── */
-    .email-form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .email-form input {
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 14px;
-      outline: none;
-      transition: all 0.3s ease;
-    }
-
-    .email-form input:focus {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-
-    .email-form .btn-primary {
-      width: 100%;
-      margin-top: 8px;
-    }
-
-    .privacy-note {
-      font-size: 11px;
-      color: var(--text-lighter);
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: rgba(17, 23, 41, 0.8);
+      border-top: 1px solid var(--dark-border);
+      padding: 40px 20px 20px;
       text-align: center;
-      margin-top: 12px;
     }
 
-    /* ─── MOBILE OPTIMIZATION ────────────────────────────────── */
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-disc {
+      font-size: 12px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 12px;
+      line-height: 1.6;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #6B7A8A;
+    }
+
+    /* ─── MOBILE OPTIMIZATION ────────────────��───────────────── */
     @media (max-width: 768px) {
       .hero {
-        padding: 40px 20px 30px;
+        padding: 50px 20px 40px;
       }
 
       .hero h1 {
         font-size: 32px;
       }
 
-      .hero > p {
-        font-size: 15px;
-        margin-bottom: 24px;
+      section {
+        padding: 50px 20px;
       }
 
-      .trust-badges {
-        gap: 10px;
-        margin-bottom: 24px;
-      }
-
-      .trust-badge {
-        font-size: 12px;
-        padding: 5px 10px;
-      }
-
-      .quiz-trigger {
-        padding: 24px 18px;
-        margin: 30px auto;
+      .cta-grid {
+        grid-template-columns: 1fr;
       }
 
       .why-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .why-card {
-        padding: 20px;
-      }
-
-      .dashboard-visual {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-box {
-        max-width: 95%;
-        padding: 24px;
       }
 
       .calculator-wrapper {
         padding: 24px;
       }
 
-      .calculator-tools {
-        gap: 8px;
+      .modal-box {
+        padding: 28px;
       }
 
-      .tool-toggle {
-        flex: 1;
-        min-width: 140px;
-        padding: 10px 10px;
-        font-size: 12px;
+      .dashboard-visual {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1006,15 +833,9 @@
         font-size: 16px;
       }
 
-      .nav-tag {
-        font-size: 10px;
-        padding: 4px 8px;
-      }
-
       .eyebrow {
         font-size: 11px;
-        padding: 5px 10px;
-        margin-bottom: 12px;
+        padding: 6px 10px;
       }
 
       .hero h1 {
@@ -1024,30 +845,27 @@
 
       .hero > p {
         font-size: 14px;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
       }
 
-      .trust-badges {
-        margin-bottom: 20px;
+      .cta-grid {
+        gap: 12px;
       }
 
-      .trust-badge {
+      .cta-card {
+        padding: 16px;
+      }
+
+      .cta-icon {
+        font-size: 24px;
+      }
+
+      .cta-title {
+        font-size: 13px;
+      }
+
+      .cta-desc {
         font-size: 11px;
-        padding: 4px 8px;
-      }
-
-      .btn {
-        padding: 12px 20px;
-        font-size: 14px;
-      }
-
-      .btn-cta {
-        padding: 14px 24px;
-        font-size: 15px;
-      }
-
-      section {
-        padding: 40px 16px;
       }
 
       section h2 {
@@ -1055,24 +873,7 @@
       }
 
       .why-card {
-        padding: 16px;
-      }
-
-      .why-card h3 {
-        font-size: 16px;
-      }
-
-      .why-card p {
-        font-size: 13px;
-      }
-
-      .calculator-wrapper {
-        padding: 18px;
-      }
-
-      .tool-toggle {
-        font-size: 11px;
-        padding: 8px 10px;
+        padding: 20px;
       }
 
       .modal-box {
@@ -1080,24 +881,16 @@
       }
 
       .modal-header h2 {
-        font-size: 20px;
+        font-size: 22px;
       }
 
-      footer {
-        padding: 30px 16px 16px;
+      .calculator-wrapper {
+        padding: 18px;
       }
 
-      .footer-links {
-        gap: 4px 12px;
+      .tool-toggle {
         font-size: 12px;
-      }
-
-      .footer-disc {
-        font-size: 11px;
-      }
-
-      .footer-copy {
-        font-size: 10px;
+        padding: 8px 10px;
       }
     }
   </style>
@@ -1112,7 +905,7 @@
   <!-- Navigation -->
   <nav>
     <div class="logo">Income<b>Vault</b></div>
-    <div class="nav-tag">🎯 Pinterest Powered</div>
+    <div class="nav-tag">⚡ Next-Gen SaaS</div>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════════
@@ -1122,38 +915,60 @@
     <div class="container-sm">
       <div class="eyebrow">✦ Discover Your Operating System</div>
       <h1>The Backend Running <em>Modern Online Businesses</em></h1>
-      <p>See how successful creators, agencies, and entrepreneurs are ditching 10+ tool stacks for one elegant system that handles everything—funnels, automations, AI follow-up, and customer management.</p>
+      <p>See how successful entrepreneurs, agencies, and digital creators are ditching 10+ tool stacks for one elegant system that handles everything—funnels, automations, AI follow-up, and customer management.</p>
 
-      <div class="trust-badges">
-        <div class="trust-badge"><span>⚡</span> Used by 140+ countries</div>
-        <div class="trust-badge"><span>🔒</span> Enterprise-grade security</div>
-        <div class="trust-badge"><span>📈</span> 3x faster setup</div>
-        <div class="trust-badge"><span>🎯</span> Pinterest optimized</div>
-      </div>
+      <!-- STRATEGIC CTA GRID: 6 OPTIONS (ALL 12 LINKS COVERED) -->
+      <div class="cta-grid">
+        <!-- For Complete Beginners -->
+        <div class="cta-card">
+          <span class="cta-icon">🆓</span>
+          <div class="cta-title">Complete Beginner?</div>
+          <div class="cta-desc">Start 100% free with the 5-Day Challenge</div>
+          <a href="http://gohighlevel.com/5dc?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Free Challenge</a>
+        </div>
 
-      <div style="margin-top: 32px; animation: fadeInUp 0.6s ease-out 0.4s both;">
-        <a href="https://bit.ly/4tTPZ9" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right: 12px; margin-bottom: 12px;">
-          Start 30-Day Trial →
-        </a>
-        <a href="https://bit.ly/3OylVk4" target="_blank" rel="noopener" class="btn btn-secondary">
-          Watch Free 5-Day Challenge
-        </a>
+        <!-- For Hands-On Learners -->
+        <div class="cta-card">
+          <span class="cta-icon">📅</span>
+          <div class="cta-title">Want Structure?</div>
+          <div class="cta-desc">30-Day Bootcamp with guided training</div>
+          <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Join Bootcamp</a>
+        </div>
+
+        <!-- For Digital Product Creators -->
+        <div class="cta-card">
+          <span class="cta-icon">📦</span>
+          <div class="cta-title">Build a Product?</div>
+          <div class="cta-desc">Digital Product Launch Workshop</div>
+          <a href="https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Learn Launch</a>
+        </div>
+
+        <!-- For Agencies/White-Label -->
+        <div class="cta-card">
+          <span class="cta-icon">🏢</span>
+          <div class="cta-title">Running an Agency?</div>
+          <div class="cta-desc">White-label SaaS with Agency Unlimited</div>
+          <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">SaaS Upgrade</a>
+        </div>
+
+        <!-- For Power Users -->
+        <div class="cta-card">
+          <span class="cta-icon">⚡</span>
+          <div class="cta-title">Already Using GHL?</div>
+          <div class="cta-desc">Get Certified & unlock advanced features</div>
+          <a href="https://www.gohighlevel.com/certifications?fp_ref=dominic-91" target="_blank" rel="noopener" class="btn btn-primary">Get Certified</a>
+        </div>
+
+        <!-- For Everyone -->
+        <div class="cta-card">
+          <span class="cta-icon">🚀</span>
+          <div class="cta-title">All-In on GHL?</div>
+          <div class="cta-desc">14-Day Trial or Annual Plans</div>
+          <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Start Trial</a>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       QUIZ TRIGGER SECTION
-       ═══════════════════════════════════════════════════════════ -->
-  <div class="container-sm">
-    <div class="quiz-trigger">
-      <h3>Not sure where to start?</h3>
-      <p>Take the 60-second quiz to discover your personalized path</p>
-      <button class="btn btn-primary" onclick="openQuizModal()">
-        Take the Quiz →
-      </button>
-    </div>
-  </div>
 
   <!-- ═══════════════════════════════════════════════════════════
        WHY SWITCHING SECTION
@@ -1197,7 +1012,7 @@
         <div class="why-card">
           <div class="stat-number">∞</div>
           <h3>Scalable Systems</h3>
-          <p>From your first funnel to 10,000 contacts. Grows with you. No limits, no surprises.</p>
+          <p>From your first funnel to 100K contacts. Grows with you. No limits, no surprises.</p>
         </div>
       </div>
     </div>
@@ -1206,74 +1021,55 @@
   <!-- ═══════════════════════════════════════════════════════════
        IMMERSIVE DASHBOARD SECTION
        ═══════════════════════════════════════════════════════════ -->
-  <section class="dashboard-section">
-    <div class="container">
+  <section>
+    <div class="container-sm">
       <h2>See the Hidden Infrastructure Behind Every Successful Creator</h2>
       <p>Funnels, automations, AI follow-up, pipelines, calendars, memberships, and client systems—all connected, all working together.</p>
 
-      <div class="dashboard-visual">
-        <div class="dashboard-card">
-          <h4>📊 Live Funnel</h4>
-          <div class="dashboard-metric">1,247</div>
-          <div class="dashboard-label">New Leads Today</div>
+      <div class="dashboard-section">
+        <div class="dashboard-visual">
+          <div class="dashboard-card">
+            <div class="dashboard-label">📊 Live Funnel</div>
+            <div class="dashboard-metric">1,247</div>
+            <div class="dashboard-label">New Leads Today</div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-label">🤖 AI Automation</div>
+            <div class="dashboard-metric">94%</div>
+            <div class="dashboard-label">Response Rate</div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-label">📬 Email Campaign</div>
+            <div class="dashboard-metric">42%</div>
+            <div class="dashboard-label">Open Rate</div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="dashboard-label">💰 Revenue</div>
+            <div class="dashboard-metric">$28K</div>
+            <div class="dashboard-label">This Month</div>
+          </div>
         </div>
-
-        <div class="dashboard-card">
-          <h4>🤖 AI Automation</h4>
-          <div class="dashboard-metric">94%</div>
-          <div class="dashboard-label">Response Rate</div>
-        </div>
-
-        <div class="dashboard-card">
-          <h4>📬 Email Campaign</h4>
-          <div class="dashboard-metric">42%</div>
-          <div class="dashboard-label">Open Rate</div>
-        </div>
-
-        <div class="dashboard-card">
-          <h4>💰 Revenue</h4>
-          <div class="dashboard-metric">$28K</div>
-          <div class="dashboard-label">This Month</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       PINTEREST REVENUE FLOW SECTION
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="flow-section">
-    <div class="container-sm">
-      <h2>How Pinterest Traffic Becomes Revenue</h2>
-      <p>The complete funnel from pin to profit in one integrated system.</p>
-
-      <div class="flow-diagram">
-        <div class="flow-step">📌 Pinterest Pin</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">🎯 Landing Page</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">📧 Email Capture</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">🤖 AI Follow-Up</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">📅 Booked Call</div>
-        <div class="flow-arrow">↓</div>
-        <div class="flow-step">💰 Recurring Revenue</div>
       </div>
 
       <div style="text-align: center; margin-top: 40px;">
-        <p style="color: var(--text-light); margin-bottom: 20px;">Everything Pinterest creators need in one place</p>
-        <a href="https://bit.ly/4tTPZ9" target="_blank" rel="noopener" class="btn btn-primary">
-          Start Your Free Trial →
+        <p style="color: var(--text-light); margin-bottom: 20px;">Want to unlock this level of automation?</p>
+        <a href="https://www.gohighlevel.com/ai?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right: 12px; margin-bottom: 12px;">
+          Explore AI Employee →
+        </a>
+        <a href="https://www.gohighlevel.com/297upgrade?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-secondary">
+          Unlimited Upgrade
         </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       COST CALCULATOR SECTION
+       COST CALCULATOR SECTION (WITH 12 LINKS STRATEGY)
        ═══════════════════════════════════════════════════════════ -->
-  <section class="calculator-section">
+  <section>
     <div class="container-sm">
       <h2>How Much Are Your Tools Actually Costing You?</h2>
       <p>See what you could save by consolidating to one system.</p>
@@ -1319,11 +1115,11 @@
             <span class="result-value" id="annualTotal">$0</span>
           </div>
           <div class="result-row">
-            <span class="result-label">Income Vault Cost (Monthly)</span>
+            <span class="result-label">GHL Monthly (Avg)</span>
             <span class="result-value">$99–297</span>
           </div>
-          <div class="result-row" style="border-top: 2px solid var(--primary); padding-top: 14px; margin-top: 14px;">
-            <span class="result-label" style="color: var(--secondary); font-weight: 700;">Your Potential Annual Savings</span>
+          <div class="result-row" style="border-top: 1px solid rgba(0, 217, 255, 0.2); padding-top: 14px; margin-top: 14px;">
+            <span class="result-label" style="color: var(--green); font-weight: 700;">Your Annual Savings</span>
             <span class="savings" id="savings">$0</span>
           </div>
         </div>
@@ -1332,8 +1128,8 @@
           <p style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">
             Ready to consolidate and simplify?
           </p>
-          <a href="https://bit.ly/4tTPZ9" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">
-            See Your Savings with a Free Trial →
+          <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">
+            Claim Your Free Trial →
           </a>
         </div>
       </div>
@@ -1343,27 +1139,62 @@
   <!-- ═══════════════════════════════════════════════════════════
        FINAL CTA SECTION
        ═══════════════════════════════════════════════════════════ -->
-  <section style="background: linear-gradient(135deg, #0f172a 0%, #111827 50%, #1a1a2e 100%); color: white;">
+  <section style="background: linear-gradient(135deg, rgba(123, 63, 242, 0.08) 0%, rgba(0, 217, 255, 0.03) 100%); border: 1px solid var(--dark-border);">
     <div class="container-sm">
-      <h2 style="color: white; font-size: clamp(32px, 5vw, 48px);">
+      <h2 style="text-align: center;">
         You Don't Need More Tools.<br>
         You Need One System That Runs Everything.
       </h2>
-      <p style="color: rgba(255, 255, 255, 0.8); font-size: 16px; margin-bottom: 40px;">
+      <p style="text-align: center;">
         Build your funnels, automate follow-up, capture leads, manage customers, launch products, and scale your business—from one elegant operating system.
       </p>
 
-      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 400px; margin: 0 auto;">
-        <a href="https://bit.ly/4tTPZ9" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center;">
-          Start The 30-Day Trial →
-        </a>
-        <a href="https://bit.ly/3OylVk4" target="_blank" rel="noopener" class="btn btn-secondary" style="width: 100%; justify-content: center; background: transparent; border-color: white; color: white;">
-          Watch The 5-Day Challenge
-        </a>
+      <div class="cta-grid">
+        <div class="cta-card">
+          <span class="cta-icon">🚀</span>
+          <div class="cta-title">14-Day Trial</div>
+          <div class="cta-desc">Start risk-free with full access</div>
+          <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Start Trial</a>
+        </div>
+
+        <div class="cta-card">
+          <span class="cta-icon">📈</span>
+          <div class="cta-title">Annual Plans</div>
+          <div class="cta-desc">Lock in savings + long-term value</div>
+          <a href="https://gohighlevel.com/annual?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Save Annually</a>
+        </div>
+
+        <div class="cta-card">
+          <span class="cta-icon">💼</span>
+          <div class="cta-title">Pro Features</div>
+          <div class="cta-desc">Unlock white-label and SaaS mode</div>
+          <a href="https://www.gohighlevel.com/protrial?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Pro Trial</a>
+        </div>
+
+        <div class="cta-card">
+          <span class="cta-icon">💸</span>
+          <div class="cta-title">Affiliate Income</div>
+          <div class="cta-desc">Build passive recurring revenue</div>
+          <a href="https://affiliate.gohighlevel.com?sref=cvi0huk" target="_blank" rel="noopener" class="btn btn-primary">Become Affiliate</a>
+        </div>
+
+        <div class="cta-card">
+          <span class="cta-icon">🎓</span>
+          <div class="cta-title">Super Charged SaaS</div>
+          <div class="cta-desc">Premium SaaS reselling program</div>
+          <a href="https://www.gohighlevel.com/pro-trial?fp_ref=dominic-39" target="_blank" rel="noopener" class="btn btn-primary">SaaS Program</a>
+        </div>
+
+        <div class="cta-card">
+          <span class="cta-icon">⭐</span>
+          <div class="cta-title">5-Day Challenge</div>
+          <div class="cta-desc">Free live training from experts</div>
+          <a href="http://gohighlevel.com/5dc?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Free Challenge</a>
+        </div>
       </div>
 
-      <p style="text-align: center; font-size: 12px; color: rgba(255, 255, 255, 0.6); margin-top: 24px;">
-        No credit card required. Cancel anytime. Join 10,000+ creators building smarter.
+      <p style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 32px;">
+        No credit card required. Cancel anytime. Join 100,000+ creators and entrepreneurs.
       </p>
     </div>
   </section>
@@ -1381,8 +1212,32 @@
     <p class="footer-disc">
       Some links on this website may be affiliate links, which means we may earn a commission at no additional cost to you if you choose to purchase through them. We only recommend resources we genuinely believe in.
     </p>
-    <p class="footer-copy">© 2026 IncomeVault. All rights reserved. | <a href="https://income-vault.vercel.app" style="color: inherit; text-decoration: none;">income-vault.vercel.app</a></p>
+    <p class="footer-copy">© 2026 IncomeVault. All rights reserved.</p>
   </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       AGGRESSIVE EMAIL CAPTURE MODAL (2-STEP)
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="emailModal" onclick="closeModalOnOverlay(event, 'emailModal')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('emailModal')">✕</button>
+
+      <div class="modal-header">
+        <h2>Get Free Business Blueprints</h2>
+        <p>Your step-by-step guides for funnels, automations, and scaling to $10K+ monthly revenue</p>
+      </div>
+
+      <form class="email-form" onsubmit="submitEmail(event)">
+        <input type="text" placeholder="First Name" required>
+        <input type="email" placeholder="Your Best Email" required>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Me the Blueprints →</button>
+      </form>
+
+      <p class="privacy-note">
+        🔒 100% private. Unsubscribe anytime. No spam, ever.
+      </p>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════════════════════
        QUIZ MODAL
@@ -1401,77 +1256,54 @@
       <!-- Step 1 -->
       <div class="quiz-step active" id="quizStep0">
         <h3>What type of business are you building?</h3>
-        <p>Select what resonates most with you</p>
+        <p>Select what resonates most</p>
         <div class="quiz-options">
-          <button class="quiz-option" onclick="selectQuizAnswer(0, 'Digital Products')">📦 Digital Products (courses, templates)</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(0, 'Services')">💼 Services (freelance, consulting)</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(0, 'Agency')">🏢 Agency (multi-client management)</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(0, 'SaaS')">⚙️ SaaS Reselling (white-label)</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'Digital Products')">📦 Digital Products</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'Services')">💼 Services/Freelance</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'Agency')">🏢 Agency</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'SaaS')">⚙️ SaaS Reselling</button>
         </div>
       </div>
 
       <!-- Step 2 -->
       <div class="quiz-step" id="quizStep1">
-        <h3>Are you a beginner or established?</h3>
-        <p>This helps us recommend the right starting point</p>
+        <h3>What's your experience level?</h3>
+        <p>This helps us recommend the right path</p>
         <div class="quiz-options">
-          <button class="quiz-option" onclick="selectQuizAnswer(1, 'Beginner')">🌱 Beginner (brand new to online business)</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(1, 'Established')">📈 Established (already running something)</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(1, 'Complete Beginner')">🌱 Complete Beginner</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(1, 'Some Experience')">📈 Some Experience</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(1, 'Already Selling')">🚀 Already Selling</button>
         </div>
       </div>
 
       <!-- Step 3 -->
       <div class="quiz-step" id="quizStep2">
         <h3>What's your main goal right now?</h3>
-        <p>Pick your #1 priority this year</p>
+        <p>Pick your #1 priority</p>
         <div class="quiz-options">
-          <button class="quiz-option" onclick="selectQuizAnswer(2, 'Leads')">📊 Generate more leads</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(2, 'Automation')">🤖 Automate my business</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(2, 'Revenue')">💰 Increase recurring revenue</button>
-          <button class="quiz-option" onclick="selectQuizAnswer(2, 'Certification')">🎓 Get certified & level up</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Generate Leads')">📊 Generate More Leads</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Automate Business')">🤖 Automate Everything</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Build Recurring Revenue')">💰 Build Recurring Revenue</button>
+          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Get Certified')">🎓 Get Certified</button>
         </div>
       </div>
 
       <!-- Results -->
       <div class="quiz-step" id="quizResults" style="text-align: center;">
-        <h3>🎯 Your Personalized Match</h3>
-        <p id="quizResultText" style="margin-bottom: 24px;"></p>
-        <a href="https://bit.ly/4tTPZ9" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center;">
-          Claim Your Free Trial →
+        <h3 style="margin-bottom: 16px;">🎯 Your Personalized Recommendation</h3>
+        <p id="quizResultText" style="margin-bottom: 28px; color: var(--text-light); line-height: 1.8;"></p>
+        <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: 12px;">
+          Start Your Free Trial →
         </a>
-        <button class="btn btn-outline" onclick="resetQuiz()" style="width: 100%; margin-top: 12px;">
+        <button type="button" class="btn btn-outline" onclick="resetQuiz()" style="width: 100%;">
           Retake the Quiz
         </button>
       </div>
 
       <div class="quiz-buttons" id="quizButtons">
-        <button class="btn btn-outline" onclick="prevQuizStep()" id="prevBtn" style="display: none;">← Back</button>
-        <button class="btn btn-primary" onclick="nextQuizStep()">Next →</button>
+        <button type="button" class="btn btn-outline" onclick="prevQuizStep()" id="prevBtn" style="display: none;">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextQuizStep()">Next →</button>
       </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       EMAIL CAPTURE MODAL (Exit Intent)
-       ═══════════════════════════════════════════════════════════ -->
-  <div class="modal-overlay" id="emailModal" onclick="closeModalOnOverlay(event, 'emailModal')">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('emailModal')">✕</button>
-
-      <div class="modal-header">
-        <h2>Get the Pinterest Funnel Blueprint</h2>
-        <p>Free PDF: The exact system used by 10,000+ creators to convert pins into revenue</p>
-      </div>
-
-      <form class="email-form" onsubmit="submitEmail(event)">
-        <input type="text" placeholder="First Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Get Free Blueprint →</button>
-      </form>
-
-      <p class="privacy-note">
-        🔒 Your email is safe. Unsubscribe anytime.
-      </p>
     </div>
   </div>
 
@@ -1484,13 +1316,13 @@
       <h2>Privacy Policy</h2>
       <p><strong>Last updated:</strong> May 2026</p>
       <p>IncomeVault respects your privacy. This policy explains how we handle information collected through this website.</p>
-      <ul style="padding-left: 20px; margin: 16px 0;">
-        <li><strong>Information collected:</strong> When you submit your email, it is used solely to deliver your requested resources and relevant follow-up content. We do not sell or share your email.</li>
-        <li><strong>Cookies & analytics:</strong> We use standard analytics to understand how visitors interact with this site. No personally identifiable data is stored in cookies.</li>
+      <ul style="padding-left: 20px; margin: 16px 0; color: var(--text-light);">
+        <li><strong>Information collected:</strong> When you submit your email, it is used solely to deliver your requested resources and relevant follow-up content.</li>
+        <li><strong>Cookies & analytics:</strong> We use standard analytics to understand how visitors interact with this site.</li>
         <li><strong>Affiliate links:</strong> This site contains affiliate links. Clicking them may result in a commission earned by IncomeVault at no additional cost to you.</li>
-        <li><strong>Unsubscribe:</strong> You may opt out of any email at any time via the unsubscribe link in every email we send.</li>
+        <li><strong>Unsubscribe:</strong> You may opt out of any email at any time via the unsubscribe link.</li>
       </ul>
-      <p>Questions? Contact <a href="mailto:domilogics@gmail.com">domilogics@gmail.com</a></p>
+      <p>Questions? Contact <a href="mailto:domilogics@gmail.com" style="color: var(--accent-cyan);">domilogics@gmail.com</a></p>
     </div>
   </div>
 
@@ -1500,13 +1332,13 @@
       <h2>Terms of Use</h2>
       <p><strong>Last updated:</strong> May 2026</p>
       <p>By accessing IncomeVault, you agree to the following terms:</p>
-      <ul style="padding-left: 20px; margin: 16px 0;">
-        <li><strong>Educational purpose:</strong> All content is provided for informational and educational purposes only. Nothing constitutes financial, legal, or business advice.</li>
-        <li><strong>No income guarantees:</strong> Results vary by individual effort, experience, and market conditions. We make no guarantees of income or success.</li>
-        <li><strong>Affiliate disclosure:</strong> This site participates in affiliate programs. We may earn commissions on purchases made through links at no extra cost to you.</li>
-        <li><strong>Intellectual property:</strong> All site content is owned by IncomeVault and may not be reproduced without permission.</li>
+      <ul style="padding-left: 20px; margin: 16px 0; color: var(--text-light);">
+        <li><strong>Educational purpose:</strong> All content is provided for informational and educational purposes only.</li>
+        <li><strong>No income guarantees:</strong> Results vary by individual effort. We make no guarantees of income or success.</li>
+        <li><strong>Affiliate disclosure:</strong> This site participates in affiliate programs. We may earn commissions on purchases.</li>
+        <li><strong>Intellectual property:</strong> All site content is owned by IncomeVault.</li>
       </ul>
-      <p>Questions? Contact <a href="mailto:domilogics@gmail.com">domilogics@gmail.com</a></p>
+      <p>Questions? Contact <a href="mailto:domilogics@gmail.com" style="color: var(--accent-cyan);">domilogics@gmail.com</a></p>
     </div>
   </div>
 
@@ -1514,22 +1346,20 @@
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('modal-contact')">✕</button>
       <h2>Contact Us</h2>
-      <p>Have questions, feedback, or partnership inquiries? We'd love to hear from you.</p>
-      <p><strong>Email:</strong> <a href="mailto:domilogics@gmail.com">domilogics@gmail.com</a></p>
-      <p>We typically respond within 1–2 business days.</p>
-      <p style="margin-top: 20px; font-size: 13px; color: var(--text-light);">
-        For GoHighLevel support, visit <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener">GoHighLevel.com</a>
-      </p>
+      <p>Have questions or partnership inquiries? We'd love to hear from you.</p>
+      <p style="margin-top: 16px;"><strong style="color: var(--accent-cyan);">Email:</strong> <a href="mailto:domilogics@gmail.com" style="color: var(--accent-cyan);">domilogics@gmail.com</a></p>
+      <p style="margin-top: 12px; font-size: 13px; color: var(--text-light);">We typically respond within 1–2 business days.</p>
     </div>
   </div>
 
   <script>
     /* ════════════════════════════════════════════════════════════
-       INCOME VAULT 2.0 — JavaScript
+       INCOME VAULT 3.0 — Advanced JavaScript with All 12 Links
        ════════════════════════════════════════════════════════════ */
 
     let quizAnswers = [];
     let currentQuizStep = 0;
+    let emailModalShown = false;
 
     /* ─── Modal Management ──────────────────────────────────── */
     function openModal(id) {
@@ -1546,17 +1376,44 @@
       }
     }
 
-    function openQuizModal() {
-      quizAnswers = [];
-      currentQuizStep = 0;
-      showQuizStep(0);
-      openModal('quizModal');
+    /* ─── AGGRESSIVE EMAIL CAPTURE ────────────────────────────
+       Triggers: 3 seconds on page load + 25% scroll + page exit
+       ─────────────────────────────────────────────────────── */
+    setTimeout(() => {
+      if (!emailModalShown) {
+        openModal('emailModal');
+        emailModalShown = true;
+      }
+    }, 3000);
+
+    window.addEventListener('scroll', () => {
+      if (!emailModalShown) {
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPercent > 25) {
+          openModal('emailModal');
+          emailModalShown = true;
+        }
+      }
+    });
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 0 && !emailModalShown && window.innerWidth > 768) {
+        openModal('emailModal');
+        emailModalShown = true;
+      }
+    });
+
+    /* ─── Email Submit ────────────────────────────────────── */
+    function submitEmail(e) {
+      e.preventDefault();
+      // Redirect to 5-Day Challenge (great for all segments)
+      window.location.href = 'http://gohighlevel.com/5dc?fp_ref=dominic-32';
     }
 
-    /* ─── Quiz Logic ────────────────────────────────────────── */
+    /* ─── Quiz Functions ────────────────────────────────────── */
     function updateQuizProgress() {
       const progress = document.getElementById('quizProgress');
-      let dots = '<div style="display: flex; gap: 4px;">';
+      let dots = '<div style="display: flex; gap: 6px;">';
       for (let i = 0; i < 3; i++) {
         dots += `<div class="progress-dot ${i <= currentQuizStep ? 'active' : ''}"></div>`;
       }
@@ -1610,17 +1467,58 @@
       const goal = quizAnswers[2];
 
       let recommendation = '';
-      if (level === 'Beginner') {
-        recommendation = `Based on your answers, start with the <strong>5-Day Free Challenge</strong> to learn the fundamentals while building your first funnel.`;
-      } else if (goal === 'Certification') {
-        recommendation = `You're ready for our <strong>GHL Certification Program</strong> to position yourself as a verified expert and command premium rates.`;
-      } else if (goal === 'Revenue') {
-        recommendation = `Launch your <strong>SaaS Upgrade</strong> to white-label and build recurring monthly revenue with Agency Unlimited.`;
+      let cta = 'https://www.gohighlevel.com/?fp_ref=dominic-32';
+
+      // INTELLIGENT 12-LINK ROUTING BASED ON QUIZ ANSWERS
+      if (level === 'Complete Beginner') {
+        // Beginners → 5-Day Challenge (FREE)
+        recommendation = `Based on your answers, start with the <strong style="color: var(--accent-cyan);">5-Day Free Challenge</strong> to learn the fundamentals while building your first funnel, completely risk-free.`;
+        cta = 'http://gohighlevel.com/5dc?fp_ref=dominic-32';
+      } else if (goal === 'Generate Leads') {
+        // Lead generators → Bootcamp (STRUCTURED)
+        recommendation = `Perfect for you: <strong style="color: var(--accent-cyan);">30-Day Bootcamp</strong> with structured training on funnels, lead capture, and follow-up automations to maximize your lead generation.`;
+        cta = 'https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32';
+      } else if (business === 'Digital Products') {
+        // Product builders → Product Launch Workshop
+        recommendation = `You need the <strong style="color: var(--accent-cyan);">Digital Product Launch Workshop</strong> to turn your knowledge into a profitable product with funnels, email sequences, and everything built-in.`;
+        cta = 'https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32';
+      } else if (business === 'Agency') {
+        // Agencies → SaaS Upgrade + Certifications
+        if (goal === 'Build Recurring Revenue') {
+          recommendation = `Ready to scale? The <strong style="color: var(--accent-cyan);">SaaS Upgrade (Agency Unlimited)</strong> lets you white-label and build predictable monthly recurring revenue.`;
+          cta = 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32';
+        } else {
+          recommendation = `Agencies thrive with <strong style="color: var(--accent-cyan);">GHL Certification</strong> to position as verified experts and command premium client contracts.`;
+          cta = 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91';
+        }
+      } else if (goal === 'Get Certified') {
+        // Certification seekers
+        recommendation = `Get the <strong style="color: var(--accent-cyan);">GHL Certification</strong> to unlock credibility, attract higher-paying clients, and position yourself as a verified expert.`;
+        cta = 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91';
+      } else if (goal === 'Automate Business') {
+        // Automation lovers → AI Employee or Pro Trial
+        recommendation = `For serious automation, unlock the <strong style="color: var(--accent-cyan);">AI Employee</strong> to handle conversations, scheduling, and follow-ups 24/7 automatically.`;
+        cta = 'https://www.gohighlevel.com/ai?fp_ref=dominic-32';
+      } else if (level === 'Already Selling') {
+        // Established users → Annual Plans + Pro Trial
+        if (goal === 'Build Recurring Revenue') {
+          recommendation = `Ready for the next level? The <strong style="color: var(--accent-cyan);">Annual Plans</strong> lock in savings and simplify billing for established businesses.`;
+          cta = 'https://gohighlevel.com/annual?fp_ref=dominic-32';
+        } else {
+          recommendation = `Upgrade to <strong style="color: var(--accent-cyan);">Pro Trial</strong> to unlock white-labeling, SaaS mode, and advanced features for scaling your operation.`;
+          cta = 'https://www.gohighlevel.com/protrial?fp_ref=dominic-32';
+        }
       } else {
-        recommendation = `Jump into the <strong>30-Day Trial + Bootcamp</strong> to get guided through every feature with structured training.`;
+        // Default to 14-Day Trial
+        recommendation = `Start with our <strong style="color: var(--accent-cyan);">14-Day Free Trial</strong> to explore all features and find what works best for your business.`;
+        cta = 'https://www.gohighlevel.com/?fp_ref=dominic-32';
       }
 
-      document.getElementById('quizResultText').innerHTML = recommendation;
+      const resultText = document.getElementById('quizResultText');
+      resultText.innerHTML = recommendation;
+
+      // Update CTA button
+      document.querySelector('#quizResults .btn-primary').href = cta;
     }
 
     function resetQuiz() {
@@ -1641,43 +1539,16 @@
 
       const monthly = total;
       const annual = total * 12;
-      const ghlCost = 297 * 12;
-      const savings = Math.max(0, annual - ghlCost);
+      const ghlAnnualCost = 297 * 12;
+      const savings = Math.max(0, annual - ghlAnnualCost);
 
       document.getElementById('monthlyTotal').textContent = '$' + monthly;
       document.getElementById('annualTotal').textContent = '$' + annual.toLocaleString();
       document.getElementById('savings').textContent = '$' + savings.toLocaleString();
     }
 
-    /* ─── Email Capture ────────────────────────────────────── */
-    function submitEmail(e) {
-      e.preventDefault();
-      window.location.href = 'https://bit.ly/3OylVk4';
-    }
-
-    /* ─── Exit Intent Popup ────────────────────────────────── */
-    let emailModalShown = false;
-    document.addEventListener('mouseleave', function(e) {
-      if (e.clientY < 0 && !emailModalShown && window.innerWidth > 768) {
-        emailModalShown = true;
-        openModal('emailModal');
-      }
-    });
-
-    /* Mobile: Show on 50% scroll */
-    let mobileEmailShown = false;
-    window.addEventListener('scroll', function() {
-      if (!mobileEmailShown && window.innerWidth <= 768) {
-        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 50) {
-          mobileEmailShown = true;
-          openModal('emailModal');
-        }
-      }
-    });
-
     /* ─── Progress Bar ────────────────────────────────────── */
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       document.querySelector('.progress-fill').style.width = Math.min(scrollPercent, 95) + '%';
     });
