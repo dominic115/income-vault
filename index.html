@@ -906,15 +906,22 @@
       margin-bottom: 16px;
     }
 
-    .footer-links a {
+    .footer-links a,
+    .footer-links button {
       font-size: 13px;
       color: var(--text-muted);
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
     }
 
-    .footer-links a:hover {
+    .footer-links a:hover,
+    .footer-links button:hover {
       color: var(--accent-cyan);
     }
 
@@ -1050,130 +1057,190 @@
        ═══════════════════════════════════════════════════════════ -->
   <section class="hero">
     <div class="container-sm">
-      <div class="eyebrow">✦ Find Your Path</div>
+      <div class="eyebrow">✦ One Platform. Every Business Model.</div>
       <h1>The <em>Operating System</em> for Modern Online Businesses</h1>
       <p>See how successful entrepreneurs, agencies, and digital creators are ditching 10+ tool stacks for one elegant system that handles everything—funnels, automations, AI follow-up, and customer management.</p>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       WHO GoHighLevel IS MEANT FOR SECTION (REPLACES CAMPAIGNS)
+       WHO GoHighLevel IS MEANT FOR SECTION
        ═══════════════════════════════════════════════════════════ -->
   <section class="audience-section">
     <div class="container">
       <h2>Who GoHighLevel Is Meant For</h2>
-      <p>Whether you're just starting out or scaling a six-figure business, there's a clear path forward. Choose your audience to see all relevant offers.</p>
+      <p>GoHighLevel works across every stage of business growth. Below are the exact offers recommended for each type of user — matched to where you are and what you're building.</p>
 
       <div class="audience-grid">
-        <!-- Beginners -->
+
+        <!-- 1. Complete Beginners -->
         <div class="audience-card">
           <span class="audience-icon">🆓</span>
-          <h3 class="audience-title">Beginners Making First $$</h3>
-          <span class="audience-goal">Goal: Learn GHL + Land First Clients</span>
-          <p class="audience-desc">You want to understand GHL from scratch and start earning money through service offers or reselling.</p>
+          <h3 class="audience-title">Complete Beginners</h3>
+          <span class="audience-goal">Your first action begins here — start earning faster than you think.</span>
+          <p class="audience-desc">You've never used GHL. The 5-Day Challenge gets you moving immediately — no setup overwhelm, no wasted time figuring things out alone.</p>
           <div class="roadmap">
-            <div class="roadmap-step">Learn GHL basics</div>
-            <div class="roadmap-step">Offer GHL setup services</div>
-            <div class="roadmap-step">Get first paid client</div>
-            <div class="roadmap-step">Resell GHL & scale</div>
+            <div class="roadmap-step">Take the free 5-Day Challenge</div>
+            <div class="roadmap-step">Understand GHL's core features</div>
+            <div class="roadmap-step">Explore the Digital Product Workshop</div>
+            <div class="roadmap-step">Jump into your 14-day trial</div>
           </div>
-          <div class="audience-offers">
-            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('5dc-challenge')">Free Challenge</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Start Trial</button>
+          <div class="audience-offers three-col">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('digital-product')">Product Workshop</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Free Trial</button>
           </div>
         </div>
 
-        <!-- Hands-On Learners -->
+        <!-- 2. Hands-On Learners -->
         <div class="audience-card">
           <span class="audience-icon">📅</span>
           <h3 class="audience-title">Hands-On Learners</h3>
-          <span class="audience-goal">Goal: Structured Training + Certification</span>
-          <p class="audience-desc">You learn better with a proven curriculum, step-by-step guidance, and community support to accelerate results.</p>
+          <span class="audience-goal">Build real campaigns. Get real results. Certification unlocks premium rates.</span>
+          <p class="audience-desc">You retain knowledge by doing, not watching. The Bootcamp gives you 30 days to build, break things, and come out the other side with a working GHL business.</p>
           <div class="roadmap">
-            <div class="roadmap-step">Complete 30-day bootcamp</div>
-            <div class="roadmap-step">Build real client campaigns</div>
-            <div class="roadmap-step">Get industry certified</div>
-            <div class="roadmap-step">Launch your GHL service</div>
+            <div class="roadmap-step">Enrol in the Bootcamp (30-day trial)</div>
+            <div class="roadmap-step">Complete the 5-Day Challenge for foundations</div>
+            <div class="roadmap-step">Explore the Digital Product Workshop</div>
+            <div class="roadmap-step">Move to a full plan with momentum behind you</div>
+          </div>
+          <div class="audience-offers" style="grid-template-columns: repeat(2, 1fr);">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('bootcamp')">Bootcamp Trial</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('digital-product')">Product Workshop</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">14-Day Trial</button>
+          </div>
+        </div>
+
+        <!-- 3. Coaches & Consultants -->
+        <div class="audience-card">
+          <span class="audience-icon">🎓</span>
+          <h3 class="audience-title">Coaches &amp; Consultants</h3>
+          <span class="audience-goal">Stop chasing leads manually. Wake up to booked calls and paid clients.</span>
+          <p class="audience-desc">Your follow-up system should be working while you're offline. GHL handles lead capture, automated follow-up, and appointment booking — so you focus on delivering, not chasing.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Start a 14-day Starter trial</div>
+            <div class="roadmap-step">Set up your funnel &amp; booking calendar</div>
+            <div class="roadmap-step">Add GHL AI Employee for 24/7 follow-up</div>
+            <div class="roadmap-step">Launch the 5-Day Challenge to learn faster</div>
           </div>
           <div class="audience-offers three-col">
-            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('bootcamp')">Bootcamp</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('certification')">Certification</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Free Trial</button>
-          </div>
-        </div>
-
-        <!-- Digital Creators -->
-        <div class="audience-card">
-          <span class="audience-icon">📦</span>
-          <h3 class="audience-title">Digital Product Creators</h3>
-          <span class="audience-goal">Goal: Build & Launch Digital Products</span>
-          <p class="audience-desc">You want to create high-ticket digital products using GHL as your all-in-one launch & sales system.</p>
-          <div class="roadmap">
-            <div class="roadmap-step">Design your product</div>
-            <div class="roadmap-step">Create automated funnels</div>
-            <div class="roadmap-step">Set up email sequences</div>
-            <div class="roadmap-step">Launch with confidence</div>
-          </div>
-          <div class="audience-offers">
-            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('digital-product')">Product Workshop</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Start Trial</button>
-          </div>
-        </div>
-
-        <!-- Agencies -->
-        <div class="audience-card">
-          <span class="audience-icon">🏢</span>
-          <h3 class="audience-title">Digital Agencies & Service Providers</h3>
-          <span class="audience-goal">Goal: Expand Revenue + White-Label Options</span>
-          <p class="audience-desc">You manage client campaigns and want to white-label GHL, offer it as your own, and unlock recurring revenue.</p>
-          <div class="roadmap">
-            <div class="roadmap-step">White-label GHL</div>
-            <div class="roadmap-step">Build managed services</div>
-            <div class="roadmap-step">Add recurring revenue</div>
-            <div class="roadmap-step">Scale agency profitably</div>
-          </div>
-          <div class="audience-offers three-col">
-            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('agency-unlimited')">Agency Plan</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('certification')">Certification</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Free Trial</button>
-          </div>
-        </div>
-
-        <!-- Power Users -->
-        <div class="audience-card">
-          <span class="audience-icon">⚡</span>
-          <h3 class="audience-title">Power Users & Resellers</h3>
-          <span class="audience-goal">Goal: Master Advanced Features</span>
-          <p class="audience-desc">You're already using GHL and want certification, advanced automations, premium features, and reseller opportunities.</p>
-          <div class="roadmap">
-            <div class="roadmap-step">Get GHL certified</div>
-            <div class="roadmap-step">Access advanced features</div>
-            <div class="roadmap-step">Build complex workflows</div>
-            <div class="roadmap-step">Become a GHL expert</div>
-          </div>
-          <div class="audience-offers">
-            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('certification')">Get Certified</button>
-            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Upgrade Plan</button>
-          </div>
-        </div>
-
-        <!-- Everyone -->
-        <div class="audience-card">
-          <span class="audience-icon">🚀</span>
-          <h3 class="audience-title">Explorers & Decision-Makers</h3>
-          <span class="audience-goal">Goal: Discover What's Possible</span>
-          <p class="audience-desc">You want to test GHL's capabilities, see the full feature set, or compare it with other solutions before committing.</p>
-          <div class="roadmap">
-            <div class="roadmap-step">Start 14-day trial</div>
-            <div class="roadmap-step">Test core features</div>
-            <div class="roadmap-step">Import your data</div>
-            <div class="roadmap-step">Choose your path</div>
-          </div>
-          <div class="audience-offers">
-            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('trial')">Start Free Trial</button>
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('trial')">14-Day Trial</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('ai-employee')">AI Employee</button>
             <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
           </div>
         </div>
+
+        <!-- 4. Digital Creators & Product Sellers -->
+        <div class="audience-card">
+          <span class="audience-icon">📦</span>
+          <h3 class="audience-title">Digital Creators &amp; Product Sellers</h3>
+          <span class="audience-goal">Your audience is ready. Turn it into a product that pays you on repeat.</span>
+          <p class="audience-desc">You already have an audience — GHL gives you everything to package your knowledge, launch it fast, and sell it without stitching together five different platforms.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Join the Digital Product Launch Workshop</div>
+            <div class="roadmap-step">Design your product &amp; automated funnel</div>
+            <div class="roadmap-step">Set up email sequences &amp; checkout</div>
+            <div class="roadmap-step">Start a 14-day trial to build it all</div>
+          </div>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('digital-product')">Product Workshop</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">14-Day Trial</button>
+          </div>
+        </div>
+
+        <!-- 5. Agency Builders -->
+        <div class="audience-card">
+          <span class="audience-icon">🏢</span>
+          <h3 class="audience-title">Agency Builders</h3>
+          <span class="audience-goal">More clients. More sub-accounts. More recurring revenue — all under your brand.</span>
+          <p class="audience-desc">You're not just running campaigns — you're building a business. GHL's agency infrastructure gives you the systems, white-label tools, and scalability to grow a proper client operation.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Enrol in the Bootcamp (30-day trial)</div>
+            <div class="roadmap-step">Set up white-label sub-accounts</div>
+            <div class="roadmap-step">Upgrade to the Annual Unlimited plan</div>
+            <div class="roadmap-step">Get GHL certified to boost credibility</div>
+          </div>
+          <div class="audience-offers three-col">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('bootcamp')">Bootcamp Trial</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('annual')">Annual Plan</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('certification')">Certification</button>
+          </div>
+        </div>
+
+        <!-- 6. Existing Starter Users Ready to Scale -->
+        <div class="audience-card">
+          <span class="audience-icon">⚡</span>
+          <h3 class="audience-title">Existing Starter Users Ready to Scale</h3>
+          <span class="audience-goal">You've outgrown your current plan. Unlimited is where the real money starts.</span>
+          <p class="audience-desc">Three sub-accounts is a ceiling, not a business. Upgrading to Unlimited removes that cap and opens the door to the client volume your agency is actually capable of handling.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Upgrade to Unlimited ($297/mo)</div>
+            <div class="roadmap-step">Unlock unlimited sub-accounts</div>
+            <div class="roadmap-step">Consider the Annual plan to save 2 months</div>
+            <div class="roadmap-step">Scale your client roster profitably</div>
+          </div>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('unlimited-upgrade')">Upgrade to Unlimited</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('annual')">Annual Plan</button>
+          </div>
+        </div>
+
+        <!-- 7. SaaS Builders & White-Label Resellers -->
+        <div class="audience-card">
+          <span class="audience-icon">🔧</span>
+          <h3 class="audience-title">SaaS Builders &amp; White-Label Resellers</h3>
+          <span class="audience-goal">Your name on the software. Your price. Your recurring revenue stream.</span>
+          <p class="audience-desc">GHL's white-label infrastructure lets you launch a fully branded SaaS product without building anything from scratch. Sell subscriptions, keep the margin, own the relationship.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Start the SaaS Pro plan trial (new users)</div>
+            <div class="roadmap-step">Or upgrade to Pro (existing GHL users)</div>
+            <div class="roadmap-step">Join the Supercharged SaaS program</div>
+            <div class="roadmap-step">Launch your branded SaaS product</div>
+          </div>
+          <div class="audience-offers three-col">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('saas-pro-trial')">SaaS Pro Trial</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('saas-upgrade')">Upgrade to Pro</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('supercharged-saas')">Supercharged SaaS</button>
+          </div>
+        </div>
+
+        <!-- 8. Freelance GHL Admins & Specialists -->
+        <div class="audience-card">
+          <span class="audience-icon">💼</span>
+          <h3 class="audience-title">Freelance GHL Admins &amp; Specialists</h3>
+          <span class="audience-goal">Certified specialists get more clients and charge what they're actually worth.</span>
+          <p class="audience-desc">Anyone can claim they know GHL. A certification proves it — and puts you on the official GHL partner directory where businesses are actively searching for specialists like you.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Get officially GHL certified</div>
+            <div class="roadmap-step">List yourself as a certified specialist</div>
+            <div class="roadmap-step">Start an Unlimited trial to serve clients</div>
+            <div class="roadmap-step">Charge premium rates with confidence</div>
+          </div>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('certification')">Get Certified</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Unlimited Trial</button>
+          </div>
+        </div>
+
+        <!-- 9. Fellow Marketers & Affiliate-Minded People -->
+        <div class="audience-card">
+          <span class="audience-icon">🚀</span>
+          <h3 class="audience-title">Fellow Marketers &amp; Affiliate-Minded People</h3>
+          <span class="audience-goal">You already have the audience. Point them at GHL and earn 40% every month they stay.</span>
+          <p class="audience-desc">GHL pays 40% recurring commissions — meaning every referral keeps paying you for as long as that person stays subscribed. If you have a marketing audience, this is the simplest income stream you're not running yet.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Become a GHL affiliate (free to join)</div>
+            <div class="roadmap-step">Or become a customer first via Annual plan</div>
+            <div class="roadmap-step">Share your affiliate link with your audience</div>
+            <div class="roadmap-step">Earn 40% recurring on every referral</div>
+          </div>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('become-affiliate')">Become an Affiliate</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('annual')">Annual Plan</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1187,7 +1254,6 @@
       <p>See the transformations happening across different GHL audiences.</p>
 
       <div class="testimonials-grid">
-        <!-- Testimonial 1: Beginner -->
         <div class="testimonial-card">
           <div class="testimonial-header">
             <div class="testimonial-avatar">📧</div>
@@ -1200,7 +1266,6 @@
           <div class="testimonial-result">$4,200/month from 3 clients</div>
         </div>
 
-        <!-- Testimonial 2: Agency Owner -->
         <div class="testimonial-card">
           <div class="testimonial-header">
             <div class="testimonial-avatar">🏢</div>
@@ -1213,7 +1278,6 @@
           <div class="testimonial-result">+$35,000/month recurring</div>
         </div>
 
-        <!-- Testimonial 3: Digital Creator -->
         <div class="testimonial-card">
           <div class="testimonial-header">
             <div class="testimonial-avatar">📱</div>
@@ -1226,7 +1290,6 @@
           <div class="testimonial-result">$18,000 in first month</div>
         </div>
 
-        <!-- Testimonial 4: Reseller -->
         <div class="testimonial-card">
           <div class="testimonial-header">
             <div class="testimonial-avatar">🎯</div>
@@ -1239,7 +1302,6 @@
           <div class="testimonial-result">$8,900 in reseller commissions</div>
         </div>
 
-        <!-- Testimonial 5: Freelancer -->
         <div class="testimonial-card">
           <div class="testimonial-header">
             <div class="testimonial-avatar">💼</div>
@@ -1252,7 +1314,6 @@
           <div class="testimonial-result">$800/month saved + higher margins</div>
         </div>
 
-        <!-- Testimonial 6: Coach -->
         <div class="testimonial-card">
           <div class="testimonial-header">
             <div class="testimonial-avatar">🎓</div>
@@ -1277,42 +1338,36 @@
       <p>Estimate your monthly income potential by combining GHL offers across different revenue streams.</p>
 
       <div class="calculator-wrapper">
-        <!-- Setup Services -->
         <div class="calc-input-group">
           <label class="calc-label">Setup Services Per Month</label>
           <input type="range" class="calc-slider" id="setupServices" min="0" max="10" value="2" step="1">
           <div class="calc-value"><span id="setupServicesVal">2</span> services × $1,500 = $3,000</div>
         </div>
 
-        <!-- Monthly Retainers -->
         <div class="calc-input-group">
           <label class="calc-label">Monthly Retainer Clients</label>
           <input type="range" class="calc-slider" id="retainerClients" min="0" max="15" value="3" step="1">
           <div class="calc-value"><span id="retainerClientsVal">3</span> clients × $2,000 = $6,000</div>
         </div>
 
-        <!-- GHL Reseller Commissions -->
         <div class="calc-input-group">
           <label class="calc-label">Monthly GHL Reseller Sales</label>
           <input type="range" class="calc-slider" id="resellerSales" min="0" max="20" value="3" step="1">
           <div class="calc-value"><span id="resellerSalesVal">3</span> sales × $497 = $1,491</div>
         </div>
 
-        <!-- Digital Products -->
         <div class="calc-input-group">
           <label class="calc-label">Digital Product Sales (Monthly Avg)</label>
           <input type="range" class="calc-slider" id="productSales" min="0" max="100" value="20" step="5">
           <div class="calc-value"><span id="productSalesVal">20</span> sales × $297 = $5,940</div>
         </div>
 
-        <!-- Agency White-Label Revenue -->
         <div class="calc-input-group">
           <label class="calc-label">White-Label Reseller Base (Subscribers)</label>
           <input type="range" class="calc-slider" id="whitelabelSubs" min="0" max="50" value="10" step="1">
           <div class="calc-value"><span id="whitelabelSubsVal">10</span> subscribers × $300 = $3,000</div>
         </div>
 
-        <!-- Results -->
         <div class="calculator-results">
           <div class="result-row">
             <span class="result-label">Setup Services</span>
@@ -1415,14 +1470,22 @@
        ═══════════════════════════════════════════════════════════ -->
   <footer>
     <div class="footer-links">
-      <a href="#" onclick="return false;">Privacy Policy</a>
-      <a href="#" onclick="return false;">Terms of Service</a>
-      <a href="#" onclick="return false;">Affiliate Disclosure</a>
-      <a href="#" onclick="return false;">Contact</a>
+      <button onclick="openFooterModal('privacy')">Privacy Policy</button>
+      <button onclick="openFooterModal('terms')">Terms of Service</button>
+      <button onclick="openFooterModal('affiliate')">Affiliate Disclosure</button>
+      <button onclick="openFooterModal('contact')">Contact</button>
     </div>
     <p class="footer-disc">Income Vault is an independent GHL education and reseller resource. We are not affiliated with GoHighLevel Inc. GHL is a trademark of GoHighLevel, Inc.</p>
     <p class="footer-copy">&copy; 2026 Income Vault. All rights reserved.</p>
   </footer>
+
+  <!-- FOOTER MODALS -->
+  <div class="modal-overlay" id="footerModal">
+    <div class="modal-box" style="max-width:640px;">
+      <button class="modal-close" onclick="closeFooterModal()">✕</button>
+      <div id="footerModalContent"></div>
+    </div>
+  </div>
 
   <!-- EMAIL CAPTURE MODAL -->
   <div class="modal-overlay" id="emailModal">
@@ -1483,44 +1546,80 @@
     }
 
     // ───────────────────────────────────────────────────────────
-    // EMAIL MODAL WITH OFFER ROUTING
+    // EMAIL MODAL WITH OFFER ROUTING — UPDATED AFFILIATE LINKS
     // ───────────────────────────────────────────────────────────
     const offerConfig = {
       '5dc-challenge': {
-        title: 'Join the 5-Day GHL Challenge',
-        desc: 'Start free and learn the fundamentals. Complete the challenge and unlock exclusive content.',
+        title: 'Join the Free 5-Day GHL Challenge',
+        desc: 'Start free and learn the GHL fundamentals in 5 days. No credit card required.',
         offerName: '5-Day Challenge',
         link: 'http://gohighlevel.com/5dc?fp_ref=dominic-32'
       },
       'bootcamp': {
-        title: 'Enroll in the 30-Day Bootcamp',
-        desc: 'Structured training with daily lessons, live Q&A, and certification. Hands-on learning guaranteed.',
-        offerName: 'HighLevel Bootcamp',
+        title: 'Enrol in the 30-Day Bootcamp',
+        desc: 'Structured training with a 30-day extended trial, daily lessons, and live Q&A. Hands-on learning guaranteed.',
+        offerName: 'HighLevel Bootcamp (30-Day Trial)',
         link: 'https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32'
       },
       'digital-product': {
         title: 'Access the Digital Product Launch Workshop',
-        desc: 'Learn how to create, market, and sell digital products using GHL as your platform.',
-        offerName: 'Digital Product Workshop',
+        desc: 'Learn how to create, market, and sell digital products using GHL as your all-in-one platform.',
+        offerName: 'Digital Product Launch Workshop',
         link: 'https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32'
-      },
-      'agency-unlimited': {
-        title: 'Explore Agency Unlimited',
-        desc: 'White-label GHL and offer it as your own. Build a recurring revenue stream with your clients.',
-        offerName: 'Agency Unlimited',
-        link: 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32'
-      },
-      'certification': {
-        title: 'Get GHL Certified',
-        desc: 'Master advanced features, boost credibility, and unlock exclusive partner benefits.',
-        offerName: 'GHL Certification',
-        link: 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91'
       },
       'trial': {
         title: 'Start Your 14-Day Free Trial',
         desc: 'Explore all GHL features risk-free. No credit card required to get started.',
         offerName: '14-Day Free Trial',
         link: 'https://www.gohighlevel.com/?fp_ref=dominic-32'
+      },
+      'ai-employee': {
+        title: 'Meet the GHL AI Employee',
+        desc: 'Let AI handle your follow-up, appointment booking, and lead nurturing around the clock.',
+        offerName: 'GHL AI Employee',
+        link: 'https://www.gohighlevel.com/ai?fp_ref=dominic-32'
+      },
+      'annual': {
+        title: 'Save 2 Months with the Annual Plan',
+        desc: 'Commit to GHL annually and save the equivalent of two months of subscription fees.',
+        offerName: 'Annual Plan (Unlimited)',
+        link: 'https://gohighlevel.com/annual?fp_ref=dominic-32'
+      },
+      'certification': {
+        title: 'Get GHL Certified',
+        desc: 'Master advanced features, boost your credibility, and unlock exclusive partner benefits.',
+        offerName: 'GHL Certification Program',
+        link: 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91'
+      },
+      'unlimited-upgrade': {
+        title: 'Upgrade to Unlimited ($297/mo)',
+        desc: 'Remove the 3 sub-account cap and unlock unlimited client accounts to grow your roster.',
+        offerName: 'Unlimited Upgrade ($297/mo)',
+        link: 'https://www.gohighlevel.com/297upgrade?fp_ref=dominic-32'
+      },
+      'saas-pro-trial': {
+        title: 'Start the SaaS Pro Plan Trial',
+        desc: 'New to GHL? Get started on the SaaS Pro plan and launch your own branded software product.',
+        offerName: 'SaaS Pro Plan Trial (New Users)',
+        link: 'https://www.gohighlevel.com/protrial?fp_ref=dominic-32'
+      },
+      'saas-upgrade': {
+        title: 'Upgrade to SaaS Pro (Existing Users)',
+        desc: 'Already on GHL? Upgrade from Unlimited to Pro and unlock full white-label SaaS reselling.',
+        offerName: 'Upgrade to SaaS Pro (Existing Users)',
+        link: 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32'
+      },
+      'supercharged-saas': {
+        title: 'Join the Supercharged SaaS Program',
+        desc: 'Advanced strategies, playbooks, and community for serious GHL SaaS resellers.',
+        offerName: 'Supercharged SaaS Program',
+        link: 'https://www.gohighlevel.com/pro-trial?fp_ref=dominic-39'
+      },
+      'become-affiliate': {
+        title: 'Become a GHL Affiliate',
+        desc: 'Earn 40% recurring commissions by referring businesses to GoHighLevel. Free to join.',
+        offerName: 'GHL Affiliate Program',
+        link: 'https://affiliate.gohighlevel.com?sref=cvi0huk'
       }
     };
 
@@ -1531,11 +1630,10 @@
       document.getElementById('offerName').textContent = config.offerName;
       document.getElementById('modalTitle').textContent = config.title;
       document.getElementById('modalDesc').textContent = config.desc;
-      
-      // Store the current offer and link for submission
+
       document.getElementById('emailModal').dataset.offerKey = offerKey;
       document.getElementById('emailModal').dataset.offerLink = config.link;
-      
+
       document.getElementById('emailModal').classList.add('open');
     }
 
@@ -1555,15 +1653,105 @@
       const email = document.getElementById('email').value;
       const offerLink = document.getElementById('emailModal').dataset.offerLink;
 
-      // In production, you'd send this to your email service (ConvertKit, MailerLite, etc.)
+      // In production, send this to your email service (ConvertKit, MailerLite, etc.)
       console.log('Email captured:', { fullName, email });
 
-      // Redirect to the offer after email capture
       setTimeout(() => {
         window.open(offerLink, '_blank');
         closeEmailModal();
       }, 500);
     }
+
+    // ───────────────────────────────────────────────────────────
+    // FOOTER MODALS
+    // ───────────────────────────────────────────────────────────
+    const footerContent = {
+      privacy: `
+        <h2 style="font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Privacy Policy</h2>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Last updated: January 2026</p>
+
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">Your privacy matters to us. Here's a straightforward explanation of what we collect, why, and how it's used.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">What We Collect</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">When you submit your name and email through one of our forms, we store that information to send you the resource you asked for, along with occasional follow-up content about GHL and online business. We may also collect basic anonymous data — like pages visited — to understand what's helpful and improve the site.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">How We Use It</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">We use your information to deliver what you signed up for and to share relevant GHL resources. We don't sell your data or pass it to anyone for their own marketing.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Cookies</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">This site may use cookies for affiliate tracking and basic analytics. You're free to disable them in your browser at any time.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Opting Out</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;">Every email we send includes an unsubscribe link. One click and you're off the list — no questions asked.</p>
+      `,
+      terms: `
+        <h2 style="font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Terms of Service</h2>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Last updated: January 2026</p>
+
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">By using Income Vault, you're agreeing to a few straightforward ground rules. Nothing unusual here.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Using This Site</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">Income Vault exists to educate and inform. We ask that you use it in good faith — for your own learning and business decisions, not to misuse any content or resources here.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Affiliate Links</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">Some links on this site are affiliate links. If you click one and sign up, we may earn a commission — at no extra cost to you. See our Affiliate Disclosure for the full picture.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Income & Results</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">Any income figures or projections shown on this site are illustrative examples. Results depend on individual effort, skills, and circumstances — they're not guarantees.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Our Content</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;">The content on this site belongs to Income Vault. You're welcome to reference it, but please don't reproduce or redistribute it without permission.</p>
+      `,
+      affiliate: `
+        <h2 style="font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Affiliate Disclosure</h2>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Keeping things transparent</p>
+
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">Some of the links on this site are affiliate links. That means if you click through and sign up for GoHighLevel, we may earn a commission — at no extra cost to you. The price you pay is exactly the same either way.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Why We Promote GHL</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">We only recommend GoHighLevel because we genuinely believe it's one of the most capable platforms available for the business types described on this site. The commission is a bonus — not the reason.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">How It Works</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">GoHighLevel runs a partner programme that pays approved affiliates a recurring commission on referrals. Our links include a referral code so GHL can attribute sign-ups correctly. This is a standard, transparent arrangement.</p>
+
+        <h3 style="font-size:15px;font-weight:700;color:var(--accent-cyan);margin:20px 0 8px;">Independence</h3>
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;">Income Vault is an independent resource. We are not employed by, officially endorsed by, or formally partnered with GoHighLevel Inc. beyond the standard affiliate relationship above.</p>
+      `,
+      contact: `
+        <h2 style="font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Contact Us</h2>
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">We usually reply within 1–2 business days.</p>
+
+        <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:24px;">Have a question about a GHL offer, need help figuring out which plan suits you, or just want to get in touch? Drop us an email.</p>
+
+        <div style="background:rgba(0,217,255,0.05);border:1px solid rgba(0,217,255,0.2);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Email</p>
+          <p style="font-size:15px;color:var(--accent-cyan);font-weight:700;">contact@incomevault.co</p>
+        </div>
+
+        <div style="background:rgba(0,217,255,0.05);border:1px solid rgba(0,217,255,0.2);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Response Time</p>
+          <p style="font-size:15px;color:var(--text-light);">Monday – Friday, within 1–2 business days</p>
+        </div>
+
+        <div style="background:rgba(0,217,255,0.05);border:1px solid rgba(0,217,255,0.2);border-radius:12px;padding:24px;">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">GoHighLevel account questions?</p>
+          <p style="font-size:14px;color:var(--text-light);line-height:1.7;">For anything related to your GHL account, billing, or platform features, GoHighLevel's own support team will be better placed to help — you can find them inside your GHL dashboard.</p>
+        </div>
+      `
+    };
+
+    function openFooterModal(key) {
+      document.getElementById('footerModalContent').innerHTML = footerContent[key] || '';
+      document.getElementById('footerModal').classList.add('open');
+    }
+
+    function closeFooterModal() {
+      document.getElementById('footerModal').classList.remove('open');
+    }
+
+    document.getElementById('footerModal').addEventListener('click', (e) => {
+      if (e.target.id === 'footerModal') closeFooterModal();
+    });
   </script>
 
 </body>
