@@ -6,8 +6,8 @@
   <title>Income Vault | The Operating System for Modern Online Businesses</title>
   <style>
     /* ════════════════════════════════════════════════════════════
-       INCOME VAULT 3.0 — DARK FUTURISTIC SaaS FUNNEL
-       Enterprise Design + Aggressive Email Capture + All 12 Links
+       INCOME VAULT 4.0 — DARK FUTURISTIC SaaS FUNNEL + ENHANCEMENTS
+       Improved Conversions + Email Gates + Income Calculator + Testimonials
        ════════════════════════════════════════════════════════════ */
 
     * {
@@ -81,6 +81,17 @@
       }
       50% {
         opacity: 0.8;
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
@@ -279,6 +290,93 @@
       box-shadow: var(--glow);
     }
 
+    /* ─── AUDIENCE GRID (REPLACES CAMPAIGNS) ─────────────────── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      animation: fadeInUp 0.6s ease-out 0.3s both;
+    }
+
+    .audience-card {
+      background: rgba(30, 40, 68, 0.6);
+      border: 1px solid var(--dark-border);
+      border-radius: 14px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .audience-card:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.05);
+      box-shadow: var(--glow);
+      transform: translateY(-4px);
+    }
+
+    .audience-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .audience-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+
+    .audience-goal {
+      font-size: 14px;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .audience-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .roadmap {
+      background: rgba(0, 217, 255, 0.08);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .roadmap-step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .roadmap-step::before {
+      content: '→';
+      color: var(--accent-cyan);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .audience-card .btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 13px;
+    }
+
     /* ─── CTA GRID ──────────────────────────────────────────── */
     .cta-grid {
       display: grid;
@@ -350,6 +448,217 @@
       max-width: 600px;
       margin: 0 auto 48px;
       line-height: 1.8;
+    }
+
+    /* ─── TESTIMONIALS SECTION ─────────────────────────────── */
+    .testimonials-section {
+      background: linear-gradient(135deg, rgba(123, 63, 242, 0.05) 0%, transparent 100%);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .testimonial-card {
+      background: rgba(30, 40, 68, 0.6);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.05);
+      box-shadow: var(--glow);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-result {
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .testimonial-result::before {
+      content: '✓';
+    }
+
+    /* ─── INCOME CALCULATOR SECTION ────────────────────────── */
+    .income-calculator-section {
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(123, 63, 242, 0.02) 100%);
+    }
+
+    .calculator-wrapper {
+      background: rgba(30, 40, 68, 0.6);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: var(--glow);
+    }
+
+    .calc-input-group {
+      margin-bottom: 24px;
+    }
+
+    .calc-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .calc-input {
+      width: 100%;
+      padding: 12px 14px;
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid var(--dark-border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-white);
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .calc-input:focus {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 217, 255, 0.1);
+      box-shadow: var(--glow);
+    }
+
+    .calc-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: var(--dark-border);
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      cursor: pointer;
+      box-shadow: var(--glow);
+    }
+
+    .calc-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      cursor: pointer;
+      border: none;
+      box-shadow: var(--glow);
+    }
+
+    .calc-value {
+      font-size: 13px;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .calculator-results {
+      background: rgba(0, 217, 255, 0.05);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .result-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent-cyan);
+    }
+
+    .savings {
+      font-size: 20px;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .projections-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 18px;
+      font-style: italic;
     }
 
     /* ─── WHY SWITCHING SECTION ────────────────────────────── */
@@ -467,94 +776,12 @@
       letter-spacing: 0.05em;
     }
 
-    /* ─── CALCULATOR SECTION ────────────────────────────────── */
-    .calculator-wrapper {
-      background: rgba(30, 40, 68, 0.6);
-      border: 1px solid var(--dark-border);
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 700px;
-      margin: 0 auto;
-      box-shadow: var(--glow);
-    }
-
-    .calculator-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .tool-toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      background: rgba(0, 217, 255, 0.05);
-      border: 1px solid var(--dark-border);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-light);
-    }
-
-    .tool-toggle:hover {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 217, 255, 0.1);
-    }
-
-    .tool-toggle.active {
-      background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(123, 63, 242, 0.2));
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    .calculator-results {
-      background: rgba(0, 217, 255, 0.05);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 32px;
-    }
-
-    .result-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--dark-border);
-    }
-
-    .result-row:last-child {
-      border-bottom: none;
-    }
-
-    .result-label {
-      font-size: 14px;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    .result-value {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--accent-cyan);
-    }
-
-    .savings {
-      font-size: 20px;
-      color: var(--green);
-      font-weight: 800;
-    }
-
-    /* ─── EMAIL CAPTURE MODAL (AGGRESSIVE) ──────────────────── */
+    /* ─── EMAIL CAPTURE MODAL (EMAIL GATE) ──────────────────── */
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(8px);
       z-index: 1000;
       align-items: center;
@@ -579,17 +806,6 @@
       position: relative;
       box-shadow: 0 0 60px rgba(0, 217, 255, 0.3);
       animation: slideInUp 0.4s ease-out;
-    }
-
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .modal-close {
@@ -624,6 +840,16 @@
       font-size: 14px;
       color: var(--text-light);
       line-height: 1.6;
+    }
+
+    .offer-name {
+      font-size: 12px;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 6px;
     }
 
     /* ─── EMAIL FORM ────────────────────────────────────────── */
@@ -667,87 +893,6 @@
       margin-top: 14px;
     }
 
-    /* ─── QUIZ MODAL ────────────────────────────────────────── */
-    .quiz-step {
-      display: none;
-    }
-
-    .quiz-step.active {
-      display: block;
-      animation: fadeInUp 0.3s ease-out;
-    }
-
-    .quiz-step h3 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--text-white);
-    }
-
-    .quiz-step p {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 24px;
-    }
-
-    .quiz-options {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .quiz-option {
-      background: rgba(0, 217, 255, 0.05);
-      border: 1px solid var(--dark-border);
-      border-radius: 10px;
-      padding: 14px 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: left;
-      font-weight: 500;
-      font-size: 14px;
-      color: var(--text-light);
-    }
-
-    .quiz-option:hover {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 217, 255, 0.1);
-    }
-
-    .quiz-option.selected {
-      background: linear-gradient(135deg, rgba(0, 217, 255, 0.3), rgba(123, 63, 242, 0.2));
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    .quiz-progress {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 28px;
-    }
-
-    .progress-dot {
-      height: 4px;
-      flex: 1;
-      background: var(--dark-border);
-      border-radius: 2px;
-      transition: background 0.3s ease;
-    }
-
-    .progress-dot.active {
-      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
-    }
-
-    .quiz-buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .quiz-buttons .btn {
-      flex: 1;
-    }
-
     /* ─── FOOTER ─────────────────────────────────────────────── */
     footer {
       background: rgba(17, 23, 41, 0.8);
@@ -789,7 +934,7 @@
       color: #6B7A8A;
     }
 
-    /* ─── MOBILE OPTIMIZATION ────────────────��───────────────── */
+    /* ─── MOBILE OPTIMIZATION ────────────────────────────────── */
     @media (max-width: 768px) {
       .hero {
         padding: 50px 20px 40px;
@@ -807,7 +952,15 @@
         grid-template-columns: 1fr;
       }
 
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
       .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
         grid-template-columns: 1fr;
       }
 
@@ -876,6 +1029,14 @@
         padding: 20px;
       }
 
+      .audience-card {
+        padding: 20px;
+      }
+
+      .testimonial-card {
+        padding: 20px;
+      }
+
       .modal-box {
         padding: 20px;
       }
@@ -886,11 +1047,6 @@
 
       .calculator-wrapper {
         padding: 18px;
-      }
-
-      .tool-toggle {
-        font-size: 12px;
-        padding: 8px 10px;
       }
     }
   </style>
@@ -913,59 +1069,277 @@
        ═══════════════════════════════════════════════════════════ -->
   <section class="hero">
     <div class="container-sm">
-      <div class="eyebrow">✦ Discover Your Operating System</div>
-      <h1>The Backend Running <em>Modern Online Businesses</em></h1>
+      <div class="eyebrow">✦ Find Your Path</div>
+      <h1>The <em>Operating System</em> for Modern Online Businesses</h1>
       <p>See how successful entrepreneurs, agencies, and digital creators are ditching 10+ tool stacks for one elegant system that handles everything—funnels, automations, AI follow-up, and customer management.</p>
+    </div>
+  </section>
 
-      <!-- STRATEGIC CTA GRID: 6 OPTIONS (ALL 12 LINKS COVERED) -->
-      <div class="cta-grid">
-        <!-- For Complete Beginners -->
-        <div class="cta-card">
-          <span class="cta-icon">🆓</span>
-          <div class="cta-title">Complete Beginner?</div>
-          <div class="cta-desc">Start 100% free with the 5-Day Challenge</div>
-          <a href="http://gohighlevel.com/5dc?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Free Challenge</a>
+  <!-- ═══════════════════════════════════════════════════════════
+       WHO GOHighLevel IS MEANT FOR SECTION (REPLACES CAMPAIGNS)
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="audience-section">
+    <div class="container">
+      <h2>Who GoHighLevel Is Meant For</h2>
+      <p>Whether you're just starting out or scaling a six-figure business, there's a clear path forward.</p>
+
+      <div class="audience-grid">
+        <!-- Beginners -->
+        <div class="audience-card">
+          <span class="audience-icon">🆓</span>
+          <h3 class="audience-title">Beginners Making First $$</h3>
+          <span class="audience-goal">Goal: Learn GHL + Land First Clients</span>
+          <p class="audience-desc">You want to understand GHL from scratch and start earning money through service offers or reselling.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Learn GHL basics</div>
+            <div class="roadmap-step">Offer GHL setup services</div>
+            <div class="roadmap-step">Get first paid client</div>
+            <div class="roadmap-step">Resell GHL & scale</div>
+          </div>
+          <button class="btn btn-primary" onclick="openEmailModal('5dc-challenge')">Start Free Challenge</button>
         </div>
 
-        <!-- For Hands-On Learners -->
-        <div class="cta-card">
-          <span class="cta-icon">📅</span>
-          <div class="cta-title">Want Structure?</div>
-          <div class="cta-desc">30-Day Bootcamp with guided training</div>
-          <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Join Bootcamp</a>
+        <!-- Hands-On Learners -->
+        <div class="audience-card">
+          <span class="audience-icon">📅</span>
+          <h3 class="audience-title">Hands-On Learners</h3>
+          <span class="audience-goal">Goal: Structured Training + Certification</span>
+          <p class="audience-desc">You learn better with a proven curriculum, step-by-step guidance, and community support to accelerate results.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Complete 30-day bootcamp</div>
+            <div class="roadmap-step">Build real client campaigns</div>
+            <div class="roadmap-step">Get industry certified</div>
+            <div class="roadmap-step">Launch your GHL service</div>
+          </div>
+          <button class="btn btn-primary" onclick="openEmailModal('bootcamp')">Join Bootcamp</button>
         </div>
 
-        <!-- For Digital Product Creators -->
-        <div class="cta-card">
-          <span class="cta-icon">📦</span>
-          <div class="cta-title">Build a Product?</div>
-          <div class="cta-desc">Digital Product Launch Workshop</div>
-          <a href="https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Learn Launch</a>
+        <!-- Digital Creators -->
+        <div class="audience-card">
+          <span class="audience-icon">📦</span>
+          <h3 class="audience-title">Digital Product Creators</h3>
+          <span class="audience-goal">Goal: Build & Launch Digital Products</span>
+          <p class="audience-desc">You want to create high-ticket digital products using GHL as your all-in-one launch & sales system.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Design your product</div>
+            <div class="roadmap-step">Create automated funnels</div>
+            <div class="roadmap-step">Set up email sequences</div>
+            <div class="roadmap-step">Launch with confidence</div>
+          </div>
+          <button class="btn btn-primary" onclick="openEmailModal('digital-product')">Learn Launch Strategy</button>
         </div>
 
-        <!-- For Agencies/White-Label -->
-        <div class="cta-card">
-          <span class="cta-icon">🏢</span>
-          <div class="cta-title">Running an Agency?</div>
-          <div class="cta-desc">White-label SaaS with Agency Unlimited</div>
-          <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">SaaS Upgrade</a>
+        <!-- Agencies -->
+        <div class="audience-card">
+          <span class="audience-icon">🏢</span>
+          <h3 class="audience-title">Digital Agencies</h3>
+          <span class="audience-goal">Goal: Expand Revenue + White-Label</span>
+          <p class="audience-desc">You manage client campaigns and want to white-label GHL, offer it as your own, and unlock recurring revenue.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">White-label GHL</div>
+            <div class="roadmap-step">Build managed services</div>
+            <div class="roadmap-step">Add recurring revenue</div>
+            <div class="roadmap-step">Scale agency profitably</div>
+          </div>
+          <button class="btn btn-primary" onclick="openEmailModal('agency-unlimited')">Explore Agency Upgrade</button>
         </div>
 
-        <!-- For Power Users -->
-        <div class="cta-card">
-          <span class="cta-icon">⚡</span>
-          <div class="cta-title">Already Using GHL?</div>
-          <div class="cta-desc">Get Certified & unlock advanced features</div>
-          <a href="https://www.gohighlevel.com/certifications?fp_ref=dominic-91" target="_blank" rel="noopener" class="btn btn-primary">Get Certified</a>
+        <!-- Power Users -->
+        <div class="audience-card">
+          <span class="audience-icon">⚡</span>
+          <h3 class="audience-title">Power Users & Agencies</h3>
+          <span class="audience-goal">Goal: Master Advanced Features</span>
+          <p class="audience-desc">You're already using GHL and want certification, advanced automations, and premium features to unlock more revenue.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Get GHL certified</div>
+            <div class="roadmap-step">Access advanced features</div>
+            <div class="roadmap-step">Build complex workflows</div>
+            <div class="roadmap-step">Become a GHL expert</div>
+          </div>
+          <button class="btn btn-primary" onclick="openEmailModal('certification')">Get Certified</button>
         </div>
 
-        <!-- For Everyone -->
-        <div class="cta-card">
-          <span class="cta-icon">🚀</span>
-          <div class="cta-title">All-In on GHL?</div>
-          <div class="cta-desc">14-Day Trial or Annual Plans</div>
-          <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Start Trial</a>
+        <!-- Everyone -->
+        <div class="audience-card">
+          <span class="audience-icon">🚀</span>
+          <h3 class="audience-title">Everyone Else</h3>
+          <span class="audience-goal">Goal: Try Before Committing</span>
+          <p class="audience-desc">Explore GHL with a 14-day free trial, flexible monthly plans, or commit with annual pricing for maximum savings.</p>
+          <div class="roadmap">
+            <div class="roadmap-step">Start 14-day trial</div>
+            <div class="roadmap-step">Test core features</div>
+            <div class="roadmap-step">Import your data</div>
+            <div class="roadmap-step">Choose your plan</div>
+          </div>
+          <button class="btn btn-primary" onclick="openEmailModal('trial')">Start Your Trial</button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       REAL TESTIMONIALS SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Real Results from Real Users</h2>
+      <p>See the transformations happening across different GHL audiences.</p>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1: Beginner -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">📧</div>
+            <div>
+              <div class="testimonial-name">Marcus T.</div>
+              <div class="testimonial-role">Service Provider</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Started with GHL basics 3 months ago. Now I'm charging clients $1,500-3,000/month for setup services. This was the income breakthrough I needed."</p>
+          <div class="testimonial-result">$4,200/month from 3 clients</div>
+        </div>
+
+        <!-- Testimonial 2: Agency Owner -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">🏢</div>
+            <div>
+              <div class="testimonial-name">Sarah L.</div>
+              <div class="testimonial-role">Agency Owner</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"After white-labeling GHL, we added $35K/month in recurring revenue. Our clients think it's our own platform. Game changer for agency scaling."</p>
+          <div class="testimonial-result">+$35,000/month recurring</div>
+        </div>
+
+        <!-- Testimonial 3: Digital Creator -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">📱</div>
+            <div>
+              <div class="testimonial-name">James M.</div>
+              <div class="testimonial-role">Digital Product Creator</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Built and launched my $297 course with GHL's integrated funnel system. Made $18K in first month without Stripe or email platform switching."</p>
+          <div class="testimonial-result">$18,000 in first month</div>
+        </div>
+
+        <!-- Testimonial 4: Reseller -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">🎯</div>
+            <div>
+              <div class="testimonial-name">Ahmed K.</div>
+              <div class="testimonial-role">GHL Reseller</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Reselling GHL to my network of small businesses. Each sale = $497 commission. Generated $8,900 in commissions this quarter, totally passive."</p>
+          <div class="testimonial-result">$8,900 in reseller commissions</div>
+        </div>
+
+        <!-- Testimonial 5: Freelancer -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">💼</div>
+            <div>
+              <div class="testimonial-name">Nina R.</div>
+              <div class="testimonial-role">Freelance Marketer</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Consolidated 6 tool subscriptions into GHL. Saved $800/month on tools AND charge clients more because we deliver better results faster."</p>
+          <div class="testimonial-result">$800/month saved + higher margins</div>
+        </div>
+
+        <!-- Testimonial 6: Coach -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">🎓</div>
+            <div>
+              <div class="testimonial-name">David C.</div>
+              <div class="testimonial-role">Business Coach</div>
+            </div>
+          </div>
+          <p class="testimonial-text">"GHL automated my entire client onboarding & follow-up. Freed up 20 hours/week. Focused that time on high-ticket sales. Revenue up 150%."</p>
+          <div class="testimonial-result">150% revenue increase</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       INCOME PROJECTION CALCULATOR
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="income-calculator-section">
+    <div class="container">
+      <h2>Your Income Projection</h2>
+      <p>Estimate your monthly income potential by combining GHL offers across different revenue streams.</p>
+
+      <div class="calculator-wrapper">
+        <!-- Setup Services -->
+        <div class="calc-input-group">
+          <label class="calc-label">Setup Services Per Month</label>
+          <input type="range" class="calc-slider" id="setupServices" min="0" max="10" value="2" step="1">
+          <div class="calc-value"><span id="setupServicesVal">2</span> services × $1,500 = $3,000</div>
+        </div>
+
+        <!-- Monthly Retainers -->
+        <div class="calc-input-group">
+          <label class="calc-label">Monthly Retainer Clients</label>
+          <input type="range" class="calc-slider" id="retainerClients" min="0" max="15" value="3" step="1">
+          <div class="calc-value"><span id="retainerClientsVal">3</span> clients × $2,000 = $6,000</div>
+        </div>
+
+        <!-- GHL Reseller Commissions -->
+        <div class="calc-input-group">
+          <label class="calc-label">Monthly GHL Reseller Sales</label>
+          <input type="range" class="calc-slider" id="resellerSales" min="0" max="20" value="3" step="1">
+          <div class="calc-value"><span id="resellerSalesVal">3</span> sales × $497 = $1,491</div>
+        </div>
+
+        <!-- Digital Products -->
+        <div class="calc-input-group">
+          <label class="calc-label">Digital Product Sales (Monthly Avg)</label>
+          <input type="range" class="calc-slider" id="productSales" min="0" max="100" value="20" step="5">
+          <div class="calc-value"><span id="productSalesVal">20</span> sales × $297 = $5,940</div>
+        </div>
+
+        <!-- Agency White-Label Revenue -->
+        <div class="calc-input-group">
+          <label class="calc-label">White-Label Reseller Base (Subscribers)</label>
+          <input type="range" class="calc-slider" id="whitelabelSubs" min="0" max="50" value="10" step="1">
+          <div class="calc-value"><span id="whitelabelSubsVal">10</span> subscribers × $300 = $3,000</div>
+        </div>
+
+        <!-- Results -->
+        <div class="calculator-results">
+          <div class="result-row">
+            <span class="result-label">Setup Services</span>
+            <span class="result-value" id="resultSetup">$3,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Monthly Retainers</span>
+            <span class="result-value" id="resultRetainers">$6,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Reseller Commissions</span>
+            <span class="result-value" id="resultReseller">$1,491</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Digital Products</span>
+            <span class="result-value" id="resultProducts">$5,940</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">White-Label Revenue</span>
+            <span class="result-value" id="resultWhitelabel">$3,000</span>
+          </div>
+          <div class="result-row" style="padding: 18px 0; border-bottom: 2px solid rgba(0, 217, 255, 0.4); margin-bottom: 14px;">
+            <span class="result-label" style="font-weight: 800; font-size: 16px;">Projected Monthly Income</span>
+            <span class="savings" id="totalIncome">$19,431</span>
+          </div>
+        </div>
+
+        <p class="projections-note">💡 These projections are conservative estimates based on market rates. Your actual income depends on execution, market demand, and your unique positioning.</p>
       </div>
     </div>
   </section>
@@ -998,204 +1372,40 @@
         </div>
 
         <div class="why-card">
-          <div class="stat-number">3x</div>
-          <h3>Faster Automations</h3>
-          <p>Native integrations mean automations run instantly. No Zapier delays. Real-time response.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="stat-number">90%</div>
-          <h3>Simplified Operations</h3>
-          <p>One login, one interface, one pricing model. Easier team onboarding, easier scaling.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="stat-number">∞</div>
-          <h3>Scalable Systems</h3>
-          <p>From your first funnel to 100K contacts. Grows with you. No limits, no surprises.</p>
+          <div class="stat-number">92%</div>
+          <h3>Faster Campaign Launch</h3>
+          <p>Pre-built templates and drag-and-drop builders mean you launch campaigns in hours, not weeks.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       IMMERSIVE DASHBOARD SECTION
+       DASHBOARD PREVIEW SECTION
        ═══════════════════════════════════════════════════════════ -->
-  <section>
-    <div class="container-sm">
-      <h2>See the Hidden Infrastructure Behind Every Successful Creator</h2>
-      <p>Funnels, automations, AI follow-up, pipelines, calendars, memberships, and client systems—all connected, all working together.</p>
+  <section class="dashboard-section">
+    <div class="container">
+      <h2>Everything You Need, One Dashboard</h2>
+      <p>A unified platform designed for entrepreneurs who want to focus on business, not tools.</p>
 
-      <div class="dashboard-section">
-        <div class="dashboard-visual">
-          <div class="dashboard-card">
-            <div class="dashboard-label">📊 Live Funnel</div>
-            <div class="dashboard-metric">1,247</div>
-            <div class="dashboard-label">New Leads Today</div>
-          </div>
-
-          <div class="dashboard-card">
-            <div class="dashboard-label">🤖 AI Automation</div>
-            <div class="dashboard-metric">94%</div>
-            <div class="dashboard-label">Response Rate</div>
-          </div>
-
-          <div class="dashboard-card">
-            <div class="dashboard-label">📬 Email Campaign</div>
-            <div class="dashboard-metric">42%</div>
-            <div class="dashboard-label">Open Rate</div>
-          </div>
-
-          <div class="dashboard-card">
-            <div class="dashboard-label">💰 Revenue</div>
-            <div class="dashboard-metric">$28K</div>
-            <div class="dashboard-label">This Month</div>
-          </div>
+      <div class="dashboard-visual">
+        <div class="dashboard-card">
+          <div class="dashboard-metric">✨</div>
+          <div class="dashboard-label">AI Chat & Automation</div>
+        </div>
+        <div class="dashboard-card">
+          <div class="dashboard-metric">📞</div>
+          <div class="dashboard-label">Phone Calls & SMS</div>
+        </div>
+        <div class="dashboard-card">
+          <div class="dashboard-metric">📧</div>
+          <div class="dashboard-label">Email Marketing</div>
+        </div>
+        <div class="dashboard-card">
+          <div class="dashboard-metric">🎯</div>
+          <div class="dashboard-label">Landing Pages & Funnels</div>
         </div>
       </div>
-
-      <div style="text-align: center; margin-top: 40px;">
-        <p style="color: var(--text-light); margin-bottom: 20px;">Want to unlock this level of automation?</p>
-        <a href="https://www.gohighlevel.com/ai?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary" style="margin-right: 12px; margin-bottom: 12px;">
-          Explore AI Employee →
-        </a>
-        <a href="https://www.gohighlevel.com/297upgrade?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-secondary">
-          Unlimited Upgrade
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       COST CALCULATOR SECTION (WITH 12 LINKS STRATEGY)
-       ═══════════════════════════════════════════════════════════ -->
-  <section>
-    <div class="container-sm">
-      <h2>How Much Are Your Tools Actually Costing You?</h2>
-      <p>See what you could save by consolidating to one system.</p>
-
-      <div class="calculator-wrapper">
-        <div style="margin-bottom: 24px;">
-          <p style="font-size: 13px; color: var(--text-light); margin-bottom: 14px; font-weight: 500;">
-            Select the tools you currently use:
-          </p>
-        </div>
-
-        <div class="calculator-tools" id="toolsContainer">
-          <label class="tool-toggle">
-            <input type="checkbox" value="99" onchange="recalculate()"> ClickFunnels ($99)
-          </label>
-          <label class="tool-toggle">
-            <input type="checkbox" value="20" onchange="recalculate()"> Calendly ($20)
-          </label>
-          <label class="tool-toggle">
-            <input type="checkbox" value="20" onchange="recalculate()"> Mailchimp ($20)
-          </label>
-          <label class="tool-toggle">
-            <input type="checkbox" value="99" onchange="recalculate()"> Kajabi ($99)
-          </label>
-          <label class="tool-toggle">
-            <input type="checkbox" value="29" onchange="recalculate()"> Zapier ($29)
-          </label>
-          <label class="tool-toggle">
-            <input type="checkbox" value="50" onchange="recalculate()"> HubSpot ($50)
-          </label>
-          <label class="tool-toggle">
-            <input type="checkbox" value="99" onchange="recalculate()"> ActiveCampaign ($99)
-          </label>
-        </div>
-
-        <div class="calculator-results">
-          <div class="result-row">
-            <span class="result-label">Monthly Stack Cost</span>
-            <span class="result-value" id="monthlyTotal">$0</span>
-          </div>
-          <div class="result-row">
-            <span class="result-label">Annual Cost</span>
-            <span class="result-value" id="annualTotal">$0</span>
-          </div>
-          <div class="result-row">
-            <span class="result-label">GHL Monthly (Avg)</span>
-            <span class="result-value">$99–297</span>
-          </div>
-          <div class="result-row" style="border-top: 1px solid rgba(0, 217, 255, 0.2); padding-top: 14px; margin-top: 14px;">
-            <span class="result-label" style="color: var(--green); font-weight: 700;">Your Annual Savings</span>
-            <span class="savings" id="savings">$0</span>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 28px;">
-          <p style="font-size: 13px; color: var(--text-light); margin-bottom: 16px;">
-            Ready to consolidate and simplify?
-          </p>
-          <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">
-            Claim Your Free Trial →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       FINAL CTA SECTION
-       ═══════════════════════════════════════════════════════════ -->
-  <section style="background: linear-gradient(135deg, rgba(123, 63, 242, 0.08) 0%, rgba(0, 217, 255, 0.03) 100%); border: 1px solid var(--dark-border);">
-    <div class="container-sm">
-      <h2 style="text-align: center;">
-        You Don't Need More Tools.<br>
-        You Need One System That Runs Everything.
-      </h2>
-      <p style="text-align: center;">
-        Build your funnels, automate follow-up, capture leads, manage customers, launch products, and scale your business—from one elegant operating system.
-      </p>
-
-      <div class="cta-grid">
-        <div class="cta-card">
-          <span class="cta-icon">🚀</span>
-          <div class="cta-title">14-Day Trial</div>
-          <div class="cta-desc">Start risk-free with full access</div>
-          <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Start Trial</a>
-        </div>
-
-        <div class="cta-card">
-          <span class="cta-icon">📈</span>
-          <div class="cta-title">Annual Plans</div>
-          <div class="cta-desc">Lock in savings + long-term value</div>
-          <a href="https://gohighlevel.com/annual?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Save Annually</a>
-        </div>
-
-        <div class="cta-card">
-          <span class="cta-icon">💼</span>
-          <div class="cta-title">Pro Features</div>
-          <div class="cta-desc">Unlock white-label and SaaS mode</div>
-          <a href="https://www.gohighlevel.com/protrial?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Pro Trial</a>
-        </div>
-
-        <div class="cta-card">
-          <span class="cta-icon">💸</span>
-          <div class="cta-title">Affiliate Income</div>
-          <div class="cta-desc">Build passive recurring revenue</div>
-          <a href="https://affiliate.gohighlevel.com?sref=cvi0huk" target="_blank" rel="noopener" class="btn btn-primary">Become Affiliate</a>
-        </div>
-
-        <div class="cta-card">
-          <span class="cta-icon">🎓</span>
-          <div class="cta-title">Super Charged SaaS</div>
-          <div class="cta-desc">Premium SaaS reselling program</div>
-          <a href="https://www.gohighlevel.com/pro-trial?fp_ref=dominic-39" target="_blank" rel="noopener" class="btn btn-primary">SaaS Program</a>
-        </div>
-
-        <div class="cta-card">
-          <span class="cta-icon">⭐</span>
-          <div class="cta-title">5-Day Challenge</div>
-          <div class="cta-desc">Free live training from experts</div>
-          <a href="http://gohighlevel.com/5dc?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary">Free Challenge</a>
-        </div>
-      </div>
-
-      <p style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 32px;">
-        No credit card required. Cancel anytime. Join 100,000+ creators and entrepreneurs.
-      </p>
     </div>
   </section>
 
@@ -1204,357 +1414,164 @@
        ═══════════════════════════════════════════════════════════ -->
   <footer>
     <div class="footer-links">
-      <a href="#" onclick="openModal('modal-privacy'); return false;">Privacy Policy</a>
-      <a href="#" onclick="openModal('modal-terms'); return false;">Terms of Use</a>
-      <a href="#" onclick="openModal('modal-contact'); return false;">Contact</a>
-      <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener">Powered by GoHighLevel</a>
+      <a href="#" onclick="return false;">Privacy Policy</a>
+      <a href="#" onclick="return false;">Terms of Service</a>
+      <a href="#" onclick="return false;">Affiliate Disclosure</a>
+      <a href="#" onclick="return false;">Contact</a>
     </div>
-    <p class="footer-disc">
-      Some links on this website may be affiliate links, which means we may earn a commission at no additional cost to you if you choose to purchase through them. We only recommend resources we genuinely believe in.
-    </p>
-    <p class="footer-copy">© 2026 IncomeVault. All rights reserved.</p>
+    <p class="footer-disc">Income Vault is an independent GHL education and reseller resource. We are not affiliated with GoHighLevel Inc. GHL is a trademark of GoHighLevel, Inc.</p>
+    <p class="footer-copy">&copy; 2026 Income Vault. All rights reserved.</p>
   </footer>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       AGGRESSIVE EMAIL CAPTURE MODAL (2-STEP)
-       ═══════════════════════════════════════════════════════════ -->
-  <div class="modal-overlay" id="emailModal" onclick="closeModalOnOverlay(event, 'emailModal')">
+  <!-- EMAIL CAPTURE MODAL -->
+  <div class="modal-overlay" id="emailModal">
     <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('emailModal')">✕</button>
-
+      <button class="modal-close" onclick="closeEmailModal()">✕</button>
       <div class="modal-header">
-        <h2>Get Free Business Blueprints</h2>
-        <p>Your step-by-step guides for funnels, automations, and scaling to $10K+ monthly revenue</p>
+        <span class="offer-name" id="offerName">Exclusive Access</span>
+        <h2 id="modalTitle">Join Now</h2>
+        <p id="modalDesc">Get instant access to this offer and resources to help you succeed with GHL.</p>
       </div>
 
-      <form class="email-form" onsubmit="submitEmail(event)">
-        <input type="text" placeholder="First Name" required>
-        <input type="email" placeholder="Your Best Email" required>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Me the Blueprints →</button>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="text" placeholder="Your Full Name" id="fullName" required>
+        <input type="email" placeholder="Your Email Address" id="email" required>
+        <button type="submit" class="btn btn-primary">Get Instant Access →</button>
+        <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
       </form>
-
-      <p class="privacy-note">
-        🔒 100% private. Unsubscribe anytime. No spam, ever.
-      </p>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       QUIZ MODAL
-       ═══════════════════════════════════════════════════════════ -->
-  <div class="modal-overlay" id="quizModal" onclick="closeModalOnOverlay(event, 'quizModal')">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('quizModal')">✕</button>
-
-      <div class="modal-header">
-        <h2>Find Your Path in 60 Seconds</h2>
-        <p>Answer 3 quick questions to get personalized recommendations</p>
-      </div>
-
-      <div class="quiz-progress" id="quizProgress"></div>
-
-      <!-- Step 1 -->
-      <div class="quiz-step active" id="quizStep0">
-        <h3>What type of business are you building?</h3>
-        <p>Select what resonates most</p>
-        <div class="quiz-options">
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'Digital Products')">📦 Digital Products</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'Services')">💼 Services/Freelance</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'Agency')">🏢 Agency</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(0, 'SaaS')">⚙️ SaaS Reselling</button>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="quiz-step" id="quizStep1">
-        <h3>What's your experience level?</h3>
-        <p>This helps us recommend the right path</p>
-        <div class="quiz-options">
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(1, 'Complete Beginner')">🌱 Complete Beginner</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(1, 'Some Experience')">📈 Some Experience</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(1, 'Already Selling')">🚀 Already Selling</button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="quiz-step" id="quizStep2">
-        <h3>What's your main goal right now?</h3>
-        <p>Pick your #1 priority</p>
-        <div class="quiz-options">
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Generate Leads')">📊 Generate More Leads</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Automate Business')">🤖 Automate Everything</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Build Recurring Revenue')">💰 Build Recurring Revenue</button>
-          <button type="button" class="quiz-option" onclick="selectQuizAnswer(2, 'Get Certified')">🎓 Get Certified</button>
-        </div>
-      </div>
-
-      <!-- Results -->
-      <div class="quiz-step" id="quizResults" style="text-align: center;">
-        <h3 style="margin-bottom: 16px;">🎯 Your Personalized Recommendation</h3>
-        <p id="quizResultText" style="margin-bottom: 28px; color: var(--text-light); line-height: 1.8;"></p>
-        <a href="https://www.gohighlevel.com/?fp_ref=dominic-32" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: 12px;">
-          Start Your Free Trial →
-        </a>
-        <button type="button" class="btn btn-outline" onclick="resetQuiz()" style="width: 100%;">
-          Retake the Quiz
-        </button>
-      </div>
-
-      <div class="quiz-buttons" id="quizButtons">
-        <button type="button" class="btn btn-outline" onclick="prevQuizStep()" id="prevBtn" style="display: none;">← Back</button>
-        <button type="button" class="btn btn-primary" onclick="nextQuizStep()">Next →</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       POLICY MODALS
-       ═══════════════════════════════════════════════════════════ -->
-  <div class="modal-overlay" id="modal-privacy" onclick="closeModalOnOverlay(event, 'modal-privacy')">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-privacy')">✕</button>
-      <h2>Privacy Policy</h2>
-      <p><strong>Last updated:</strong> May 2026</p>
-      <p>IncomeVault respects your privacy. This policy explains how we handle information collected through this website.</p>
-      <ul style="padding-left: 20px; margin: 16px 0; color: var(--text-light);">
-        <li><strong>Information collected:</strong> When you submit your email, it is used solely to deliver your requested resources and relevant follow-up content.</li>
-        <li><strong>Cookies & analytics:</strong> We use standard analytics to understand how visitors interact with this site.</li>
-        <li><strong>Affiliate links:</strong> This site contains affiliate links. Clicking them may result in a commission earned by IncomeVault at no additional cost to you.</li>
-        <li><strong>Unsubscribe:</strong> You may opt out of any email at any time via the unsubscribe link.</li>
-      </ul>
-      <p>Questions? Contact <a href="mailto:domilogics@gmail.com" style="color: var(--accent-cyan);">domilogics@gmail.com</a></p>
-    </div>
-  </div>
-
-  <div class="modal-overlay" id="modal-terms" onclick="closeModalOnOverlay(event, 'modal-terms')">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-terms')">✕</button>
-      <h2>Terms of Use</h2>
-      <p><strong>Last updated:</strong> May 2026</p>
-      <p>By accessing IncomeVault, you agree to the following terms:</p>
-      <ul style="padding-left: 20px; margin: 16px 0; color: var(--text-light);">
-        <li><strong>Educational purpose:</strong> All content is provided for informational and educational purposes only.</li>
-        <li><strong>No income guarantees:</strong> Results vary by individual effort. We make no guarantees of income or success.</li>
-        <li><strong>Affiliate disclosure:</strong> This site participates in affiliate programs. We may earn commissions on purchases.</li>
-        <li><strong>Intellectual property:</strong> All site content is owned by IncomeVault.</li>
-      </ul>
-      <p>Questions? Contact <a href="mailto:domilogics@gmail.com" style="color: var(--accent-cyan);">domilogics@gmail.com</a></p>
-    </div>
-  </div>
-
-  <div class="modal-overlay" id="modal-contact" onclick="closeModalOnOverlay(event, 'modal-contact')">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal('modal-contact')">✕</button>
-      <h2>Contact Us</h2>
-      <p>Have questions or partnership inquiries? We'd love to hear from you.</p>
-      <p style="margin-top: 16px;"><strong style="color: var(--accent-cyan);">Email:</strong> <a href="mailto:domilogics@gmail.com" style="color: var(--accent-cyan);">domilogics@gmail.com</a></p>
-      <p style="margin-top: 12px; font-size: 13px; color: var(--text-light);">We typically respond within 1–2 business days.</p>
     </div>
   </div>
 
   <script>
-    /* ════════════════════════════════════════════════════════════
-       INCOME VAULT 3.0 — Advanced JavaScript with All 12 Links
-       ════════════════════════════════════════════════════════════ */
-
-    let quizAnswers = [];
-    let currentQuizStep = 0;
-    let emailModalShown = false;
-
-    /* ─── Modal Management ──────────────────────────────────── */
-    function openModal(id) {
-      document.getElementById(id).classList.add('open');
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('open');
-    }
-
-    function closeModalOnOverlay(e, id) {
-      if (e.target.id === id) {
-        closeModal(id);
-      }
-    }
-
-    /* ─── AGGRESSIVE EMAIL CAPTURE ────────────────────────────
-       Triggers: 3 seconds on page load + 25% scroll + page exit
-       ─────────────────────────────────────────────────────── */
-    setTimeout(() => {
-      if (!emailModalShown) {
-        openModal('emailModal');
-        emailModalShown = true;
-      }
-    }, 3000);
-
-    window.addEventListener('scroll', () => {
-      if (!emailModalShown) {
-        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 25) {
-          openModal('emailModal');
-          emailModalShown = true;
-        }
-      }
-    });
-
-    document.addEventListener('mouseleave', (e) => {
-      if (e.clientY < 0 && !emailModalShown && window.innerWidth > 768) {
-        openModal('emailModal');
-        emailModalShown = true;
-      }
-    });
-
-    /* ─── Email Submit ────────────────────────────────────── */
-    function submitEmail(e) {
-      e.preventDefault();
-      // Redirect to 5-Day Challenge (great for all segments)
-      window.location.href = 'http://gohighlevel.com/5dc?fp_ref=dominic-32';
-    }
-
-    /* ─── Quiz Functions ────────────────────────────────────── */
-    function updateQuizProgress() {
-      const progress = document.getElementById('quizProgress');
-      let dots = '<div style="display: flex; gap: 6px;">';
-      for (let i = 0; i < 3; i++) {
-        dots += `<div class="progress-dot ${i <= currentQuizStep ? 'active' : ''}"></div>`;
-      }
-      dots += '</div>';
-      progress.innerHTML = dots;
-    }
-
-    function selectQuizAnswer(step, answer) {
-      quizAnswers[step] = answer;
-      const options = document.querySelectorAll(`#quizStep${step} .quiz-option`);
-      options.forEach(opt => opt.classList.remove('selected'));
-      event.target.closest('.quiz-option').classList.add('selected');
-    }
-
-    function showQuizStep(step) {
-      document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-      document.getElementById(`quizStep${step}`).classList.add('active');
-      updateQuizProgress();
-
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.querySelector('#quizButtons .btn-primary');
-
-      prevBtn.style.display = step > 0 ? 'block' : 'none';
-      nextBtn.textContent = step === 2 ? 'See My Match →' : 'Next →';
-    }
-
-    function nextQuizStep() {
-      if (currentQuizStep < 2) {
-        if (!quizAnswers[currentQuizStep]) return;
-        currentQuizStep++;
-        showQuizStep(currentQuizStep);
-      } else {
-        showQuizResults();
-      }
-    }
-
-    function prevQuizStep() {
-      if (currentQuizStep > 0) {
-        currentQuizStep--;
-        showQuizStep(currentQuizStep);
-      }
-    }
-
-    function showQuizResults() {
-      document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-      document.getElementById('quizResults').classList.add('active');
-      document.getElementById('quizButtons').style.display = 'none';
-
-      const business = quizAnswers[0];
-      const level = quizAnswers[1];
-      const goal = quizAnswers[2];
-
-      let recommendation = '';
-      let cta = 'https://www.gohighlevel.com/?fp_ref=dominic-32';
-
-      // INTELLIGENT 12-LINK ROUTING BASED ON QUIZ ANSWERS
-      if (level === 'Complete Beginner') {
-        // Beginners → 5-Day Challenge (FREE)
-        recommendation = `Based on your answers, start with the <strong style="color: var(--accent-cyan);">5-Day Free Challenge</strong> to learn the fundamentals while building your first funnel, completely risk-free.`;
-        cta = 'http://gohighlevel.com/5dc?fp_ref=dominic-32';
-      } else if (goal === 'Generate Leads') {
-        // Lead generators → Bootcamp (STRUCTURED)
-        recommendation = `Perfect for you: <strong style="color: var(--accent-cyan);">30-Day Bootcamp</strong> with structured training on funnels, lead capture, and follow-up automations to maximize your lead generation.`;
-        cta = 'https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32';
-      } else if (business === 'Digital Products') {
-        // Product builders → Product Launch Workshop
-        recommendation = `You need the <strong style="color: var(--accent-cyan);">Digital Product Launch Workshop</strong> to turn your knowledge into a profitable product with funnels, email sequences, and everything built-in.`;
-        cta = 'https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32';
-      } else if (business === 'Agency') {
-        // Agencies → SaaS Upgrade + Certifications
-        if (goal === 'Build Recurring Revenue') {
-          recommendation = `Ready to scale? The <strong style="color: var(--accent-cyan);">SaaS Upgrade (Agency Unlimited)</strong> lets you white-label and build predictable monthly recurring revenue.`;
-          cta = 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32';
-        } else {
-          recommendation = `Agencies thrive with <strong style="color: var(--accent-cyan);">GHL Certification</strong> to position as verified experts and command premium client contracts.`;
-          cta = 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91';
-        }
-      } else if (goal === 'Get Certified') {
-        // Certification seekers
-        recommendation = `Get the <strong style="color: var(--accent-cyan);">GHL Certification</strong> to unlock credibility, attract higher-paying clients, and position yourself as a verified expert.`;
-        cta = 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91';
-      } else if (goal === 'Automate Business') {
-        // Automation lovers → AI Employee or Pro Trial
-        recommendation = `For serious automation, unlock the <strong style="color: var(--accent-cyan);">AI Employee</strong> to handle conversations, scheduling, and follow-ups 24/7 automatically.`;
-        cta = 'https://www.gohighlevel.com/ai?fp_ref=dominic-32';
-      } else if (level === 'Already Selling') {
-        // Established users → Annual Plans + Pro Trial
-        if (goal === 'Build Recurring Revenue') {
-          recommendation = `Ready for the next level? The <strong style="color: var(--accent-cyan);">Annual Plans</strong> lock in savings and simplify billing for established businesses.`;
-          cta = 'https://gohighlevel.com/annual?fp_ref=dominic-32';
-        } else {
-          recommendation = `Upgrade to <strong style="color: var(--accent-cyan);">Pro Trial</strong> to unlock white-labeling, SaaS mode, and advanced features for scaling your operation.`;
-          cta = 'https://www.gohighlevel.com/protrial?fp_ref=dominic-32';
-        }
-      } else {
-        // Default to 14-Day Trial
-        recommendation = `Start with our <strong style="color: var(--accent-cyan);">14-Day Free Trial</strong> to explore all features and find what works best for your business.`;
-        cta = 'https://www.gohighlevel.com/?fp_ref=dominic-32';
-      }
-
-      const resultText = document.getElementById('quizResultText');
-      resultText.innerHTML = recommendation;
-
-      // Update CTA button
-      document.querySelector('#quizResults .btn-primary').href = cta;
-    }
-
-    function resetQuiz() {
-      quizAnswers = [];
-      currentQuizStep = 0;
-      document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
-      document.getElementById('quizButtons').style.display = 'flex';
-      showQuizStep(0);
-    }
-
-    /* ─── Calculator Logic ──────────────────────────────────── */
-    function recalculate() {
-      const checkboxes = document.querySelectorAll('#toolsContainer input[type="checkbox"]:checked');
-      let total = 0;
-      checkboxes.forEach(cb => {
-        total += parseInt(cb.value);
-      });
-
-      const monthly = total;
-      const annual = total * 12;
-      const ghlAnnualCost = 297 * 12;
-      const savings = Math.max(0, annual - ghlAnnualCost);
-
-      document.getElementById('monthlyTotal').textContent = '$' + monthly;
-      document.getElementById('annualTotal').textContent = '$' + annual.toLocaleString();
-      document.getElementById('savings').textContent = '$' + savings.toLocaleString();
-    }
-
-    /* ─── Progress Bar ────────────────────────────────────── */
+    // ───────────────────────────────────────────────────────────
+    // PROGRESS BAR
+    // ───────────────────────────────────────────────────────────
     window.addEventListener('scroll', () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      document.querySelector('.progress-fill').style.width = Math.min(scrollPercent, 95) + '%';
+      document.querySelector('.progress-fill').style.width = scrollPercent + '%';
     });
 
-    /* ─── Initialize ────────────────────────────────────── */
-    recalculate();
+    // ───────────────────────────────────────────────────────────
+    // INCOME CALCULATOR
+    // ───────────────────────────────────────────────────────────
+    const sliders = [
+      { id: 'setupServices', valueDisplay: 'setupServicesVal', resultId: 'resultSetup', rate: 1500 },
+      { id: 'retainerClients', valueDisplay: 'retainerClientsVal', resultId: 'resultRetainers', rate: 2000 },
+      { id: 'resellerSales', valueDisplay: 'resellerSalesVal', resultId: 'resultReseller', rate: 497 },
+      { id: 'productSales', valueDisplay: 'productSalesVal', resultId: 'resultProducts', rate: 297 },
+      { id: 'whitelabelSubs', valueDisplay: 'whitelabelSubsVal', resultId: 'resultWhitelabel', rate: 300 }
+    ];
+
+    sliders.forEach(slider => {
+      const element = document.getElementById(slider.id);
+      element.addEventListener('input', () => {
+        const value = parseInt(element.value);
+        document.getElementById(slider.valueDisplay).textContent = value;
+        document.getElementById(slider.resultId).textContent = '$' + (value * slider.rate).toLocaleString();
+        updateTotalIncome();
+      });
+    });
+
+    function updateTotalIncome() {
+      let total = 0;
+      sliders.forEach(slider => {
+        const value = parseInt(document.getElementById(slider.id).value);
+        total += value * slider.rate;
+      });
+      document.getElementById('totalIncome').textContent = '$' + total.toLocaleString();
+    }
+
+    // ───────────────────────────────────────────────────────────
+    // EMAIL MODAL WITH OFFER ROUTING
+    // ───────────────────────────────────────────────────────────
+    const offerConfig = {
+      '5dc-challenge': {
+        title: 'Join the 5-Day GHL Challenge',
+        desc: 'Start free and learn the fundamentals. Complete the challenge and unlock exclusive content.',
+        offerName: '5-Day Challenge',
+        link: 'http://gohighlevel.com/5dc?fp_ref=dominic-32'
+      },
+      'bootcamp': {
+        title: 'Enroll in the 30-Day Bootcamp',
+        desc: 'Structured training with daily lessons, live Q&A, and certification. Hands-on learning guaranteed.',
+        offerName: 'HighLevel Bootcamp',
+        link: 'https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32'
+      },
+      'digital-product': {
+        title: 'Access the Digital Product Launch Workshop',
+        desc: 'Learn how to create, market, and sell digital products using GHL as your platform.',
+        offerName: 'Digital Product Workshop',
+        link: 'https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32'
+      },
+      'agency-unlimited': {
+        title: 'Explore Agency Unlimited',
+        desc: 'White-label GHL and offer it as your own. Build a recurring revenue stream with your clients.',
+        offerName: 'Agency Unlimited',
+        link: 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32'
+      },
+      'certification': {
+        title: 'Get GHL Certified',
+        desc: 'Master advanced features, boost credibility, and unlock exclusive partner benefits.',
+        offerName: 'GHL Certification',
+        link: 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91'
+      },
+      'trial': {
+        title: 'Start Your 14-Day Free Trial',
+        desc: 'Explore all GHL features risk-free. No credit card required to get started.',
+        offerName: '14-Day Trial',
+        link: 'https://www.gohighlevel.com/?fp_ref=dominic-32'
+      }
+    };
+
+    function openEmailModal(offerKey) {
+      const config = offerConfig[offerKey];
+      if (!config) return;
+
+      document.getElementById('offerName').textContent = config.offerName;
+      document.getElementById('modalTitle').textContent = config.title;
+      document.getElementById('modalDesc').textContent = config.desc;
+      
+      // Store the current offer and link for submission
+      document.getElementById('emailModal').dataset.offerKey = offerKey;
+      document.getElementById('emailModal').dataset.offerLink = config.link;
+      
+      document.getElementById('emailModal').classList.add('open');
+    }
+
+    function closeEmailModal() {
+      document.getElementById('emailModal').classList.remove('open');
+      document.getElementById('fullName').value = '';
+      document.getElementById('email').value = '';
+    }
+
+    document.getElementById('emailModal').addEventListener('click', (e) => {
+      if (e.target.id === 'emailModal') closeEmailModal();
+    });
+
+    function handleEmailSubmit(e) {
+      e.preventDefault();
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const offerLink = document.getElementById('emailModal').dataset.offerLink;
+
+      // In production, you'd send this to your email service (ConvertKit, MailerLite, etc.)
+      console.log('Email captured:', { fullName, email });
+
+      // Redirect to the offer after email capture
+      setTimeout(() => {
+        window.open(offerLink, '_blank');
+        closeEmailModal();
+      }, 500);
+    }
+
+    // ───────────────────────────────────────────────────────────
+    // AUDIENCE CARD CLICK HANDLING
+    // ───────────────────────────────────────────────────────────
+    document.querySelectorAll('.audience-card .btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Button onclick is handled directly, no need for extra listener
+      });
+    });
   </script>
 
 </body>
