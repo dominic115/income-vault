@@ -279,6 +279,12 @@
       box-shadow: var(--glow);
     }
 
+    .btn-sm {
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
     .btn-outline {
       background: transparent;
       color: var(--accent-cyan);
@@ -293,8 +299,8 @@
     /* ─── AUDIENCE GRID (REPLACES CAMPAIGNS) ─────────────────── */
     .audience-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
       margin-top: 48px;
       animation: fadeInUp 0.6s ease-out 0.3s both;
     }
@@ -347,7 +353,7 @@
       border: 1px solid rgba(0, 217, 255, 0.2);
       border-radius: 10px;
       padding: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       font-size: 12px;
       color: var(--text-light);
       line-height: 1.7;
@@ -371,61 +377,52 @@
       flex-shrink: 0;
     }
 
-    .audience-card .btn {
-      width: 100%;
-      padding: 10px;
-      font-size: 13px;
-    }
-
-    /* ─── CTA GRID ──────────────────────────────────────────── */
-    .cta-grid {
+    /* ─── AUDIENCE OFFERS GRID ──────────────────────────────── */
+    .audience-offers {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 40px;
-      animation: fadeInUp 0.6s ease-out 0.3s both;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    .cta-card {
-      background: rgba(30, 40, 68, 0.5);
-      border: 1px solid var(--dark-border);
-      border-radius: 12px;
-      padding: 20px;
+    .audience-offers.three-col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .offer-btn {
+      padding: 10px 14px;
+      font-size: 12px;
       text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
+      line-height: 1.4;
     }
 
-    .cta-card:hover {
-      border-color: var(--accent-cyan);
-      background: rgba(0, 217, 255, 0.05);
+    .offer-btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+      color: var(--dark-bg);
+      border: 1px solid var(--accent-cyan);
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .offer-btn-primary:hover {
+      transform: translateY(-2px);
       box-shadow: var(--glow);
     }
 
-    .cta-icon {
-      font-size: 32px;
-      margin-bottom: 12px;
-      display: block;
+    .offer-btn-secondary {
+      background: rgba(123, 63, 242, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .cta-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-white);
-      margin-bottom: 6px;
-    }
-
-    .cta-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-      line-height: 1.5;
-    }
-
-    .cta-card .btn {
-      width: 100%;
-      padding: 10px;
-      font-size: 13px;
+    .offer-btn-secondary:hover {
+      background: rgba(123, 63, 242, 0.3);
+      box-shadow: var(--glow);
     }
 
     /* ─── SECTION STYLING ───────────────────────────────────── */
@@ -948,10 +945,6 @@
         padding: 50px 20px;
       }
 
-      .cta-grid {
-        grid-template-columns: 1fr;
-      }
-
       .audience-grid {
         grid-template-columns: 1fr;
       }
@@ -974,6 +967,10 @@
 
       .dashboard-visual {
         grid-template-columns: 1fr;
+      }
+
+      .audience-offers {
+        grid-template-columns: 1fr !important;
       }
     }
 
@@ -999,26 +996,6 @@
       .hero > p {
         font-size: 14px;
         margin-bottom: 24px;
-      }
-
-      .cta-grid {
-        gap: 12px;
-      }
-
-      .cta-card {
-        padding: 16px;
-      }
-
-      .cta-icon {
-        font-size: 24px;
-      }
-
-      .cta-title {
-        font-size: 13px;
-      }
-
-      .cta-desc {
-        font-size: 11px;
       }
 
       section h2 {
@@ -1048,6 +1025,10 @@
       .calculator-wrapper {
         padding: 18px;
       }
+
+      .audience-offers {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
@@ -1076,12 +1057,12 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       WHO GOHighLevel IS MEANT FOR SECTION (REPLACES CAMPAIGNS)
+       WHO GoHighLevel IS MEANT FOR SECTION (REPLACES CAMPAIGNS)
        ═══════════════════════════════════════════════════════════ -->
   <section class="audience-section">
     <div class="container">
       <h2>Who GoHighLevel Is Meant For</h2>
-      <p>Whether you're just starting out or scaling a six-figure business, there's a clear path forward.</p>
+      <p>Whether you're just starting out or scaling a six-figure business, there's a clear path forward. Choose your audience to see all relevant offers.</p>
 
       <div class="audience-grid">
         <!-- Beginners -->
@@ -1096,7 +1077,10 @@
             <div class="roadmap-step">Get first paid client</div>
             <div class="roadmap-step">Resell GHL & scale</div>
           </div>
-          <button class="btn btn-primary" onclick="openEmailModal('5dc-challenge')">Start Free Challenge</button>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('5dc-challenge')">Free Challenge</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Start Trial</button>
+          </div>
         </div>
 
         <!-- Hands-On Learners -->
@@ -1111,7 +1095,11 @@
             <div class="roadmap-step">Get industry certified</div>
             <div class="roadmap-step">Launch your GHL service</div>
           </div>
-          <button class="btn btn-primary" onclick="openEmailModal('bootcamp')">Join Bootcamp</button>
+          <div class="audience-offers three-col">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('bootcamp')">Bootcamp</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('certification')">Certification</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Free Trial</button>
+          </div>
         </div>
 
         <!-- Digital Creators -->
@@ -1126,14 +1114,17 @@
             <div class="roadmap-step">Set up email sequences</div>
             <div class="roadmap-step">Launch with confidence</div>
           </div>
-          <button class="btn btn-primary" onclick="openEmailModal('digital-product')">Learn Launch Strategy</button>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('digital-product')">Product Workshop</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Start Trial</button>
+          </div>
         </div>
 
         <!-- Agencies -->
         <div class="audience-card">
           <span class="audience-icon">🏢</span>
-          <h3 class="audience-title">Digital Agencies</h3>
-          <span class="audience-goal">Goal: Expand Revenue + White-Label</span>
+          <h3 class="audience-title">Digital Agencies & Service Providers</h3>
+          <span class="audience-goal">Goal: Expand Revenue + White-Label Options</span>
           <p class="audience-desc">You manage client campaigns and want to white-label GHL, offer it as your own, and unlock recurring revenue.</p>
           <div class="roadmap">
             <div class="roadmap-step">White-label GHL</div>
@@ -1141,37 +1132,47 @@
             <div class="roadmap-step">Add recurring revenue</div>
             <div class="roadmap-step">Scale agency profitably</div>
           </div>
-          <button class="btn btn-primary" onclick="openEmailModal('agency-unlimited')">Explore Agency Upgrade</button>
+          <div class="audience-offers three-col">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('agency-unlimited')">Agency Plan</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('certification')">Certification</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Free Trial</button>
+          </div>
         </div>
 
         <!-- Power Users -->
         <div class="audience-card">
           <span class="audience-icon">⚡</span>
-          <h3 class="audience-title">Power Users & Agencies</h3>
+          <h3 class="audience-title">Power Users & Resellers</h3>
           <span class="audience-goal">Goal: Master Advanced Features</span>
-          <p class="audience-desc">You're already using GHL and want certification, advanced automations, and premium features to unlock more revenue.</p>
+          <p class="audience-desc">You're already using GHL and want certification, advanced automations, premium features, and reseller opportunities.</p>
           <div class="roadmap">
             <div class="roadmap-step">Get GHL certified</div>
             <div class="roadmap-step">Access advanced features</div>
             <div class="roadmap-step">Build complex workflows</div>
             <div class="roadmap-step">Become a GHL expert</div>
           </div>
-          <button class="btn btn-primary" onclick="openEmailModal('certification')">Get Certified</button>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('certification')">Get Certified</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Upgrade Plan</button>
+          </div>
         </div>
 
         <!-- Everyone -->
         <div class="audience-card">
           <span class="audience-icon">🚀</span>
-          <h3 class="audience-title">Everyone Else</h3>
-          <span class="audience-goal">Goal: Try Before Committing</span>
-          <p class="audience-desc">Explore GHL with a 14-day free trial, flexible monthly plans, or commit with annual pricing for maximum savings.</p>
+          <h3 class="audience-title">Explorers & Decision-Makers</h3>
+          <span class="audience-goal">Goal: Discover What's Possible</span>
+          <p class="audience-desc">You want to test GHL's capabilities, see the full feature set, or compare it with other solutions before committing.</p>
           <div class="roadmap">
             <div class="roadmap-step">Start 14-day trial</div>
             <div class="roadmap-step">Test core features</div>
             <div class="roadmap-step">Import your data</div>
-            <div class="roadmap-step">Choose your plan</div>
+            <div class="roadmap-step">Choose your path</div>
           </div>
-          <button class="btn btn-primary" onclick="openEmailModal('trial')">Start Your Trial</button>
+          <div class="audience-offers">
+            <button class="offer-btn offer-btn-primary" onclick="openEmailModal('trial')">Start Free Trial</button>
+            <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1518,7 +1519,7 @@
       'trial': {
         title: 'Start Your 14-Day Free Trial',
         desc: 'Explore all GHL features risk-free. No credit card required to get started.',
-        offerName: '14-Day Trial',
+        offerName: '14-Day Free Trial',
         link: 'https://www.gohighlevel.com/?fp_ref=dominic-32'
       }
     };
@@ -1563,15 +1564,6 @@
         closeEmailModal();
       }, 500);
     }
-
-    // ───────────────────────────────────────────────────────────
-    // AUDIENCE CARD CLICK HANDLING
-    // ───────────────────────────────────────────────────────────
-    document.querySelectorAll('.audience-card .btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        // Button onclick is handled directly, no need for extra listener
-      });
-    });
   </script>
 
 </body>
