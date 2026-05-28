@@ -1,1890 +1,1088 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Income Vault | The Operating System for Modern Online Businesses</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Get GoHighLevel 30-Day Trial + $5,264+ Bonus Bundle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #37ca37;
+    --secondary: #188bf6;
+    --white: #ffffff;
+    --black: #000000;
+    --red: #e93d3d;
+    --green: #9ae6b4;
+    --dark-navy: #031631;
+    --light-blue: #00b4f5;
+    --overlay: rgba(0,0,0,0.5);
+    --headlinefont: 'Montserrat', sans-serif;
+    --contentfont: 'Lato', sans-serif;
+    --text-color: #000000;
+    --link-color: #188bf6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--contentfont); background: #fff; color: var(--text-color); }
 
-    :root {
-      --dark-bg: #060914;
-      --dark-card: #0d1424;
-      --dark-card-2: #111b30;
-      --dark-border: #1a2540;
-      --dark-border-2: #243050;
-      --accent-cyan: #00CFFF;
-      --accent-cyan-dim: rgba(0,207,255,0.12);
-      --accent-purple: #6C3FF5;
-      --accent-pink: #FF2D6B;
-      --accent-green: #00E584;
-      --accent-yellow: #FFD12A;
-      --text-white: #F0F4FF;
-      --text-light: #A8B8D0;
-      --text-muted: #5A6B85;
-      --glow-cyan: 0 0 30px rgba(0,207,255,0.25);
-      --glow-purple: 0 0 30px rgba(108,63,245,0.3);
-      --gradient-main: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
-    }
+  /* ===== ANNOUNCEMENT BAR ===== */
+  .announcement-bar {
+    background: var(--secondary);
+    color: #fff;
+    text-align: center;
+    padding: 12px 20px;
+    font-family: var(--headlinefont);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  @media(max-width:480px){ .announcement-bar { font-size: 12px; } }
 
-    html { scroll-behavior: smooth; }
+  /* ===== SECTION WRAPPERS ===== */
+  .section { padding: 40px 0; }
+  .section-inner { max-width: 1170px; margin: 0 auto; padding: 0 20px; }
+  .section-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--dark-bg);
-      color: var(--text-white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+  /* ===== TYPOGRAPHY ===== */
+  h1, h2, h3, h4 { font-family: var(--headlinefont); }
+  a { color: var(--link-color); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-    /* ── GRAIN OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.35;
-    }
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    display: inline-block;
+    background: var(--secondary);
+    color: #fff;
+    font-family: var(--headlinefont);
+    font-size: 28px;
+    font-weight: 600;
+    padding: 18px 28px;
+    border: 2px solid var(--green);
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(24,139,246,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(24,139,246,0.45); text-decoration: none; }
+  .btn-sub { display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9); margin-top: 6px; }
+  @media(max-width:480px){ .btn-primary { font-size: 20px; padding: 15px 20px; } }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes ticker {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes pulse-border {
-      0%,100% { border-color: rgba(0,207,255,0.3); }
-      50%      { border-color: rgba(0,207,255,0.7); }
-    }
-    @keyframes shimmer {
-      0%   { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    @keyframes countUp {
-      from { opacity: 0; transform: scale(0.8); }
-      to   { opacity: 1; transform: scale(1); }
-    }
+  .btn-upgrade {
+    display: inline-block;
+    background: transparent;
+    color: var(--secondary);
+    font-family: var(--headlinefont);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: 2px solid var(--secondary);
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 12px;
+  }
+  .btn-upgrade:hover { background: var(--secondary); color: #fff; text-decoration: none; }
 
-    /* ── PROGRESS BAR ── */
-    .progress-bar { height: 3px; background: transparent; position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
-    .progress-fill { height: 100%; background: var(--gradient-main); width: 2%; transition: width 0.3s; box-shadow: 0 0 12px var(--accent-cyan); }
+  /* ===== COUNTDOWN TIMER ===== */
+  .countdown-wrap { text-align: center; font-family: var(--headlinefont); margin: 20px 0; }
+  .countdown-wrap p { font-size: 16px; margin-bottom: 10px; }
+  .countdown-boxes { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .time-box {
+    background: var(--red);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    min-width: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+  }
+  .time-val { font-size: 26px; line-height: 1; margin-bottom: 4px; }
+  .time-label { font-size: 11px; text-transform: uppercase; }
 
-    /* ── NAV ── */
-    nav {
-      background: rgba(6,9,20,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--dark-border);
-      padding: 14px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      background: var(--gradient-main);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: -0.5px;
-    }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-tag {
-      font-size: 11px;
-      color: var(--accent-cyan);
-      background: rgba(0,207,255,0.08);
-      border: 1px solid rgba(0,207,255,0.3);
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-    .nav-cta {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--dark-bg);
-      background: var(--gradient-main);
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); box-shadow: var(--glow-cyan); }
+  /* ===== SHADOW CARD ===== */
+  .card { box-shadow: 2px 2px 20px 2px #707070; border-radius: 10px; background: #fff; padding: 24px; margin-bottom: 24px; }
 
-    /* ── TICKER ── */
-    .ticker-wrap {
-      background: rgba(0,207,255,0.06);
-      border-top: 1px solid rgba(0,207,255,0.15);
-      border-bottom: 1px solid rgba(0,207,255,0.15);
-      overflow: hidden;
-      padding: 10px 0;
-    }
-    .ticker-inner {
-      display: flex;
-      width: max-content;
-      animation: ticker 30s linear infinite;
-    }
-    .ticker-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0 40px;
-      font-size: 12px;
-      color: var(--text-light);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-    .ticker-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-cyan); flex-shrink: 0; }
+  /* ===== ROWS / GRID ===== */
+  .row { display: flex; flex-wrap: wrap; gap: 0; }
+  .row-shadow { box-shadow: 0 0 6px 0 #707070; }
+  .col-half { width: 50%; padding: 10px; }
+  .col-full { width: 100%; padding: 10px; }
+  @media(max-width:768px){ .col-half { width: 100%; } }
 
-    /* ── CONTAINERS ── */
-    .container    { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .container-sm { max-width: 760px;  margin: 0 auto; padding: 0 24px; }
+  /* ===== HERO SECTION ===== */
+  .hero-section { background: var(--dark-navy); padding: 40px 0 0; }
+  .hero-video-row { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 96px 24px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg-orb-1 {
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(0,207,255,0.12) 0%, transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero-bg-orb-2 {
-      position: absolute;
-      bottom: -30%;
-      left: -5%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(108,63,245,0.1) 0%, transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
+  /* ===== TEXT SECTION (replaces video) ===== */
+  .text-hero-section { background: #fff; padding: 40px 0 20px; }
+  .text-hero-body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    font-family: var(--contentfont);
+    font-size: 18px;
+    line-height: 1.75;
+    color: #222;
+  }
+  .text-hero-body p { margin-bottom: 16px; }
+  .text-hero-body .highlight-line {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 20px;
+  }
+  .text-hero-body .bold-close {
+    font-weight: 700;
+    font-size: 19px;
+    color: #111;
+    border-top: 2px solid #eee;
+    padding-top: 16px;
+    margin-top: 8px;
+  }
 
-    /* Social proof bar */
-    .social-proof-bar {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      background: rgba(13,20,36,0.8);
-      border: 1px solid var(--dark-border-2);
-      border-radius: 40px;
-      padding: 8px 18px 8px 10px;
-      margin-bottom: 28px;
-      animation: fadeUp 0.5s ease-out both;
-    }
-    .sp-avatars { display: flex; }
-    .sp-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      border: 2px solid var(--dark-bg);
-      background: var(--gradient-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      margin-left: -8px;
-      flex-shrink: 0;
-    }
-    .sp-avatar:first-child { margin-left: 0; }
-    .sp-text { font-size: 12px; color: var(--text-light); font-weight: 500; }
-    .sp-text strong { color: var(--accent-cyan); font-weight: 700; }
+  /* ===== WARNING BOX ===== */
+  .warning-box {
+    background: #fff8e1;
+    border: 2px solid #f5a623;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px auto;
+    max-width: 900px;
+    font-family: var(--contentfont);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .warning-box .warning-title {
+    font-family: var(--headlinefont);
+    font-size: 18px;
+    font-weight: 800;
+    color: #b85c00;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .warning-box p { color: #5a3a00; }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      background: rgba(0,207,255,0.08);
-      border: 1px solid rgba(0,207,255,0.3);
-      padding: 6px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      animation: fadeUp 0.5s ease-out 0.05s both;
-    }
+  /* ===== VIDEO EMBED ===== */
+  .video-embed-section { background: #f5f8ff; padding: 30px 0; }
+  .video-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  .video-embed-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border: 5px solid var(--light-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  }
+  .video-embed-wrapper iframe,
+  .video-embed-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(34px, 6vw, 62px);
-      font-weight: 800;
-      line-height: 1.05;
-      margin-bottom: 20px;
-      letter-spacing: -1.5px;
-      animation: fadeUp 0.6s ease-out 0.1s both;
-    }
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 60%, var(--accent-pink) 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 4s linear infinite;
-    }
-    .hero-sub {
-      font-size: 17px;
-      color: var(--text-light);
-      max-width: 580px;
-      margin: 0 auto 36px;
-      line-height: 1.75;
-      font-weight: 400;
-      animation: fadeUp 0.6s ease-out 0.15s both;
-    }
+  /* ===== OFFER HEADER ===== */
+  .offer-header { background: var(--secondary); padding: 14px 20px; text-align: center; }
+  .offer-header p { color: #fff; font-family: var(--headlinefont); font-size: 18px; font-weight: 500; }
+  @media(max-width:480px){ .offer-header p { font-size: 12px; } }
 
-    /* Hero CTA cluster */
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-      animation: fadeUp 0.6s ease-out 0.2s both;
-    }
-    .btn-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 15px 30px;
-      font-size: 15px;
-      font-weight: 700;
-      font-family: 'DM Sans', sans-serif;
-      border-radius: 10px;
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s;
-      text-decoration: none;
-    }
-    .btn-hero-primary {
-      background: var(--gradient-main);
-      color: var(--dark-bg);
-      box-shadow: 0 4px 24px rgba(0,207,255,0.3), 0 0 0 0 rgba(0,207,255,0.4);
-    }
-    .btn-hero-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 40px rgba(0,207,255,0.5);
-    }
-    .btn-hero-ghost {
-      background: rgba(255,255,255,0.04);
-      color: var(--text-light);
-      border: 1px solid var(--dark-border-2);
-    }
-    .btn-hero-ghost:hover {
-      background: rgba(255,255,255,0.07);
-      color: var(--text-white);
-      border-color: var(--accent-cyan);
-    }
+  /* ===== MAIN OFFER ROW ===== */
+  .main-offer-section { padding: 30px 0; }
+  .offer-row { max-width: 1050px; margin: 0 auto; padding: 0 20px; display: flex; gap: 20px; flex-wrap: wrap; box-shadow: 0 0 6px 0 #707070; }
+  .offer-image-col { width: 45%; padding: 10px; }
+  .offer-content-col { width: 52%; padding: 10px 20px; display: flex; flex-direction: column; justify-content: center; }
+  @media(max-width:768px){ .offer-image-col, .offer-content-col { width: 100%; } }
+  .offer-image-col img { width: 100%; border-radius: 4px; }
+  .free-badge {
+    background: var(--green);
+    color: var(--green);
+    padding: 6px 0;
+    text-align: center;
+    border-radius: 20px;
+    font-family: var(--headlinefont);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .free-badge span { position: relative; z-index: 1; color: var(--red); text-decoration: underline; }
+  .offer-tagline { font-family: var(--headlinefont); font-size: 22px; font-weight: 700; color: var(--red); margin-bottom: 16px; }
+  .trial-note { font-family: var(--headlinefont); font-size: 20px; font-weight: 400; margin-top: 12px; }
+  @media(max-width:480px){ .offer-tagline { font-size: 17px; } .trial-note { font-size: 16px; } }
 
-    /* Trust badges */
-    .trust-badges {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.6s ease-out 0.25s both;
-    }
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-    .trust-badge-icon { color: var(--accent-green); font-size: 13px; }
+  /* ===== BONUS CARDS ===== */
+  .bonuses-section { padding: 20px 0 40px; }
+  .bonuses-inner { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
+  .bonus-card { display: flex; gap: 20px; align-items: flex-start; box-shadow: 2px 2px 20px 2px #707070; border-radius: 10px; padding: 20px 24px; background: #fff; margin-bottom: 24px; flex-wrap: wrap; }
+  .bonus-card-img { flex: 0 0 100px; }
+  .bonus-card-img img { width: 100px; height: 90px; object-fit: contain; }
+  .bonus-icon { width: 100px; height: 90px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: #f4fbff; border: 2px solid #d7eefc; color: var(--secondary); }
+  .bonus-icon svg { width: 52px; height: 52px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .bonus-card-body { flex: 1; }
+  .bonus-number { font-family: var(--headlinefont); font-size: 20px; font-weight: 400; color: #555; }
+  .bonus-title { font-family: var(--headlinefont); font-size: 28px; font-weight: 700; color: var(--text-color); margin: 4px 0 8px; }
+  .bonus-desc { font-family: var(--contentfont); font-size: 18px; line-height: 1.55; }
+  .bonus-value { font-family: var(--headlinefont); font-size: 28px; font-weight: 700; color: var(--red); margin-top: 8px; }
+  @media(max-width:480px){ .bonus-title { font-size: 22px; } .bonus-desc { font-size: 16px; } .bonus-value { font-size: 22px; } }
 
-    /* Floating stat cards */
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 56px;
-      animation: fadeUp 0.7s ease-out 0.3s both;
-    }
-    .hero-stat {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border);
-      border-radius: 12px;
-      padding: 18px 26px;
-      text-align: center;
-      min-width: 130px;
-      transition: all 0.3s;
-    }
-    .hero-stat:hover {
-      border-color: rgba(0,207,255,0.4);
-      transform: translateY(-3px);
-      box-shadow: var(--glow-cyan);
-    }
-    .hero-stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 28px;
-      font-weight: 800;
-      background: var(--gradient-main);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 4px;
-    }
-    .hero-stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  /* ===== TOTAL VALUE BOX ===== */
+  .total-value-section { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
+  .total-box { background: #fff; border-radius: 10px; padding: 40px 30px 50px; text-align: center; border: 1px solid #ccc; }
+  .total-val { font-family: var(--headlinefont); font-size: 60px; font-weight: 700; color: var(--red); margin-bottom: 8px; }
+  .total-sub { font-family: var(--headlinefont); font-size: 28px; font-weight: 400; }
+  .total-sub strong { color: var(--red); }
+  @media(max-width:480px){ .total-val { font-size: 40px; } .total-sub { font-size: 20px; } }
 
-    /* ── SECTION BASE ── */
-    section { padding: 88px 24px; position: relative; }
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 10px;
-    }
-    section h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 4.5vw, 46px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 14px;
-      letter-spacing: -1px;
-    }
-    .section-sub {
-      font-size: 16px;
-      color: var(--text-light);
-      max-width: 580px;
-      margin: 0 auto 52px;
-      line-height: 1.75;
-    }
+  /* ===== ALREADY A USER CTA ===== */
+  .existing-user-bar {
+    background: #f0f7ff;
+    border: 1px solid #c0d8f5;
+    border-radius: 8px;
+    padding: 16px 24px;
+    text-align: center;
+    margin: 16px auto;
+    max-width: 700px;
+  }
+  .existing-user-bar p { font-family: var(--headlinefont); font-size: 16px; color: #333; margin-bottom: 6px; }
+  .existing-user-bar small { font-size: 13px; color: #666; }
 
-    /* ── WHO IT'S FOR / AUDIENCE CARDS ── */
-    .audience-section { background: linear-gradient(180deg, rgba(108,63,245,0.04) 0%, transparent 100%); }
+  /* ===== COMPARISON TABLE SECTION ===== */
+  .comparison-section { padding: 40px 0; }
+  .comparison-inner { max-width: 850px; margin: 0 auto; padding: 0 20px; text-align: center; }
+  .comparison-inner h1 { font-size: 42px; font-weight: 700; margin-bottom: 10px; }
+  .comparison-inner h2 { font-size: 22px; font-weight: 400; margin-bottom: 20px; }
+  @media(max-width:480px){ .comparison-inner h1 { font-size: 28px; } }
+  .comparison-img { width: 100%; max-width: 700px; margin: 0 auto; display: block; }
 
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-top: 0;
-    }
-    .audience-card {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border);
-      border-radius: 16px;
-      padding: 30px;
-      transition: all 0.35s cubic-bezier(0.22,0.61,0.36,1);
-      position: relative;
-      overflow: hidden;
-    }
-    .audience-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gradient-main);
-      opacity: 0;
-      transition: opacity 0.35s;
-    }
-    .audience-card:hover {
-      border-color: rgba(0,207,255,0.3);
-      background: rgba(13,20,36,0.95);
-      box-shadow: 0 12px 48px rgba(0,0,0,0.4), var(--glow-cyan);
-      transform: translateY(-5px);
-    }
-    .audience-card:hover::before { opacity: 1; }
+  /* ===== RISK-FREE SECTION ===== */
+  .riskfree-section { padding: 30px 0; }
+  .riskfree-inner { max-width: 1050px; margin: 0 auto; box-shadow: 0 0 6px 0 #707070; padding: 20px; }
+  .riskfree-row { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+  .riskfree-img { flex: 0 0 300px; text-align: center; }
+  .riskfree-img img { width: 300px; max-width: 100%; }
+  .riskfree-body { flex: 1; }
+  .riskfree-body h2 { font-family: var(--headlinefont); font-size: 22px; font-weight: 500; margin-bottom: 14px; }
+  .riskfree-body p { font-size: 19px; font-weight: 500; margin-bottom: 12px; line-height: 1.5; }
+  @media(max-width:768px){ .riskfree-img { flex: 0 0 100%; } }
 
-    .audience-icon { font-size: 36px; margin-bottom: 14px; display: block; }
-    .audience-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-white);
-      margin-bottom: 6px;
-    }
-    .audience-goal {
-      font-size: 13px;
-      color: var(--accent-cyan);
-      font-weight: 600;
-      margin-bottom: 12px;
-      display: block;
-      line-height: 1.5;
-    }
-    .audience-desc { font-size: 13px; color: var(--text-light); margin-bottom: 18px; line-height: 1.65; }
+  /* ===== HOW TO SECTION ===== */
+  .howto-section { padding: 30px 0; }
+  .howto-inner { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
+  .howto-row { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+  .howto-img { flex: 0 0 45%; }
+  .howto-img img { width: 100%; }
+  .howto-steps { flex: 1; }
+  .step { font-family: var(--headlinefont); font-size: 22px; font-weight: 500; margin-bottom: 20px; line-height: 1.4; }
+  @media(max-width:768px){ .howto-img { flex: 0 0 100%; } }
 
-    .roadmap {
-      background: rgba(0,207,255,0.05);
-      border: 1px solid rgba(0,207,255,0.15);
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 18px;
-    }
-    .roadmap-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 6px;
-      font-size: 12px;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-    .roadmap-step:last-child { margin-bottom: 0; }
-    .roadmap-step::before { content: '→'; color: var(--accent-cyan); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  /* ===== TESTIMONIAL VIDEOS ===== */
+  .testimonials-section { padding: 40px 0; }
+  .testimonials-inner { max-width: 1170px; margin: 0 auto; padding: 0 20px; }
+  .test-header { text-align: center; font-family: var(--headlinefont); font-size: 30px; font-weight: 700; margin-bottom: 30px; }
+  .videos-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+  .video-col { flex: 1 1 calc(50% - 10px); min-width: 280px; }
+  .video-thumb {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .video-thumb img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+  .video-thumb iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70px; height: 70px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .play-btn::after { content: ''; border-left: 28px solid #fff; border-top: 17px solid transparent; border-bottom: 17px solid transparent; margin-left: 6px; }
 
-    .audience-offers { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .audience-offers.three-col { grid-template-columns: repeat(3, 1fr); }
+  /* ===== SCROLLING TESTIMONIALS ===== */
+  .scroll-testimonials { background: #f9f9f9; padding: 40px 0; overflow: hidden; }
+  .scroll-track { display: flex; gap: 20px; animation: scrollX 60s linear infinite; width: max-content; }
+  .scroll-track.reverse { animation: scrollXR 60s linear infinite; margin-top: 20px; }
+  @keyframes scrollX { 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
+  @keyframes scrollXR { 0%{ transform: translateX(-50%); } 100%{ transform: translateX(0); } }
+  .review-card { background: #fff; padding: 18px 20px; border-radius: 10px; min-width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); flex-shrink: 0; }
+  .review-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .review-verified { color: green; font-size: 12px; }
+  .review-stars { color: gold; font-size: 17px; }
+  .review-highlight { color: var(--red); font-weight: 700; margin-top: 4px; font-size: 14px; }
+  .review-card p { font-size: 13px; margin-top: 5px; line-height: 1.5; }
 
-    .offer-btn {
-      padding: 10px 12px;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: 'DM Sans', sans-serif;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.25s;
-      border: none;
-      text-align: center;
-      line-height: 1.4;
-    }
-    .offer-btn-primary {
-      background: var(--gradient-main);
-      color: var(--dark-bg);
-    }
-    .offer-btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: var(--glow-cyan); }
-    .offer-btn-secondary {
-      background: rgba(108,63,245,0.12);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(0,207,255,0.25);
-    }
-    .offer-btn-secondary:hover { background: rgba(108,63,245,0.22); box-shadow: var(--glow-cyan); transform: translateY(-1px); }
+  /* ===== URGENCY SECTION ===== */
+  .urgency-section { padding: 50px 0; }
+  .urgency-inner { max-width: 1050px; margin: 0 auto; padding: 40px; box-shadow: 0 0 6px 0 #707070; }
+  .urgency-inner h2 { font-family: var(--headlinefont); font-size: 30px; font-weight: 700; margin-bottom: 10px; }
+  .urgency-inner h3 { font-family: var(--headlinefont); font-size: 22px; font-weight: 400; margin-bottom: 12px; }
+  .urgency-body { font-family: var(--headlinefont); font-size: 22px; line-height: 1.65; }
+  .urgency-body strong { color: var(--text-color); }
+  hr.divider { border: none; border-top: 1px solid #ccc; margin: 20px 0; }
 
-    /* ── SOCIAL PROOF / TESTIMONIALS ── */
-    .testimonials-section {
-      background: var(--dark-card);
-      border-top: 1px solid var(--dark-border);
-      border-bottom: 1px solid var(--dark-border);
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .testimonial-card {
-      background: var(--dark-bg);
-      border: 1px solid var(--dark-border);
-      border-radius: 14px;
-      padding: 26px;
-      transition: all 0.3s;
-      position: relative;
-    }
-    .testimonial-card::after {
-      content: '"';
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 60px;
-      color: rgba(0,207,255,0.08);
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      line-height: 1;
-      pointer-events: none;
-    }
-    .testimonial-card:hover {
-      border-color: rgba(0,207,255,0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3), var(--glow-cyan);
-    }
-    .testimonial-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-    .testimonial-avatar {
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      background: var(--gradient-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .testimonial-name { font-size: 14px; font-weight: 700; color: var(--text-white); }
-    .testimonial-role { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
-    .stars { color: var(--accent-yellow); font-size: 12px; letter-spacing: 1px; }
-    .testimonial-text { font-size: 13px; color: var(--text-light); line-height: 1.7; font-style: italic; margin-bottom: 14px; }
-    .testimonial-result {
-      font-size: 13px;
-      color: var(--accent-green);
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(0,229,132,0.06);
-      border: 1px solid rgba(0,229,132,0.2);
-      border-radius: 8px;
-      padding: 8px 12px;
-    }
-    .testimonial-result::before { content: '✓'; }
+  /* ===== FAQ ===== */
+  .faq-section { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  .faq-title { font-family: var(--headlinefont); font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 24px; }
+  .faq-item { border: 1px solid #ddd; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .faq-q { background: #f7f7f7; padding: 14px 18px; cursor: pointer; font-weight: 700; font-size: 16px; font-family: var(--contentfont); transition: background 0.2s; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q:hover { background: #e9e9e9; }
+  .faq-q::after { content: '+'; font-size: 22px; color: #888; }
+  .faq-item.open .faq-q::after { content: '−'; }
+  .faq-a { display: none; padding: 14px 18px; background: #fff; border-top: 1px solid #ddd; font-size: 15px; line-height: 1.6; }
+  .faq-item.open .faq-a { display: block; }
 
-    /* ── CALCULATOR ── */
-    .income-calculator-section {
-      background: linear-gradient(135deg, rgba(0,207,255,0.03) 0%, rgba(108,63,245,0.03) 100%);
-    }
-    .calculator-wrapper {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border);
-      border-radius: 20px;
-      padding: 44px;
-      max-width: 720px;
-      margin: 0 auto;
-      box-shadow: 0 0 60px rgba(0,0,0,0.4), var(--glow-purple);
-      position: relative;
-      overflow: hidden;
-    }
-    .calculator-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--gradient-main);
-    }
-    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 32px; }
-    @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } }
-    .calc-input-group { display: flex; flex-direction: column; gap: 10px; }
-    .calc-label { font-size: 13px; font-weight: 600; color: var(--text-light); }
-    .calc-label span { color: var(--accent-cyan); }
+  /* ===== DISCLOSURE ===== */
+  .disclosure-section { padding: 24px 20px; max-width: 1170px; margin: 0 auto; }
+  .disclosure-section p { font-size: 14px; line-height: 1.6; color: #555; }
 
-    .calc-slider {
-      width: 100%;
-      height: 5px;
-      border-radius: 5px;
-      background: var(--dark-border-2);
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
-      cursor: pointer;
-    }
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: var(--gradient-main);
-      cursor: pointer;
-      box-shadow: 0 0 12px rgba(0,207,255,0.5);
-      transition: transform 0.2s;
-    }
-    .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
-    .calc-slider::-moz-range-thumb {
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      background: var(--gradient-main);
-      border: none;
-      cursor: pointer;
-    }
+  /* ===== 5DC POPUP ===== */
+  .popup-5dc {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 340px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+    z-index: 9999;
+    overflow: hidden;
+    transform: translateY(120%);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .popup-5dc.visible { transform: translateY(0); }
+  .popup-5dc-header {
+    background: var(--secondary);
+    color: #fff;
+    padding: 14px 16px 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .popup-5dc-header h4 { font-family: var(--headlinefont); font-size: 16px; font-weight: 700; }
+  .popup-close-btn { background: rgba(255,255,255,0.25); border: none; color: #fff; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .popup-5dc-body { padding: 18px; }
+  .popup-5dc-body p { font-size: 14px; line-height: 1.55; margin-bottom: 14px; color: #333; }
+  .popup-5dc-body ul { padding-left: 18px; margin-bottom: 14px; }
+  .popup-5dc-body ul li { font-size: 13px; margin-bottom: 6px; color: #444; }
+  .popup-5dc-cta {
+    display: block;
+    background: var(--primary);
+    color: #fff;
+    font-family: var(--headlinefont);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .popup-5dc-cta:hover { background: #28a528; text-decoration: none; }
+  .popup-dismiss { font-size: 12px; text-align: center; margin-top: 8px; color: #888; cursor: pointer; }
+  .popup-dismiss:hover { color: #444; }
 
-    .calc-value-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .calc-count { font-size: 13px; color: var(--text-muted); font-weight: 500; }
-    .calc-subtotal { font-size: 14px; font-weight: 700; color: var(--accent-cyan); }
+  /* ===== HEADLINE SECTION ===== */
+  .main-headline-section { background: #fff; padding: 40px 20px 20px; text-align: center; }
+  .main-headline-section h2 { font-family: var(--headlinefont); font-size: 20px; font-weight: 400; color: #fff; background: var(--secondary); padding: 6px 0; margin-bottom: 12px; }
+  .main-headline-section h1 { font-family: var(--headlinefont); font-size: 58px; font-weight: 700; line-height: 1.2; max-width: 900px; margin: 0 auto 14px; }
+  .main-headline-section h1 em { color: var(--red); font-style: normal; }
+  .main-headline-section .tagline { font-family: var(--headlinefont); font-size: 17px; font-weight: 400; color: #fff; font-style: italic; margin-bottom: 20px; }
+  @media(max-width:480px){
+    .main-headline-section h1 { font-size: 36px; }
+    .main-headline-section h2 { font-size: 14px; }
+  }
 
-    .calculator-results {
-      background: rgba(0,207,255,0.04);
-      border: 1px solid rgba(0,207,255,0.15);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .result-header {
-      background: rgba(0,207,255,0.06);
-      padding: 14px 22px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      display: grid;
-      grid-template-columns: 1fr auto;
-    }
-    .result-row {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 18px;
-      border-bottom: 1px solid rgba(26,37,64,0.8);
-      transition: background 0.2s;
-    }
-    .result-row:hover { background: rgba(0,207,255,0.03); }
-    .result-row:last-child { border-bottom: none; }
-    .result-label { font-size: 13px; color: var(--text-light); font-weight: 500; word-break: break-word; }
-    .result-qty { font-size: 11px; color: var(--text-muted); text-align: right; white-space: nowrap; }
-    .result-value { font-size: 14px; font-weight: 700; color: var(--text-white); text-align: right; white-space: nowrap; }
-    @media (max-width: 480px) {
-      .result-row { grid-template-columns: 1fr auto; gap: 6px; padding: 12px 14px; }
-      .result-qty { display: none; }
-      .result-header { padding: 12px 14px; }
-      .result-total { padding: 16px 14px; flex-wrap: wrap; gap: 6px; }
-      .result-total-value { font-size: 26px; }
-      .annual-note { padding: 10px 14px; font-size: 12px; flex-wrap: wrap; }
-    }
+  /* ===== SECTION TITLE ===== */
+  .section-title { font-family: var(--headlinefont); font-size: 60px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+  .section-title em { color: var(--red); font-style: normal; }
+  .section-sub { font-family: var(--headlinefont); font-size: 28px; font-weight: 400; text-align: center; margin-bottom: 30px; }
+  .section-sub strong { color: var(--red); }
+  @media(max-width:480px){ .section-title { font-size: 38px; } .section-sub { font-size: 20px; } }
 
-    .result-total {
-      background: rgba(0,207,255,0.06);
-      border-top: 1px solid rgba(0,207,255,0.2);
-      padding: 20px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .result-total-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-white);
-    }
-    .result-total-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 32px;
-      font-weight: 800;
-      background: var(--gradient-main);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: countUp 0.3s ease-out;
-    }
-    .annual-note {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--accent-green);
-      font-weight: 600;
-      padding: 12px 22px;
-      border-top: 1px solid rgba(0,229,132,0.1);
-      background: rgba(0,229,132,0.03);
-    }
-    .projections-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 18px; font-style: italic; }
-
-    /* ── WHY SWITCHING ── */
-    .why-switching {
-      background: var(--dark-card);
-      border-top: 1px solid var(--dark-border);
-      border-bottom: 1px solid var(--dark-border);
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .why-card {
-      background: var(--dark-bg);
-      border: 1px solid var(--dark-border);
-      border-radius: 14px;
-      padding: 28px 24px;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .why-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gradient-main);
-      transform: scaleX(0);
-      transition: transform 0.35s;
-      transform-origin: left;
-    }
-    .why-card:hover { border-color: rgba(0,207,255,0.25); transform: translateY(-4px); box-shadow: var(--glow-cyan); }
-    .why-card:hover::before { transform: scaleX(1); }
-    .stat-number {
-      font-family: 'Syne', sans-serif;
-      font-size: 48px;
-      font-weight: 800;
-      background: var(--gradient-main);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 6px;
-      line-height: 1;
-    }
-    .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .why-card p { font-size: 13px; color: var(--text-light); line-height: 1.65; }
-
-    /* ── COMPARISON TABLE ── */
-    .comparison-section {
-      background: linear-gradient(135deg, rgba(108,63,245,0.05) 0%, transparent 100%);
-    }
-    .comparison-table {
-      max-width: 800px;
-      margin: 0 auto;
-      border: 1px solid var(--dark-border);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .comparison-head {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      background: var(--dark-card-2);
-      border-bottom: 1px solid var(--dark-border);
-    }
-    .comp-head-cell {
-      padding: 16px 20px;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-    }
-    .comp-head-cell:first-child { text-align: left; color: var(--text-muted); }
-    .comp-head-cell.highlighted {
-      background: rgba(0,207,255,0.08);
-      color: var(--accent-cyan);
-      border-left: 1px solid rgba(0,207,255,0.2);
-      border-right: 1px solid rgba(0,207,255,0.2);
-    }
-    .comp-head-cell.competitor { color: var(--text-muted); }
-    .comparison-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      border-bottom: 1px solid var(--dark-border);
-      transition: background 0.2s;
-    }
-    .comparison-row:last-child { border-bottom: none; }
-    .comparison-row:hover { background: rgba(255,255,255,0.02); }
-    .comp-cell {
-      padding: 14px 20px;
-      font-size: 13px;
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
-    }
-    .comp-cell:first-child { font-weight: 500; color: var(--text-white); }
-    .comp-cell.center { justify-content: center; }
-    .comp-cell.highlighted {
-      background: rgba(0,207,255,0.04);
-      border-left: 1px solid rgba(0,207,255,0.1);
-      border-right: 1px solid rgba(0,207,255,0.1);
-    }
-    .check { color: var(--accent-green); font-size: 16px; }
-    .cross { color: var(--accent-pink); font-size: 16px; }
-    .partial { color: var(--accent-yellow); font-size: 13px; font-weight: 600; }
-
-    /* ── DASHBOARD ── */
-    .dashboard-section {
-      background: linear-gradient(135deg, rgba(108,63,245,0.06) 0%, rgba(0,207,255,0.02) 100%);
-      border-top: 1px solid var(--dark-border);
-      border-bottom: 1px solid var(--dark-border);
-    }
-    .dashboard-visual {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-      margin-top: 48px;
-    }
-    .dashboard-card {
-      background: rgba(13,20,36,0.9);
-      border: 1px solid var(--dark-border);
-      border-radius: 14px;
-      padding: 24px;
-      animation: float 3s ease-in-out infinite;
-      transition: all 0.3s;
-    }
-    .dashboard-card:nth-child(2) { animation-delay: 0.6s; }
-    .dashboard-card:nth-child(3) { animation-delay: 1.2s; }
-    .dashboard-card:nth-child(4) { animation-delay: 1.8s; }
-    .dashboard-card:hover { border-color: rgba(0,207,255,0.4); box-shadow: var(--glow-cyan); }
-    .dashboard-metric { font-size: 34px; margin-bottom: 8px; }
-    .dashboard-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
-
-    /* ── FINAL CTA SECTION ── */
-    .final-cta {
-      text-align: center;
-      background: var(--dark-card);
-      border-top: 1px solid var(--dark-border);
-      border-bottom: 1px solid var(--dark-border);
-      overflow: hidden;
-      position: relative;
-    }
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(108,63,245,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .final-cta h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px,5vw,52px);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-      position: relative;
-    }
-    .final-cta p { font-size: 16px; color: var(--text-light); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
-    .final-cta-badges {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-      position: relative;
-    }
-    .final-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .final-badge-icon { color: var(--accent-green); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark-bg);
-      border-top: 1px solid var(--dark-border);
-      padding: 40px 24px 24px;
-      text-align: center;
-    }
-    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 24px; margin-bottom: 18px; }
-    .footer-links a, .footer-links button {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .footer-links a:hover, .footer-links button:hover { color: var(--accent-cyan); }
-    .footer-disc { font-size: 12px; color: var(--text-muted); max-width: 560px; margin: 0 auto 12px; line-height: 1.65; }
-    .footer-copy { font-size: 11px; color: #3A4B60; }
-
-    /* ── MODALS ── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--dark-card);
-      border: 1px solid var(--dark-border-2);
-      border-radius: 18px;
-      max-width: 480px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 40px;
-      position: relative;
-      box-shadow: 0 0 80px rgba(0,207,255,0.2), 0 0 0 1px rgba(0,207,255,0.1);
-      animation: slideUp 0.35s ease-out;
-    }
-    .modal-close {
-      position: absolute;
-      top: 14px; right: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--dark-border);
-      font-size: 18px;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: all 0.3s;
-      border-radius: 6px;
-      width: 32px; height: 32px;
-      display: flex; align-items: center; justify-content: center;
-      line-height: 1;
-    }
-    .modal-close:hover { color: var(--accent-cyan); border-color: var(--accent-cyan); background: rgba(0,207,255,0.08); }
-    .modal-header { margin-bottom: 26px; }
-    .modal-header h2 { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--text-white); margin-bottom: 8px; }
-    .modal-header p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
-    .offer-name { font-size: 11px; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 6px; }
-
-    .modal-value-prop {
-      background: rgba(0,207,255,0.06);
-      border: 1px solid rgba(0,207,255,0.15);
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 22px;
-    }
-    .mvp-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-light); margin-bottom: 6px; }
-    .mvp-item:last-child { margin-bottom: 0; }
-    .mvp-icon { color: var(--accent-green); font-size: 13px; flex-shrink: 0; }
-
-    .email-form { display: flex; flex-direction: column; gap: 12px; }
-    .email-form input {
-      padding: 13px 15px;
-      background: rgba(0,207,255,0.04);
-      border: 1px solid var(--dark-border-2);
-      border-radius: 10px;
-      font-size: 14px;
-      color: var(--text-white);
-      outline: none;
-      transition: all 0.3s;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .email-form input::placeholder { color: var(--text-muted); }
-    .email-form input:focus { border-color: var(--accent-cyan); background: rgba(0,207,255,0.08); box-shadow: var(--glow-cyan); }
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--gradient-main);
-      color: var(--dark-bg);
-      border: none;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 700;
-      font-family: 'DM Sans', sans-serif;
-      cursor: pointer;
-      margin-top: 6px;
-      transition: all 0.3s;
-    }
-    .btn-submit:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,207,255,0.35); }
-    .privacy-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 10px; }
-
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .hero { padding: 56px 20px 48px; }
-      section { padding: 56px 20px; }
-      .audience-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .calculator-wrapper { padding: 24px; }
-      .modal-box { padding: 28px; }
-      .dashboard-visual { grid-template-columns: 1fr 1fr; }
-      .audience-offers { grid-template-columns: 1fr !important; }
-      .hero-stats { gap: 10px; }
-      .hero-stat { min-width: 100px; padding: 14px 18px; }
-      .comparison-table { font-size: 12px; overflow-x: auto; }
-      .nav-cta { display: none; }
-    }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 28px; letter-spacing: -1px; }
-      section h2 { font-size: 24px; }
-      .why-grid { grid-template-columns: 1fr; }
-      .audience-offers.three-col { grid-template-columns: 1fr !important; }
-      .hero-stats { flex-direction: column; align-items: center; }
-      .hero-stat { width: 100%; max-width: 240px; }
-    }
-  </style>
+  .text-center { text-align: center; }
+  .mt-20 { margin-top: 20px; }
+  .mb-20 { margin-bottom: 20px; }
+  .pt-20 { padding-top: 20px; }
+  .max-700 { max-width: 700px; margin-left: auto; margin-right: auto; }
+  img { max-width: 100%; height: auto; }
+</style>
 </head>
 <body>
 
-<!-- Progress Bar -->
-<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  ⚠️ Limited-time: These bonuses are usually sold separately — claim them FREE before they're gone!
+</div>
 
-<!-- Navigation -->
-<nav>
-  <div class="logo">Income<b>Vault</b></div>
-  <div class="nav-right">
-    <div class="nav-tag">⚡ GHL Resource Hub</div>
-    <button class="nav-cta" onclick="openEmailModal('trial')">Start Free Trial →</button>
-  </div>
-</nav>
-
-<!-- Ticker -->
-<div class="ticker-wrap" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="ticker-item"><span class="ticker-dot"></span> 40% recurring affiliate commissions</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> 14-day free trial — no credit card needed</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> Replace 10+ tools with one platform</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> White-label SaaS under your brand</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> AI-powered follow-up 24/7</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> Unlimited funnels & automations</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> 40% recurring affiliate commissions</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> 14-day free trial — no credit card needed</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> Replace 10+ tools with one platform</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> White-label SaaS under your brand</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> AI-powered follow-up 24/7</span>
-    <span class="ticker-item"><span class="ticker-dot"></span> Unlimited funnels & automations</span>
+<!-- MAIN HEADLINE SECTION (dark navy bg like original) -->
+<div style="background:#031631; padding: 30px 20px 0;">
+  <div style="max-width:1050px; margin:0 auto; text-align:center;">
+    <p style="font-family:var(--headlinefont);color:#00b4f5;font-size:20px;font-weight:400;font-style:italic;margin-bottom:10px;">Get Your 30-Day Trial + $5,264+ Bonus Vault Instantly</p>
+    <h1 style="font-family:var(--headlinefont);color:#fff;font-size:clamp(32px,5vw,60px);font-weight:700;line-height:1.2;margin-bottom:14px;">WAIT — Don't Sign Up to GoHighLevel Without This</h1>
+    <p style="font-family:var(--headlinefont);color:#fff;font-size:clamp(16px,2vw,18px);font-weight:400;font-style:italic;padding-bottom:20px;max-width:800px;margin:0 auto;">Unlock ready-to-launch funnels, automations, training, and tools the moment you start your free trial.</p>
   </div>
 </div>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-bg-orb-1"></div>
-  <div class="hero-bg-orb-2"></div>
-  <div class="container-sm" style="position:relative;z-index:1;">
+<!-- ====================================================
+     SECTION 1: TEXT HERO (replaces video)
+     ==================================================== -->
+<section class="text-hero-section" style="background:#fff;padding:40px 0 10px;">
+  <div class="text-hero-body">
+    <p class="highlight-line">GoHighLevel powers 30,000+ agencies, but many people never get results because the setup process can feel overwhelming.</p>
 
-    <div class="social-proof-bar">
-      <div class="sp-avatars">
-        <div class="sp-avatar">M</div>
-        <div class="sp-avatar">S</div>
-        <div class="sp-avatar">J</div>
-        <div class="sp-avatar">A</div>
-      </div>
-      <span class="sp-text"><strong>2,400+</strong> entrepreneurs already building with GHL this month</span>
-    </div>
+    <p>Most affiliates simply give you a free trial link and leave you to figure everything out on your own.</p>
 
-    <div class="eyebrow">✦ One Platform. Every Business Model.</div>
-    <h1>The <em>Operating System</em><br>for Modern Online Businesses</h1>
-    <p class="hero-sub">See how successful entrepreneurs, agencies, and digital creators are replacing 10+ tool stacks with one elegant system — funnels, automations, AI follow-up, and client management, unified.</p>
+    <p style="font-size:21px;font-weight:700;color:#111;font-family:var(--headlinefont);">We do things differently.</p>
 
-    <div class="hero-cta-group">
-      <button class="btn-hero btn-hero-primary" onclick="openEmailModal('trial')">
-        Start Free 14-Day Trial →
-      </button>
-      <button class="btn-hero btn-hero-ghost" onclick="openEmailModal('5dc-challenge')">
-        Try the 5-Day Challenge
-      </button>
-    </div>
+    <p>When you start your free trial through our link, you'll get funnels, automations, training, community support, and launch resources valued at <strong>$5,264+</strong>—at no extra cost to you.</p>
 
-    <div class="trust-badges">
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span> Cancel anytime</div>
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span> Setup in minutes</div>
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span> Full platform access</div>
-    </div>
+    <p>Our goal is to help you launch faster and land your first client before your trial ends.</p>
 
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">10+</div>
-        <div class="hero-stat-label">Tools Replaced</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">40%</div>
-        <div class="hero-stat-label">Recurring Commission</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">$297</div>
-        <div class="hero-stat-label">Unlimited Plan / mo</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">14-Day</div>
-        <div class="hero-stat-label">Free Trial</div>
-      </div>
+    <p class="bold-close">You pay nothing extra for any of this. GoHighLevel pays us, so you get the support you need to succeed from day one.</p>
+  </div>
+
+  <!-- WARNING BOX -->
+  <div class="warning-box">
+    <div class="warning-title">⚠️ IMPORTANT ⚠️</div>
+    <p>Do not use <strong>ad blockers, privacy extensions, or tracking blockers</strong> when clicking any of the links on this page. These tools can interfere with affiliate tracking, which means we will be unable to verify your signup and <strong>you may not receive access to the bonus package</strong>.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 2: OFFICIAL GHL INTRO VIDEO
+     ==================================================== -->
+<section class="video-embed-section">
+  <div class="video-container">
+    <p style="text-align:center;font-family:var(--headlinefont);font-size:20px;font-weight:600;margin-bottom:16px;color:#222;">See What GoHighLevel Can Do For Your Business</p>
+    <div class="video-embed-wrapper">
+      <video controls preload="metadata" playsinline title="See What GoHighLevel Can Do For Your Business">
+        <source src="success%20video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </section>
 
-<!-- ═══ WHO IT'S FOR ═══ -->
-<section class="audience-section">
-  <div class="container">
-    <div class="section-label">Find Your Fit</div>
-    <h2>Who GoHighLevel Is Meant For</h2>
-    <p class="section-sub" style="margin:0 auto 48px;">GoHighLevel works across every stage of business growth. Below are the exact offers recommended for each type of user — matched to where you are and what you're building.</p>
+<!-- ====================================================
+     SECTION 3: SPECIAL OFFER HEADER
+     ==================================================== -->
+<div class="offer-header">
+  <p>⚠️ Special Offer: This Opportunity WON'T Last Forever — Claim Your Free Bonuses Below</p>
+</div>
 
-    <div class="audience-grid">
-
-      <!-- 1. Complete Beginners -->
-      <div class="audience-card">
-        <span class="audience-icon">🆓</span>
-        <h3 class="audience-title">Complete Beginners</h3>
-        <span class="audience-goal">Your first action begins here — start earning faster than you think.</span>
-        <p class="audience-desc">You've never used GHL. The 5-Day Challenge gets you moving immediately — no setup overwhelm, no wasted time figuring things out alone.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Take the free 5-Day Challenge</div>
-          <div class="roadmap-step">Understand GHL's core features</div>
-          <div class="roadmap-step">Explore the Digital Product Workshop</div>
-          <div class="roadmap-step">Jump into your 14-day trial</div>
-        </div>
-        <div class="audience-offers three-col">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('digital-product')">Product Workshop</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Free Trial</button>
-        </div>
-      </div>
-
-      <!-- 2. Hands-On Learners -->
-      <div class="audience-card">
-        <span class="audience-icon">📅</span>
-        <h3 class="audience-title">Hands-On Learners</h3>
-        <span class="audience-goal">Build real campaigns. Get real results. Certification unlocks premium rates.</span>
-        <p class="audience-desc">You retain knowledge by doing, not watching. The Bootcamp gives you 30 days to build, break things, and come out the other side with a working GHL business.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Enrol in the Bootcamp (30-day trial)</div>
-          <div class="roadmap-step">Complete the 5-Day Challenge for foundations</div>
-          <div class="roadmap-step">Explore the Digital Product Workshop</div>
-          <div class="roadmap-step">Move to a full plan with momentum behind you</div>
-        </div>
-        <div class="audience-offers" style="grid-template-columns: repeat(2, 1fr);">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('bootcamp')">Bootcamp Trial</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('digital-product')">Product Workshop</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">14-Day Trial</button>
-        </div>
-      </div>
-
-      <!-- 3. Coaches & Consultants -->
-      <div class="audience-card">
-        <span class="audience-icon">🎓</span>
-        <h3 class="audience-title">Coaches &amp; Consultants</h3>
-        <span class="audience-goal">Stop chasing leads manually. Wake up to booked calls and paid clients.</span>
-        <p class="audience-desc">Your follow-up system should be working while you're offline. GHL handles lead capture, automated follow-up, and appointment booking — so you focus on delivering, not chasing.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Start a 14-day Starter trial</div>
-          <div class="roadmap-step">Set up your funnel &amp; booking calendar</div>
-          <div class="roadmap-step">Add GHL AI Employee for 24/7 follow-up</div>
-          <div class="roadmap-step">Launch the 5-Day Challenge to learn faster</div>
-        </div>
-        <div class="audience-offers three-col">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('trial')">14-Day Trial</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('ai-employee')">AI Employee</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('5dc-challenge')">5-Day Challenge</button>
-        </div>
-      </div>
-
-      <!-- 4. Digital Creators -->
-      <div class="audience-card">
-        <span class="audience-icon">📦</span>
-        <h3 class="audience-title">Digital Creators &amp; Product Sellers</h3>
-        <span class="audience-goal">Your audience is ready. Turn it into a product that pays you on repeat.</span>
-        <p class="audience-desc">You already have an audience — GHL gives you everything to package your knowledge, launch it fast, and sell it without stitching together five different platforms.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Join the Digital Product Launch Workshop</div>
-          <div class="roadmap-step">Design your product &amp; automated funnel</div>
-          <div class="roadmap-step">Set up email sequences &amp; checkout</div>
-          <div class="roadmap-step">Start a 14-day trial to build it all</div>
-        </div>
-        <div class="audience-offers">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('digital-product')">Product Workshop</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">14-Day Trial</button>
-        </div>
-      </div>
-
-      <!-- 5. Agency Builders -->
-      <div class="audience-card">
-        <span class="audience-icon">🏢</span>
-        <h3 class="audience-title">Agency Builders</h3>
-        <span class="audience-goal">More clients. More sub-accounts. More recurring revenue — all under your brand.</span>
-        <p class="audience-desc">You're not just running campaigns — you're building a business. GHL's agency infrastructure gives you the systems, white-label tools, and scalability to grow a proper client operation.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Enrol in the Bootcamp (30-day trial)</div>
-          <div class="roadmap-step">Set up white-label sub-accounts</div>
-          <div class="roadmap-step">Upgrade to the Annual Unlimited plan</div>
-          <div class="roadmap-step">Get GHL certified to boost credibility</div>
-        </div>
-        <div class="audience-offers three-col">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('bootcamp')">Bootcamp Trial</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('annual')">Annual Plan</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('certification')">Certification</button>
-        </div>
-      </div>
-
-      <!-- 6. Starter Users Ready to Scale -->
-      <div class="audience-card">
-        <span class="audience-icon">⚡</span>
-        <h3 class="audience-title">Existing Starter Users Ready to Scale</h3>
-        <span class="audience-goal">You've outgrown your current plan. Unlimited is where the real money starts.</span>
-        <p class="audience-desc">Three sub-accounts is a ceiling, not a business. Upgrading to Unlimited removes that cap and opens the door to the client volume your agency is actually capable of handling.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Upgrade to Unlimited ($297/mo)</div>
-          <div class="roadmap-step">Unlock unlimited sub-accounts</div>
-          <div class="roadmap-step">Consider the Annual plan to save 2 months</div>
-          <div class="roadmap-step">Scale your client roster profitably</div>
-        </div>
-        <div class="audience-offers">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('unlimited-upgrade')">Upgrade to Unlimited</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('annual')">Annual Plan</button>
-        </div>
-      </div>
-
-      <!-- 7. SaaS Builders -->
-      <div class="audience-card">
-        <span class="audience-icon">🔧</span>
-        <h3 class="audience-title">SaaS Builders &amp; White-Label Resellers</h3>
-        <span class="audience-goal">Your name on the software. Your price. Your recurring revenue stream.</span>
-        <p class="audience-desc">GHL's white-label infrastructure lets you launch a fully branded SaaS product without building anything from scratch. Sell subscriptions, keep the margin, own the relationship.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Start the SaaS Pro plan trial (new users)</div>
-          <div class="roadmap-step">Or upgrade to Pro (existing GHL users)</div>
-          <div class="roadmap-step">Join the Supercharged SaaS program</div>
-          <div class="roadmap-step">Launch your branded SaaS product</div>
-        </div>
-        <div class="audience-offers three-col">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('saas-pro-trial')">SaaS Pro Trial</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('saas-upgrade')">Upgrade to Pro</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('supercharged-saas')">Supercharged SaaS</button>
-        </div>
-      </div>
-
-      <!-- 8. Freelance Admins -->
-      <div class="audience-card">
-        <span class="audience-icon">💼</span>
-        <h3 class="audience-title">Freelance GHL Admins &amp; Specialists</h3>
-        <span class="audience-goal">Certified specialists get more clients and charge what they're actually worth.</span>
-        <p class="audience-desc">Anyone can claim they know GHL. A certification proves it — and puts you on the official GHL partner directory where businesses are actively searching for specialists like you.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Get officially GHL certified</div>
-          <div class="roadmap-step">List yourself as a certified specialist</div>
-          <div class="roadmap-step">Start an Unlimited trial to serve clients</div>
-          <div class="roadmap-step">Charge premium rates with confidence</div>
-        </div>
-        <div class="audience-offers">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('certification')">Get Certified</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('trial')">Unlimited Trial</button>
-        </div>
-      </div>
-
-      <!-- 9. Affiliate-Minded -->
-      <div class="audience-card">
-        <span class="audience-icon">🚀</span>
-        <h3 class="audience-title">Fellow Marketers &amp; Affiliate-Minded People</h3>
-        <span class="audience-goal">You already have the audience. Point them at GHL and earn 40% every month they stay.</span>
-        <p class="audience-desc">GHL pays 40% recurring commissions — meaning every referral keeps paying you for as long as that person stays subscribed. If you have a marketing audience, this is the simplest income stream you're not running yet.</p>
-        <div class="roadmap">
-          <div class="roadmap-step">Become a GHL affiliate (free to join)</div>
-          <div class="roadmap-step">Or become a customer first via Annual plan</div>
-          <div class="roadmap-step">Share your affiliate link with your audience</div>
-          <div class="roadmap-step">Earn 40% recurring on every referral</div>
-        </div>
-        <div class="audience-offers">
-          <button class="offer-btn offer-btn-primary" onclick="openEmailModal('become-affiliate')">Become an Affiliate</button>
-          <button class="offer-btn offer-btn-secondary" onclick="openEmailModal('annual')">Annual Plan</button>
-        </div>
-      </div>
-
+<!-- COUNTDOWN TIMER (top) -->
+<div style="background:#fff;padding:20px 0 10px;">
+  <div id="timer-top" class="countdown-wrap">
+    <p style="font-size:17px;font-weight:bold;">🕒 <span style="color:#444;">Deadline:</span> <span id="expiry-top" style="font-size:15px;"></span></p>
+    <div class="countdown-boxes">
+      <div class="time-box"><div class="time-val" id="t-days">00</div><div class="time-label">DAYS</div></div>
+      <div class="time-box"><div class="time-val" id="t-hours">00</div><div class="time-label">HOURS</div></div>
+      <div class="time-box"><div class="time-val" id="t-mins">00</div><div class="time-label">MINS</div></div>
+      <div class="time-box"><div class="time-val" id="t-secs">00</div><div class="time-label">SECS</div></div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
-<section class="testimonials-section">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Social Proof</div>
-    <h2 style="text-align:center;">Real Results from Real Users</h2>
-    <p class="section-sub" style="text-align:center;">Transformations happening across every GHL audience type.</p>
-
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">M</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-name">Marcus T.</div>
-            <div class="testimonial-role">Service Provider</div>
-          </div>
-        </div>
-        <p class="testimonial-text">"Started with GHL basics 3 months ago. Now I'm charging clients $1,500–3,000/month for setup services. This was the income breakthrough I needed."</p>
-        <div class="testimonial-result">$4,200/month from 3 clients</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">S</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-name">Sarah L.</div>
-            <div class="testimonial-role">Agency Owner</div>
-          </div>
-        </div>
-        <p class="testimonial-text">"After white-labeling GHL, we added $35K/month in recurring revenue. Our clients think it's our own platform. Game changer for agency scaling."</p>
-        <div class="testimonial-result">+$35,000/month recurring</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">J</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-name">James M.</div>
-            <div class="testimonial-role">Digital Product Creator</div>
-          </div>
-        </div>
-        <p class="testimonial-text">"Built and launched my $297 course with GHL's integrated funnel system. Made $18K in first month without Stripe or email platform switching."</p>
-        <div class="testimonial-result">$18,000 in first month</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">A</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-name">Ahmed K.</div>
-            <div class="testimonial-role">GHL Reseller</div>
-          </div>
-        </div>
-        <p class="testimonial-text">"Reselling GHL to my network of small businesses. Each sale = $497 commission. Generated $8,900 in commissions this quarter, totally passive."</p>
-        <div class="testimonial-result">$8,900 in reseller commissions</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">N</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-name">Nina R.</div>
-            <div class="testimonial-role">Freelance Marketer</div>
-          </div>
-        </div>
-        <p class="testimonial-text">"Consolidated 6 tool subscriptions into GHL. Saved $800/month on tools AND charge clients more because we deliver better results faster."</p>
-        <div class="testimonial-result">$800/month saved + higher margins</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          <div class="testimonial-avatar">D</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="testimonial-name">David C.</div>
-            <div class="testimonial-role">Business Coach</div>
-          </div>
-        </div>
-        <p class="testimonial-text">"GHL automated my entire client onboarding & follow-up. Freed up 20 hours/week. Focused that time on high-ticket sales. Revenue up 150%."</p>
-        <div class="testimonial-result">150% revenue increase</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ INCOME CALCULATOR ═══ -->
-<section class="income-calculator-section">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Income Projection Tool</div>
-    <h2 style="text-align:center;">Your Income Projection</h2>
-    <p class="section-sub" style="text-align:center;">Estimate your monthly income potential by combining GHL revenue streams. Adjust each slider to match your realistic targets.</p>
-
-    <div class="calculator-wrapper">
-      <div class="calc-grid">
-
-        <div class="calc-input-group">
-          <label class="calc-label">Setup Services / Month <span id="v-setup">2</span></label>
-          <input type="range" class="calc-slider" id="s-setup" min="0" max="10" value="2" step="1">
-          <div class="calc-value-row">
-            <span class="calc-count" id="c-setup">2 × $1,500</span>
-            <span class="calc-subtotal" id="sub-setup">$3,000</span>
-          </div>
-        </div>
-
-        <div class="calc-input-group">
-          <label class="calc-label">Monthly Retainer Clients <span id="v-retainer">3</span></label>
-          <input type="range" class="calc-slider" id="s-retainer" min="0" max="15" value="3" step="1">
-          <div class="calc-value-row">
-            <span class="calc-count" id="c-retainer">3 × $2,000</span>
-            <span class="calc-subtotal" id="sub-retainer">$6,000</span>
-          </div>
-        </div>
-
-        <div class="calc-input-group">
-          <label class="calc-label">GHL Reseller Sales / Month <span id="v-reseller">3</span></label>
-          <input type="range" class="calc-slider" id="s-reseller" min="0" max="20" value="3" step="1">
-          <div class="calc-value-row">
-            <span class="calc-count" id="c-reseller">3 × $497</span>
-            <span class="calc-subtotal" id="sub-reseller">$1,491</span>
-          </div>
-        </div>
-
-        <div class="calc-input-group">
-          <label class="calc-label">Digital Product Sales / Month <span id="v-products">20</span></label>
-          <input type="range" class="calc-slider" id="s-products" min="0" max="100" value="20" step="5">
-          <div class="calc-value-row">
-            <span class="calc-count" id="c-products">20 × $297</span>
-            <span class="calc-subtotal" id="sub-products">$5,940</span>
-          </div>
-        </div>
-
-        <div class="calc-input-group" style="grid-column: 1 / -1;">
-          <label class="calc-label">White-Label Subscribers <span id="v-wl">10</span></label>
-          <input type="range" class="calc-slider" id="s-wl" min="0" max="50" value="10" step="1">
-          <div class="calc-value-row">
-            <span class="calc-count" id="c-wl">10 × $300</span>
-            <span class="calc-subtotal" id="sub-wl">$3,000</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="calculator-results">
-        <div class="result-header">
-          <span>Revenue Stream</span>
-          <span>Monthly Total</span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">Setup Services</span>
-          <span class="result-qty" id="rq-setup">2 services</span>
-          <span class="result-value" id="rv-setup">$3,000</span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">Monthly Retainers</span>
-          <span class="result-qty" id="rq-retainer">3 clients</span>
-          <span class="result-value" id="rv-retainer">$6,000</span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">Reseller Commissions</span>
-          <span class="result-qty" id="rq-reseller">3 sales</span>
-          <span class="result-value" id="rv-reseller">$1,491</span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">Digital Products</span>
-          <span class="result-qty" id="rq-products">20 sales</span>
-          <span class="result-value" id="rv-products">$5,940</span>
-        </div>
-        <div class="result-row">
-          <span class="result-label">White-Label Revenue</span>
-          <span class="result-qty" id="rq-wl">10 subs</span>
-          <span class="result-value" id="rv-wl">$3,000</span>
-        </div>
-        <div class="result-total">
-          <span class="result-total-label">Projected Monthly Income</span>
-          <span class="result-total-value" id="total-income">$19,431</span>
-        </div>
-        <div class="annual-note">
-          🎯 Annualised projection: <strong id="annual-income">$233,172</strong>
-        </div>
-      </div>
-
-      <p class="projections-note">💡 Conservative estimates based on market rates. Actual income depends on execution, niche, and positioning.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ COMPARISON ═══ -->
-<section class="comparison-section">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Platform Comparison</div>
-    <h2 style="text-align:center;">GHL vs. The Old Way</h2>
-    <p class="section-sub" style="text-align:center;">Stop paying for 10 tools that don't talk to each other.</p>
-
-    <div class="comparison-table">
-      <div class="comparison-head">
-        <div class="comp-head-cell">Feature</div>
-        <div class="comp-head-cell highlighted">GoHighLevel</div>
-        <div class="comp-head-cell competitor">Tool Stack</div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">CRM & Pipeline</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="partial">HubSpot + Pipedrive</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">Funnel Builder</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="partial">ClickFunnels</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">Email Marketing</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="partial">Mailchimp</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">Course & Membership</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="partial">Kajabi / Teachable</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">Booking Calendar</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="partial">Calendly</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">AI Follow-Up</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="cross">✕</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">White-Label SaaS</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="cross">✕</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">40% Affiliate Program</div>
-        <div class="comp-cell center highlighted"><span class="check">✓</span></div>
-        <div class="comp-cell center"><span class="cross">✕</span></div>
-      </div>
-      <div class="comparison-row">
-        <div class="comp-cell">Monthly Cost</div>
-        <div class="comp-cell center highlighted" style="color:var(--accent-green);font-weight:700;">From $97/mo</div>
-        <div class="comp-cell center" style="color:var(--accent-pink);font-weight:700;">$800–1,500+/mo</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WHY SWITCHING ═══ -->
-<section class="why-switching">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">The Business Case</div>
-    <h2 style="text-align:center;">Why Smart Businesses Are Switching</h2>
-    <p class="section-sub" style="text-align:center;">Stop juggling tools. Start running a business.</p>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="stat-number">75%</div>
-        <h3>Fewer Subscriptions</h3>
-        <p>Replace ClickFunnels, Mailchimp, Kajabi, and Zapier with one integrated platform. Less cost, less chaos.</p>
-      </div>
-      <div class="why-card">
-        <div class="stat-number">80%</div>
-        <h3>Less Tech Overwhelm</h3>
-        <p>Unified dashboard means faster setup, less training, and zero time lost switching between apps mid-workflow.</p>
-      </div>
-      <div class="why-card">
-        <div class="stat-number">60%</div>
-        <h3>Centralised Data</h3>
-        <p>All customer data in one place — no silos, cleaner reporting, smarter automations that actually trigger.</p>
-      </div>
-      <div class="why-card">
-        <div class="stat-number">92%</div>
-        <h3>Faster Launch Speed</h3>
-        <p>Pre-built templates and drag-and-drop builders mean you launch campaigns in hours, not weeks.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ DASHBOARD ═══ -->
-<section class="dashboard-section">
-  <div class="container" style="text-align:center;">
-    <div class="section-label">The Platform</div>
-    <h2>Everything You Need,<br>One Dashboard</h2>
-    <p class="section-sub">A unified platform designed for entrepreneurs who want to focus on business, not tools.</p>
-
-    <div class="dashboard-visual">
-      <div class="dashboard-card">
-        <div class="dashboard-metric">✨</div>
-        <div class="dashboard-label">AI Chat & Automation</div>
-      </div>
-      <div class="dashboard-card">
-        <div class="dashboard-metric">📞</div>
-        <div class="dashboard-label">Phone Calls & SMS</div>
-      </div>
-      <div class="dashboard-card">
-        <div class="dashboard-metric">📧</div>
-        <div class="dashboard-label">Email Marketing</div>
-      </div>
-      <div class="dashboard-card">
-        <div class="dashboard-metric">🎯</div>
-        <div class="dashboard-label">Funnels & Landing Pages</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FINAL CTA ═══ -->
-<section class="final-cta">
-  <div class="container-sm">
-    <div class="section-label" style="text-align:center;">Ready to Start?</div>
-    <h2>Your Business System<br>Is One Click Away</h2>
-    <p>14 days to see what running your business on one unified platform actually feels like. Cancel anytime.</p>
-    <div style="position:relative;z-index:1;">
-      <button class="btn-hero btn-hero-primary" onclick="openEmailModal('trial')" style="font-size:16px;padding:17px 36px;">
-        Start My Free 14-Day Trial →
-      </button>
-    </div>
-    <div class="final-cta-badges">
-      <div class="final-badge"><span class="final-badge-icon">✓</span> Cancel anytime</div>
-      <div class="final-badge"><span class="final-badge-icon">✓</span> Full platform access</div>
-      <div class="final-badge"><span class="final-badge-icon">✓</span> Instant setup</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-links">
-    <button onclick="openFooterModal('privacy')">Privacy Policy</button>
-    <button onclick="openFooterModal('terms')">Terms of Service</button>
-    <button onclick="openFooterModal('affiliate')">Affiliate Disclosure</button>
-    <button onclick="openFooterModal('contact')">Contact</button>
-  </div>
-  <p class="footer-disc">Income Vault is an independent GHL education and reseller resource. We are not affiliated with GoHighLevel Inc. GHL is a trademark of GoHighLevel, Inc.</p>
-  <p class="footer-copy">&copy; 2026 Income Vault. All rights reserved.</p>
-</footer>
-
-<!-- Footer Modal -->
-<div class="modal-overlay" id="footerModal">
-  <div class="modal-box" style="max-width:620px;">
-    <button class="modal-close" onclick="closeFooterModal()">✕</button>
-    <div id="footerModalContent"></div>
   </div>
 </div>
 
-<!-- Email Capture Modal -->
-<div class="modal-overlay" id="emailModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeEmailModal()">✕</button>
-    <div class="modal-header">
-      <span class="offer-name" id="offerName">Exclusive Access</span>
-      <h2 id="modalTitle">Join Now</h2>
-      <p id="modalDesc">Get instant access to this offer and resources to help you succeed with GHL.</p>
+<!-- ====================================================
+     MAIN OFFER ROW (image + CTA)
+     ==================================================== -->
+<section class="main-offer-section" style="padding:20px 20px 30px;">
+  <div class="offer-row" style="max-width:1050px;margin:0 auto;padding:20px;display:flex;gap:20px;flex-wrap:wrap;box-shadow:0 0 6px 0 #707070;">
+    <div class="offer-image-col" style="flex:1 1 40%;min-width:260px;">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/6876902a83bdce6dec09542b.png" alt="GoHighLevel Bonus Bundle" style="width:100%;border-radius:6px;">
     </div>
-    <div class="modal-value-prop" id="modalValueProp"></div>
-    <form class="email-form" onsubmit="handleEmailSubmit(event)">
-      <input type="text" placeholder="Your Full Name" id="fullName" required>
-      <input type="email" placeholder="Your Email Address" id="email" required>
-      <button type="submit" class="btn-submit" id="submitBtn">Get Instant Access →</button>
-    </form>
-    <p class="privacy-note">🔒 We respect your privacy. No spam, ever. Unsubscribe anytime.</p>
+    <div class="offer-content-col" style="flex:1 1 50%;min-width:260px;display:flex;flex-direction:column;justify-content:center;">
+      <div class="free-badge"><span>Special Offer: FREE!!</span></div>
+      <div class="offer-tagline">This Offer WON'T Last Forever</div>
+
+      <!-- Mini countdown -->
+      <div style="text-align:center;margin-bottom:16px;">
+        <div class="countdown-boxes" style="justify-content:flex-start;">
+          <div class="time-box"><div class="time-val" id="m-hours">00</div><div class="time-label">HRS</div></div>
+          <div class="time-box"><div class="time-val" id="m-mins">00</div><div class="time-label">MIN</div></div>
+          <div class="time-box"><div class="time-val" id="m-secs">00</div><div class="time-label">SEC</div></div>
+        </div>
+      </div>
+
+      <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" class="btn-primary" id="main-cta">
+        Get Your 30-Day Trial!
+        <span class="btn-sub">And Claim Your FREE Bonuses Immediately</span>
+      </a>
+
+      <div class="trial-note" style="font-size:18px;margin-top:12px;">
+        <strong><em>Plus:</em></strong> Need more time? GoHighLevel lets you extend your trial up to 58 days — free.
+      </div>
+
+      <!-- Already a user CTA -->
+      <div class="existing-user-bar" style="margin-top:14px;">
+        <p>Already using GoHighLevel?</p>
+        <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32" class="btn-upgrade">Upgrade to HighLevel Pro →</a>
+        <br><small>Unlock additional features & advanced tools</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 4: BONUS STACK
+     ==================================================== -->
+<div style="background:#fff;padding:20px 0 0;">
+  <div style="max-width:1050px;margin:0 auto;padding:0 20px;text-align:center;">
+    <div class="section-title" style="font-size:clamp(38px,5vw,60px);">Total Value: <em>$5,264+</em></div>
+    <div class="section-sub">Yours <strong>FREE</strong> When You Start Your Trial Below</div>
   </div>
 </div>
 
+<section class="bonuses-section">
+  <div class="bonuses-inner">
+
+    <!-- BONUS 1 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/64befbd150d2d5596961f890.png" alt="30-Day Trial">
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #1</div>
+        <div class="bonus-title">30-Day Free Trial + 28 Day Trial Extension</div>
+        <div class="bonus-desc">After your 30-day trial, you can extend it twice in the billing section — 14 days each time. That gives you up to 28 extra days free, for a total of nearly 2 months at no cost. Also includes the official GHL bootcamp to get you started immediately. You won't get this on the official GHL page!</div>
+        <div class="bonus-value" style="color:#222;font-style:italic;">Exclusive Offer</div>
+      </div>
+    </div>
+
+    <!-- BONUS 2 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="2"></rect><rect x="15" y="15" width="6" height="6" rx="2"></rect><path d="M9 6h4a3 3 0 0 1 3 3v6"></path><path d="m13 13 3 3 3-3"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #2</div>
+        <div class="bonus-title">Done-For-You Automation Snapshots</div>
+        <div class="bonus-desc">Two powerful 1-click GHL snapshots — pre-built email sequences, AI workflows, pipelines, and full automation systems installed into your account in under 5 minutes. Start with a running business instead of a blank account.</div>
+        <div class="bonus-value"><em>Value: $694</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 3 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path><path d="M22 10v6"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #3</div>
+        <div class="bonus-title">Complete SaaS Mastery Bundle</div>
+        <div class="bonus-desc">The full SaaS Fast Track course combined with the SaaSpreneur Blueprint — everything from building your offer and pricing your tiers to landing your first paying SaaS client. This is a complete agency business course, not a quick tutorial.</div>
+        <div class="bonus-value"><em>Value: $1,794</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 4 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="12" rx="2"></rect><path d="M12 7V4"></path><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle><path d="M9 17h6"></path><path d="M3 11h2"></path><path d="M19 11h2"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #4</div>
+        <div class="bonus-title">AI Business Automation Bundle</div>
+        <div class="bonus-desc">Launch an AI closing system that books calls and follows up with leads 24/7 — then activate your AI employee to handle inbound calls, chat, bookings, and follow-ups around the clock. Your business runs while you sleep.</div>
+        <div class="bonus-value"><em>Value: $894</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 5 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 14v-4l11-4v12L4 14Z"></path><path d="m4 14 2 5h4l-2-4"></path><path d="m18 9 2-2"></path><path d="m18 15 2 2"></path><path d="M19 12h3"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #5</div>
+        <div class="bonus-title">Client Attraction Masterclass Bundle</div>
+        <div class="bonus-desc">Access three premium trainings combined — an organic viral growth system, a social selling masterclass with 9-figure marketing legend, and an AI client-getting system that books discovery calls on autopilot.</div>
+        <div class="bonus-value"><em>Value: $1,291</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 6 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path><path d="m8 15 2.5 2.5L16 12"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #6</div>
+        <div class="bonus-title">The 5-Day Agency Launch Accelerator</div>
+        <div class="bonus-desc">The most popular GHL training ever made — a step-by-step 5-day video course that walks you through building your offer, your funnel, and sending your first outreach in 5 days flat. Your business is live before the end of your first week.</div>
+        <div class="bonus-value"><em>Value: $197</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 7 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path><path d="M14 2v6h6"></path><circle cx="11" cy="14" r="3"></circle><path d="m13.5 16.5 2.5 2.5"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #7</div>
+        <div class="bonus-title">The AI Business Audit &amp; Client Acquisition PDF</div>
+        <div class="bonus-desc">A 9-section premium PDF guide that teaches you exactly how to find weak local businesses, run fast 5-minute audits, and close clients using AI-powered outreach. Includes audit scorecards, AI prompt templates, cold email scripts, Loom video frameworks, and a complete 30-day client acquisition system.<br><br>9 Sections · 50+ Templates · Beginner-Ready</div>
+        <div class="bonus-value"><em>Value: $97</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 8 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #8</div>
+        <div class="bonus-title">Private Mastermind Community</div>
+        <div class="bonus-desc">Exclusive members-only Telegram group managed by a certified GHL expert — weekly resources, live Q&amp;A, templates, and serious operators building alongside you. You'll never be stuck alone trying to figure things out. The community support alone is worth more than the trial.<br><br>GHL Expert · Weekly Resources · Live Help</div>
+        <div class="bonus-value"><em>Value: $197/mo</em></div>
+      </div>
+    </div>
+
+    <!-- BONUS 9 -->
+    <div class="bonus-card">
+      <div class="bonus-card-img">
+        <div class="bonus-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3Z"></path><path d="M9 3v15"></path><path d="M15 6v15"></path><path d="m5 10 2 2 4-4"></path></svg>
+        </div>
+      </div>
+      <div class="bonus-card-body">
+        <div class="bonus-number">FREE BONUS #9</div>
+        <div class="bonus-title">The 44-Day Fast-Start Playbook</div>
+        <div class="bonus-desc">Your day-by-day action plan that ties every other bonus together and tells you exactly what to do, in what order, and which bonus to use on each specific day. Without this, the bonuses are just resources. With this, they become a complete operating system for launching your business inside 44 days.<br><br>The glue that activates everything else</div>
+        <div class="bonus-value"><em>Value: $100</em></div>
+      </div>
+    </div>
+
+    <!-- TOTAL VALUE + CTA -->
+    <div style="max-width:1050px;margin:0 auto;">
+      <div style="background:#fff;border-radius:10px;padding:40px 30px 50px;text-align:center;border:1px solid #ccc;">
+        <div style="font-family:var(--headlinefont);font-size:clamp(40px,6vw,64px);font-weight:700;color:var(--red);margin-bottom:8px;">Total Value: $5,264+</div>
+        <div style="font-family:var(--headlinefont);font-size:clamp(20px,3vw,30px);font-weight:400;margin-bottom:24px;">Yours <strong style="color:var(--red);">FREE</strong> When You Sign Up Below</div>
+        <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" class="btn-primary" style="max-width:650px;display:inline-block;">
+          Get Your 30-Day Trial!
+          <span class="btn-sub">And Claim Your FREE Bonuses Immediately</span>
+        </a>
+        <!-- Already a user inline -->
+        <div style="margin-top:20px;">
+          <p style="font-family:var(--headlinefont);font-size:14px;color:#666;">Already a GoHighLevel user? <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32" style="color:var(--secondary);font-weight:700;">Upgrade to HighLevel Pro →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 5: RISK-FREE + RISK FREE EXPLAINER
+     ==================================================== -->
+<section class="riskfree-section">
+  <div class="riskfree-inner" style="max-width:1050px;margin:0 auto;box-shadow:0 0 6px 0 #707070;padding:24px 30px;">
+    <div class="riskfree-row">
+      <div class="riskfree-img">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/6876986ca071031da3b36ad1.png" alt="Risk Free">
+      </div>
+      <div class="riskfree-body">
+        <h2 style="font-size:clamp(18px,2vw,22px);font-weight:700;margin-bottom:12px;font-style:italic;"><em>Something NO ONE DOES in the online space...</em></h2>
+        <p>Experience the full system completely risk-free for 30 days!<br>No upfront cost — just dive in, see what it can do for you, and if it's not the right fit, cancel before the trial ends. Simple.</p>
+        <p style="font-weight:500;">You can launch your entire business and start landing paying clients — all before spending a single dollar.</p>
+        <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" class="btn-primary" style="margin-top:8px;font-size:clamp(18px,2.5vw,32px);">
+          Get Your 30-Day Trial!
+          <span class="btn-sub">And Claim Your FREE Bonuses Immediately</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 6: HOW IT WORKS
+     ==================================================== -->
+<section style="padding:30px 20px;">
+  <div style="max-width:1050px;margin:0 auto;">
+    <div class="howto-row">
+      <div class="howto-img" style="flex:0 0 45%;min-width:260px;">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/687698f083bdce4509096d36.png" alt="How it works">
+      </div>
+      <div class="howto-steps" style="flex:1;padding:10px;">
+        <div class="step"><strong>Step 1:</strong> Click the "Get Your 30-Day Free Trial" button anywhere on this page.</div>
+        <div class="step"><strong>Step 2:</strong> You'll be redirected to the private sign-up page to activate your extended 30-day free trial.</div>
+        <div class="step"><strong>Step 3:</strong> Once you've signed up, your login details and bonuses will be delivered straight to your email. If you do not receive your bonuses within 24 hours of sign up, check your spam folder. Also, whitelist our emails to never miss an important update.</div>
+        <div class="warning-box" style="margin:14px 0 0;max-width:none;">
+          <div class="warning-title">⚠️ IMPORTANT ⚠️</div>
+          <p>Do not use <strong>ad blockers, privacy extensions, or tracking blockers</strong> when clicking any of the links on this page. These tools can interfere with affiliate tracking, which means we will be unable to verify your signup and you may not receive access to the bonus package.</p>
+        </div>
+        <div class="step" style="border-top:1px solid #eee;padding-top:14px;">That's it. Super simple.<br><br>You can cancel or downgrade your account anytime if it's not the right fit for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 7: COMPARISON TABLE
+     ==================================================== -->
+<section class="comparison-section" style="padding:40px 0;">
+  <div class="comparison-inner">
+    <h1 style="font-size:clamp(26px,4vw,42px);"><strong>GoHighLevel Software Comparison...</strong></h1>
+    <h2 style="font-size:clamp(16px,2vw,22px);">Get EVERY Tool You Need With 1 Simple Software, And Save TONS Of 💰</h2>
+    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/68769a84c595e11066b80826.png" alt="GHL Software Comparison" class="comparison-img">
+  </div>
+</section>
+
+<!-- JOIN CTA -->
+<div style="max-width:650px;margin:0 auto;padding:0 20px 30px;text-align:center;">
+  <h2 style="font-family:var(--headlinefont);font-size:clamp(20px,3vw,30px);font-weight:700;font-style:italic;margin-bottom:8px;"><em>Join The Most Successful Marketers On The Planet</em></h2>
+  <p style="font-family:var(--headlinefont);font-size:17px;margin-bottom:18px;">Discover What GoHighLevel Can Do For You &amp; Your Business</p>
+  <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" class="btn-primary" style="font-size:clamp(16px,2vw,22px);">
+    Get Your 30-Day Trial!
+    <span class="btn-sub">And Claim Your FREE Bonuses Immediately</span>
+  </a>
+  <!-- Already a user CTA -->
+  <div style="margin-top:14px;">
+    <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32" class="btn-upgrade" style="font-size:14px;padding:8px 18px;">Already a GoHighLevel user? Upgrade to Pro →</a>
+  </div>
+</div>
+
+<!-- ====================================================
+     SECTION 8: SUCCESS STORIES (Testimonial Videos)
+     ==================================================== -->
+<section class="testimonials-section" style="background:#f9f9f9;padding:40px 0;">
+  <div class="testimonials-inner">
+    <h2 class="test-header" style="font-size:clamp(24px,3vw,32px);">🎉 Success Stories!</h2>
+    <div class="videos-grid">
+      <!-- Video 1 -->
+      <div class="video-col">
+        <div class="video-thumb">
+          <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/transcoded_videos/d32e862e5fefc988.jpg" alt="Success Story 1" loading="lazy">
+          <div class="play-btn"></div>
+          <div data-video-src="https://storage.googleapis.com/msgsndr/JHcSZGPIF3RqFVANvP31/media/68769bb047aadfffbae5eb28.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:3;"></div>
+        </div>
+      </div>
+      <!-- Video 2 -->
+      <div class="video-col">
+        <div class="video-thumb">
+          <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/transcoded_videos/d50e1ba3b9d06773.jpg" alt="Success Story 2" loading="lazy">
+          <div class="play-btn"></div>
+          <div data-video-src="https://storage.googleapis.com/msgsndr/JHcSZGPIF3RqFVANvP31/media/68769be2d9d3fce0fd2272f7.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:3;"></div>
+        </div>
+      </div>
+      <!-- Video 3 -->
+      <div class="video-col">
+        <div class="video-thumb">
+          <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/transcoded_videos/1789aaff3127dc02.jpg" alt="Success Story 3" loading="lazy">
+          <div class="play-btn"></div>
+          <div data-video-src="https://storage.googleapis.com/msgsndr/JHcSZGPIF3RqFVANvP31/media/68769bea83bdceb321097130.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:3;"></div>
+        </div>
+      </div>
+      <!-- Video 4 -->
+      <div class="video-col">
+        <div class="video-thumb">
+          <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/transcoded_videos/d0cc62bd212a1c8c.jpg" alt="Success Story 4" loading="lazy">
+          <div class="play-btn"></div>
+          <div data-video-src="https://storage.googleapis.com/msgsndr/JHcSZGPIF3RqFVANvP31/media/68769beea0710345d7b36e83.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:3;"></div>
+        </div>
+      </div>
+      <!-- Video 5 -->
+      <div class="video-col">
+        <div class="video-thumb">
+          <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/JHcSZGPIF3RqFVANvP31/media/transcoded_videos/d70cb5c77ac4b46f.jpg" alt="Success Story 5" loading="lazy">
+          <div class="play-btn"></div>
+          <div data-video-src="https://storage.googleapis.com/msgsndr/JHcSZGPIF3RqFVANvP31/media/68769bf0a07103204db36e88.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:3;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 9: SCROLLING TESTIMONIALS
+     ==================================================== -->
+<section class="scroll-testimonials">
+  <!-- Row 1 -->
+  <div style="overflow:hidden;">
+    <div class="scroll-track">
+      <!-- 12 cards (duplicated for seamless loop) -->
+      <div class="review-card"><h4>Maya T.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Finally Felt Guided</div><p>I tried GHL before and quit. The snapshots and fast-start plan gave me a clear order to follow.</p></div>
+      <div class="review-card"><h4>Collins A.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Setup Was Simple</div><p>The automations saved me from staring at a blank account. I had my first workflow live the same day.</p></div>
+      <div class="review-card"><h4>Brittany L.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Worth The Signup</div><p>The SaaS training made pricing and packaging much easier than guessing on my own.</p></div>
+      <div class="review-card"><h4>Samuel R.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Community Helped</div><p>When I got stuck, the group pointed me to the right step instead of leaving me alone.</p></div>
+      <div class="review-card"><h4>Priya M.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Clear Launch Plan</div><p>The 44-day playbook turned the bonuses into a real checklist I could follow.</p></div>
+      <div class="review-card"><h4>Ethan J.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">AI Tools Clicked</div><p>The AI automation training helped me understand how to book and follow up with leads properly.</p></div>
+      <!-- Duplicate -->
+      <div class="review-card"><h4>Maya T.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Finally Felt Guided</div><p>I tried GHL before and quit. The snapshots and fast-start plan gave me a clear order to follow.</p></div>
+      <div class="review-card"><h4>Collins A.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Setup Was Simple</div><p>The automations saved me from staring at a blank account. I had my first workflow live the same day.</p></div>
+      <div class="review-card"><h4>Brittany L.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Worth The Signup</div><p>The SaaS training made pricing and packaging much easier than guessing on my own.</p></div>
+      <div class="review-card"><h4>Samuel R.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Community Helped</div><p>When I got stuck, the group pointed me to the right step instead of leaving me alone.</p></div>
+      <div class="review-card"><h4>Priya M.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Clear Launch Plan</div><p>The 44-day playbook turned the bonuses into a real checklist I could follow.</p></div>
+      <div class="review-card"><h4>Ethan J.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">AI Tools Clicked</div><p>The AI automation training helped me understand how to book and follow up with leads properly.</p></div>
+    </div>
+  </div>
+  <!-- Row 2 -->
+  <div style="overflow:hidden;margin-top:20px;">
+    <div class="scroll-track reverse">
+      <div class="review-card"><h4>Tasha N.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">No More Overwhelm</div><p>I knew GHL was powerful, but this helped me see exactly what to build first.</p></div>
+      <div class="review-card"><h4>Jordan P.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Fast First Offer</div><p>The 5-day accelerator helped me shape my offer and start outreach faster.</p></div>
+      <div class="review-card"><h4>Lena W.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Loved The Audit PDF</div><p>The audit templates made it easier to find local businesses that actually needed help.</p></div>
+      <div class="review-card"><h4>Victor H.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Great Starting Point</div><p>The snapshots gave me a working foundation instead of an empty account.</p></div>
+      <div class="review-card"><h4>Nina C.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Support Matters</div><p>The weekly resources and community made the trial feel much less intimidating.</p></div>
+      <div class="review-card"><h4>Marcus B.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Better Than A Link</div><p>I expected a trial link, but the training and launch resources made this feel complete.</p></div>
+      <!-- Duplicate -->
+      <div class="review-card"><h4>Tasha N.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">No More Overwhelm</div><p>I knew GHL was powerful, but this helped me see exactly what to build first.</p></div>
+      <div class="review-card"><h4>Jordan P.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Fast First Offer</div><p>The 5-day accelerator helped me shape my offer and start outreach faster.</p></div>
+      <div class="review-card"><h4>Lena W.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Loved The Audit PDF</div><p>The audit templates made it easier to find local businesses that actually needed help.</p></div>
+      <div class="review-card"><h4>Victor H.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Great Starting Point</div><p>The snapshots gave me a working foundation instead of an empty account.</p></div>
+      <div class="review-card"><h4>Nina C.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Support Matters</div><p>The weekly resources and community made the trial feel much less intimidating.</p></div>
+      <div class="review-card"><h4>Marcus B.</h4><div class="review-verified">Member Feedback</div><div class="review-stars">★★★★★</div><div class="review-highlight">Better Than A Link</div><p>I expected a trial link, but the training and launch resources made this feel complete.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 10: URGENCY / FINAL CTA
+     ==================================================== -->
+<section class="urgency-section">
+  <div class="urgency-inner">
+    <h2>⚠️ This Opportunity <em style="color:var(--red);font-style:normal;">Won't Be Here Forever</em></h2>
+    <h3>Unlock These Premium Bonuses — But Only While This Page Is Active</h3>
+
+    <!-- Bottom countdown -->
+    <div id="timer-bottom" class="countdown-wrap" style="margin:16px 0 20px;">
+      <p>🕒 <span style="color:#444;">Deadline:</span> <span id="expiry-bottom"></span></p>
+      <div class="countdown-boxes">
+        <div class="time-box"><div class="time-val" id="b-hours">00</div><div class="time-label">HOURS</div></div>
+        <div class="time-box"><div class="time-val" id="b-mins">00</div><div class="time-label">MINS</div></div>
+        <div class="time-box"><div class="time-val" id="b-secs">00</div><div class="time-label">SECS</div></div>
+      </div>
+    </div>
+
+    <div class="urgency-body">
+      <p style="margin-bottom:12px;">You're getting <strong>everything shown above</strong> — the extended trial runway, done-for-you automation snapshots, SaaS mastery training, AI automation systems, client attraction training, the 5-day accelerator, audit PDF, private mastermind, and 44-day playbook.</p>
+      <p style="margin-bottom:12px;"><strong>Total Value: $5,264+ — Yours Free</strong></p>
+      <p style="margin-bottom:12px;">But here's the catch...</p>
+      <p style="margin-bottom:12px;">These are <strong>separate premium launch resources</strong> we normally sell or reserve for private members. Once this private offer ends, <strong>they'll no longer be bundled for free.</strong></p>
+
+      <p style="margin-bottom:8px;">No extended trial runway.</p>
+      <p style="margin-bottom:8px;">No done-for-you automation snapshots.</p>
+      <p style="margin-bottom:8px;">No SaaS mastery bundle.</p>
+      <p style="margin-bottom:8px;">No private mastermind support.</p>
+      <p style="margin-bottom:16px;">No 44-day fast-start playbook.</p>
+
+      <p style="margin-bottom:20px;">Once the countdown hits zero, this entire bonus stack disappears — and it won't be offered again.</p>
+      <hr class="divider">
+      <h3 style="margin-bottom:20px;">✅ Secure everything now before it's gone forever.</h3>
+    </div>
+
+    <a href="https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32" class="btn-primary" style="max-width:650px;display:block;margin:0 auto 16px;font-size:clamp(18px,2.5vw,26px);">
+      Get Your 30-Day Trial!
+      <span class="btn-sub">And Claim Your FREE Bonuses Immediately</span>
+    </a>
+
+    <!-- Already a user CTA -->
+    <div style="text-align:center;margin-top:10px;">
+      <p style="font-family:var(--headlinefont);font-size:15px;color:#555;">Already a GoHighLevel customer?</p>
+      <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32" class="btn-upgrade">Upgrade to HighLevel Pro — Unlock Advanced Features →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SECTION 11: FAQ
+     ==================================================== -->
+<section>
+  <div class="faq-section">
+    <div class="faq-title">Frequently Asked Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I get the bonuses?</div>
+      <div class="faq-a">Simply click the "Get Your 30-Day Free Trial" button, complete your GoHighLevel account setup through our link, and your bonuses will be delivered straight to your email within 24 hours.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I already have a GoHighLevel account?</div>
+      <div class="faq-a">If you're already on GoHighLevel, you can still access our bonus resources by upgrading through our special link: <a href="https://gohighlevel.com/saasupgrade?fp_ref=dominic-32">gohighlevel.com/saasupgrade</a></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this really free?</div>
+      <div class="faq-a">Yes! You'll get 30 days free directly from GoHighLevel. There's no charge unless you decide to continue after the trial. GoHighLevel pays us a commission for the referral — you pay nothing extra.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I cancel anytime?</div>
+      <div class="faq-a">Absolutely. You can cancel or downgrade your GoHighLevel plan at any time during or after your free trial. No questions asked.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to install or set anything up?</div>
+      <div class="faq-a">No complicated setup. You'll get ready-to-use snapshots, automations, and tools with step-by-step guidance. Just activate and launch. Our community is also here for support when needed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why do you offer so many bonuses for free?</div>
+      <div class="faq-a">GoHighLevel pays us a referral commission when you sign up through our link. That means we can afford to stack on premium bonuses at no cost to you. Everyone wins — you get the best possible start, and we earn our commission.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the 5-Day Challenge?</div>
+      <div class="faq-a">The GoHighLevel 5-Day Challenge is an official live training program where you'll build and launch your GoHighLevel account in just 5 days with guided coaching. <a href="http://gohighlevel.com/5dc?fp_ref=dominic-32">Learn more here →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     DISCLOSURE
+     ==================================================== -->
+<div class="disclosure-section">
+  <p><strong>Disclosure:</strong> I am an independent entity and not an agent or employee of HighLevel. I receive referral payments from HighLevel, but the opinions expressed here are my own and do not represent HighLevel Inc or its affiliates.</p>
+  <br>
+  <p><strong>Results Disclaimer:</strong> Results and testimonials on this site are based on individual experiences and may not be typical. We do not guarantee any specific outcomes or income level. Success depends on factors like effort, resources, and circumstances. Any forward-looking statements about earnings are opinions and not guarantees of actual performance.</p>
+</div>
+
+<!-- ====================================================
+     5-DAY CHALLENGE POPUP
+     ==================================================== -->
+<div class="popup-5dc" id="popup5dc" role="dialog" aria-label="5-Day Challenge Invitation">
+  <div class="popup-5dc-header">
+    <h4>🚀 GoHighLevel 5-Day Challenge</h4>
+    <button class="popup-close-btn" id="popup5dcClose" aria-label="Close">✕</button>
+  </div>
+  <div class="popup-5dc-body">
+    <p><strong>Want to launch your agency in just 5 days?</strong> Join the official GoHighLevel 5-Day Challenge and get live coaching to set up your account from scratch.</p>
+    <ul>
+      <li>✅ Step-by-step live training</li>
+      <li>✅ Build your first funnel LIVE</li>
+      <li>✅ Land your first client this week</li>
+      <li>✅ Official GoHighLevel coaching team</li>
+    </ul>
+    <a href="http://gohighlevel.com/5dc?fp_ref=dominic-32" class="popup-5dc-cta" target="_blank">Join the 5-Day Challenge →</a>
+    <div class="popup-dismiss" id="popup5dcDismiss">No thanks, I'll figure it out myself</div>
+  </div>
+</div>
+
+<!-- ====================================================
+     JAVASCRIPT
+     ==================================================== -->
 <script>
-  // ── PROGRESS BAR ──────────────────────────────────────────
-  window.addEventListener('scroll', () => {
-    const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    document.getElementById('progressFill').style.width = Math.min(pct, 100) + '%';
-  });
+  // ===== COUNTDOWN TIMERS =====
+  function updateCountdowns() {
+    var now = new Date();
+    var end = new Date();
+    end.setHours(23, 59, 59, 999);
+    var diff = Math.max(0, Math.floor((end - now) / 1000));
+    var h = Math.floor(diff / 3600);
+    var m = Math.floor((diff % 3600) / 60);
+    var s = diff % 60;
+    var pad = function(n){ return String(n).padStart(2, '0'); };
+    var expStr = end.toLocaleDateString(undefined, {weekday:'short',month:'short',day:'numeric',year:'numeric'}) + ' at 11:59 PM';
 
-  // ── INCOME CALCULATOR (FIXED) ─────────────────────────────
-  const calcConfig = [
-    { sliderId: 's-setup',    valId: 'v-setup',   countId: 'c-setup',   subId: 'sub-setup',   rqId: 'rq-setup',   rvId: 'rv-setup',   rate: 1500, unit: 'service'  },
-    { sliderId: 's-retainer', valId: 'v-retainer', countId: 'c-retainer', subId: 'sub-retainer', rqId: 'rq-retainer', rvId: 'rv-retainer', rate: 2000, unit: 'client'  },
-    { sliderId: 's-reseller', valId: 'v-reseller', countId: 'c-reseller', subId: 'sub-reseller', rqId: 'rq-reseller', rvId: 'rv-reseller', rate: 497,  unit: 'sale'    },
-    { sliderId: 's-products', valId: 'v-products', countId: 'c-products', subId: 'sub-products', rqId: 'rq-products', rvId: 'rv-products', rate: 297,  unit: 'sale'    },
-    { sliderId: 's-wl',       valId: 'v-wl',       countId: 'c-wl',       subId: 'sub-wl',       rqId: 'rq-wl',       rvId: 'rv-wl',       rate: 300,  unit: 'sub'     },
-  ];
+    // Top timer
+    var tDays = document.getElementById('t-days');
+    if(tDays){ tDays.textContent = '00'; }
+    ['t-hours','t-mins','t-secs'].forEach(function(id,i){ var el=document.getElementById(id); if(el) el.textContent=pad([h,m,s][i]); });
+    var et = document.getElementById('expiry-top'); if(et) et.textContent = 'Expires: ' + expStr;
 
-  function fmt(n) { return '$' + n.toLocaleString(); }
+    // Mid timer
+    ['m-hours','m-mins','m-secs'].forEach(function(id,i){ var el=document.getElementById(id); if(el) el.textContent=pad([h,m,s][i]); });
 
-  function updateCalc() {
-    let total = 0;
-    calcConfig.forEach(c => {
-      const val  = parseInt(document.getElementById(c.sliderId).value, 10);
-      const sub  = val * c.rate;
-      total += sub;
+    // Bottom timer
+    ['b-hours','b-mins','b-secs'].forEach(function(id,i){ var el=document.getElementById(id); if(el) el.textContent=pad([h,m,s][i]); });
+    var eb = document.getElementById('expiry-bottom'); if(eb) eb.textContent = 'Expires: ' + expStr;
+  }
+  updateCountdowns();
+  setInterval(updateCountdowns, 1000);
 
-      document.getElementById(c.valId).textContent   = val;
-      document.getElementById(c.countId).textContent = `${val} × ${fmt(c.rate)}`;
-      document.getElementById(c.subId).textContent   = fmt(sub);
-      document.getElementById(c.rqId).textContent    = `${val} ${val === 1 ? c.unit : c.unit + 's'}`;
-      document.getElementById(c.rvId).textContent    = fmt(sub);
+  // ===== VIDEO THUMBNAILS (click to play) =====
+  document.querySelectorAll('.video-thumb').forEach(function(thumb){
+    var overlay = thumb.querySelector('[data-video-src]');
+    if(!overlay) return;
+    overlay.addEventListener('click', function(){
+      var src = this.getAttribute('data-video-src');
+      var video = document.createElement('video');
+      video.src = src;
+      video.controls = true;
+      video.autoplay = true;
+      video.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;background:#000;';
+      thumb.appendChild(video);
+      // hide play btn and thumbnail
+      var img = thumb.querySelector('img');
+      var btn = thumb.querySelector('.play-btn');
+      if(img) img.style.opacity = '0';
+      if(btn) btn.style.display = 'none';
+      this.style.display = 'none';
     });
-    document.getElementById('total-income').textContent  = fmt(total);
-    document.getElementById('annual-income').textContent = fmt(total * 12);
-  }
-
-  calcConfig.forEach(c => {
-    document.getElementById(c.sliderId).addEventListener('input', updateCalc);
   });
 
-  // Run once on load to populate all values correctly
-  updateCalc();
+  // ===== FAQ ACCORDION =====
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
 
-  // ── OFFER CONFIG ──────────────────────────────────────────
-  const offerConfig = {
-    '5dc-challenge': {
-      title: 'Join the Free 5-Day GHL Challenge',
-      desc: 'Start free and learn the GHL fundamentals in 5 days. No credit card required.',
-      offerName: '5-Day Challenge',
-      link: 'http://gohighlevel.com/5dc?fp_ref=dominic-32',
-      bullets: ['Zero cost to join', 'Daily actionable lessons', 'Build your first funnel in week 1']
-    },
-    'bootcamp': {
-      title: 'Enrol in the 30-Day Bootcamp',
-      desc: 'Structured training with a 30-day extended trial, daily lessons, and live Q&A.',
-      offerName: 'HighLevel Bootcamp (30-Day Trial)',
-      link: 'https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=dominic-32',
-      bullets: ['30-day extended trial included', 'Live Q&A sessions', 'Step-by-step campaign builds']
-    },
-    'digital-product': {
-      title: 'Access the Digital Product Launch Workshop',
-      desc: 'Learn how to create, market, and sell digital products using GHL as your all-in-one platform.',
-      offerName: 'Digital Product Launch Workshop',
-      link: 'https://www.gohighlevel.com/digitalproductlaunch-workshop?fp_ref=dominic-32',
-      bullets: ['End-to-end product launch blueprint', 'Funnel templates included', 'Email automation walkthrough']
-    },
-    'trial': {
-      title: 'Start Your 14-Day Free Trial',
-      desc: 'Explore all GHL features risk-free for 14 days. Cancel anytime.',
-      offerName: '14-Day Free Trial',
-      link: 'https://www.gohighlevel.com/?fp_ref=dominic-32',
-      bullets: ['Full platform access from day one', 'Cancel anytime, no questions asked', 'All features unlocked during trial']
-    },
-    'ai-employee': {
-      title: 'Meet the GHL AI Employee',
-      desc: 'Let AI handle your follow-up, appointment booking, and lead nurturing around the clock.',
-      offerName: 'GHL AI Employee',
-      link: 'https://www.gohighlevel.com/ai?fp_ref=dominic-32',
-      bullets: ['24/7 automated follow-up', 'Books appointments while you sleep', 'Integrates with your existing GHL setup']
-    },
-    'annual': {
-      title: 'Save 2 Months with the Annual Plan',
-      desc: 'Commit to GHL annually and save the equivalent of two full months of subscription fees.',
-      offerName: 'Annual Plan (Unlimited)',
-      link: 'https://gohighlevel.com/annual?fp_ref=dominic-32',
-      bullets: ['2 months free vs monthly billing', 'Unlimited sub-accounts', 'Priority support access']
-    },
-    'certification': {
-      title: 'Get GHL Certified',
-      desc: 'Master advanced features, boost your credibility, and unlock exclusive partner benefits.',
-      offerName: 'GHL Certification Program',
-      link: 'https://www.gohighlevel.com/certifications?fp_ref=dominic-91',
-      bullets: ['Official GHL partner directory listing', 'Charge premium rates with proof', 'Stand out from uncertified freelancers']
-    },
-    'unlimited-upgrade': {
-      title: 'Upgrade to Unlimited ($297/mo)',
-      desc: 'Remove the 3 sub-account cap and unlock unlimited client accounts.',
-      offerName: 'Unlimited Upgrade ($297/mo)',
-      link: 'https://www.gohighlevel.com/297upgrade?fp_ref=dominic-32',
-      bullets: ['Unlimited client sub-accounts', 'Full agency infrastructure', 'White-label ready']
-    },
-    'saas-pro-trial': {
-      title: 'Start the SaaS Pro Plan Trial',
-      desc: 'New to GHL? Get started on the SaaS Pro plan and launch your own branded software product.',
-      offerName: 'SaaS Pro Plan Trial (New Users)',
-      link: 'https://www.gohighlevel.com/protrial?fp_ref=dominic-32',
-      bullets: ['Full white-label branding', 'Your logo, your domain, your price', 'Rebill clients at any margin']
-    },
-    'saas-upgrade': {
-      title: 'Upgrade to SaaS Pro (Existing Users)',
-      desc: 'Already on GHL? Upgrade and unlock full white-label SaaS reselling.',
-      offerName: 'Upgrade to SaaS Pro (Existing Users)',
-      link: 'https://gohighlevel.com/saasupgrade?fp_ref=dominic-32',
-      bullets: ['Keep your existing setup', 'Unlock SaaS reselling instantly', 'Launch your product in days']
-    },
-    'supercharged-saas': {
-      title: 'Join the Supercharged SaaS Program',
-      desc: 'Advanced strategies, playbooks, and community for serious GHL SaaS resellers.',
-      offerName: 'Supercharged SaaS Program',
-      link: 'https://www.gohighlevel.com/pro-trial?fp_ref=dominic-39',
-      bullets: ['Proven SaaS launch playbooks', 'Active community of resellers', 'Advanced pricing & positioning strategy']
-    },
-    'become-affiliate': {
-      title: 'Become a GHL Affiliate',
-      desc: 'Earn 40% recurring commissions by referring businesses to GoHighLevel. Free to join.',
-      offerName: 'GHL Affiliate Program',
-      link: 'https://affiliate.gohighlevel.com?sref=cvi0huk',
-      bullets: ['40% recurring commission', 'Paid monthly for life of the customer', 'Free to join — no purchase needed']
+  // ===== 5DC POPUP LOGIC =====
+  var popup = document.getElementById('popup5dc');
+  var popupShown = false;
+  var popupDismissed = false;
+
+  function showPopup(){
+    if(popupDismissed || popupShown) return;
+    popupShown = true;
+    popup.classList.add('visible');
+  }
+
+  function hidePopup(){
+    popup.classList.remove('visible');
+    popupDismissed = true;
+  }
+
+  document.getElementById('popup5dcClose').addEventListener('click', hidePopup);
+  document.getElementById('popup5dcDismiss').addEventListener('click', hidePopup);
+
+  // Trigger 1: 50 seconds on page
+  setTimeout(showPopup, 50000);
+
+  // Trigger 2: 55% scroll depth
+  var scrollTriggered = false;
+  window.addEventListener('scroll', function(){
+    if(scrollTriggered || popupDismissed) return;
+    var scrollPct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    if(scrollPct >= 55){
+      scrollTriggered = true;
+      showPopup();
     }
-  };
-
-  function openEmailModal(key) {
-    const c = offerConfig[key];
-    if (!c) return;
-
-    document.getElementById('offerName').textContent  = c.offerName;
-    document.getElementById('modalTitle').textContent = c.title;
-    document.getElementById('modalDesc').textContent  = c.desc;
-    document.getElementById('submitBtn').textContent  = key === 'become-affiliate' ? 'Join the Affiliate Program →' : 'Get Instant Access →';
-
-    const vp = document.getElementById('modalValueProp');
-    vp.innerHTML = (c.bullets || []).map(b => `
-      <div class="mvp-item"><span class="mvp-icon">✓</span> ${b}</div>
-    `).join('');
-
-    const modal = document.getElementById('emailModal');
-    modal.dataset.offerKey  = key;
-    modal.dataset.offerLink = c.link;
-    modal.classList.add('open');
-  }
-
-  function closeEmailModal() {
-    document.getElementById('emailModal').classList.remove('open');
-    document.getElementById('fullName').value = '';
-    document.getElementById('email').value    = '';
-  }
-
-  document.getElementById('emailModal').addEventListener('click', e => {
-    if (e.target.id === 'emailModal') closeEmailModal();
   });
 
-  function handleEmailSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Taking you there...';
-    btn.disabled = true;
-
-    const modal     = document.getElementById('emailModal');
-    const offerLink = modal.dataset.offerLink;
-    const fullName  = document.getElementById('fullName').value;
-    const email     = document.getElementById('email').value;
-
-    // Hook your email service here (ConvertKit, MailerLite, etc.)
-    console.log('Captured:', { fullName, email, offer: modal.dataset.offerKey });
-
-    // Use location.href so mobile browsers don't block the redirect
-    // (setTimeout + window.open is treated as a popup and blocked)
-    closeEmailModal();
-    btn.textContent = 'Get Instant Access →';
-    btn.disabled    = false;
-    window.location.href = offerLink;
-  }
-
-  // ── FOOTER MODALS ─────────────────────────────────────────
-  const footerContent = {
-    privacy: `
-      <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Privacy Policy</h2>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Last updated: January 2026</p>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">Your privacy matters to us. Here's a straightforward explanation of what we collect, why, and how it's used.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">What We Collect</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">When you submit your name and email through one of our forms, we store that information to send you the resource you asked for, along with occasional follow-up content about GHL and online business.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">How We Use It</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">We use your information to deliver what you signed up for and to share relevant GHL resources. We don't sell your data or pass it to anyone for their own marketing.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Cookies</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">This site may use cookies for affiliate tracking and basic analytics. You're free to disable them in your browser at any time.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Opting Out</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;">Every email includes an unsubscribe link. One click and you're off the list.</p>
-    `,
-    terms: `
-      <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Terms of Service</h2>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Last updated: January 2026</p>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">By using Income Vault, you're agreeing to a few straightforward ground rules.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Using This Site</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">Income Vault exists to educate and inform. Use it in good faith — for your own learning and business decisions.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Affiliate Links</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">Some links on this site are affiliate links. If you click one and sign up, we may earn a commission — at no extra cost to you.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Income & Results</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;">Any income figures shown are illustrative examples, not guarantees.</p>
-    `,
-    affiliate: `
-      <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Affiliate Disclosure</h2>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Keeping things transparent</p>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:16px;">Some links on this site are affiliate links. If you sign up for GoHighLevel through them, we may earn a commission — at no extra cost to you. The price you pay is exactly the same.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Why We Promote GHL</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px;">We only recommend GoHighLevel because we genuinely believe it's one of the most capable platforms for the business types described on this site.</p>
-      <h3 style="font-size:14px;font-weight:700;color:var(--accent-cyan);margin:18px 0 8px;">Independence</h3>
-      <p style="font-size:14px;color:var(--text-light);line-height:1.8;">Income Vault is an independent resource, not officially affiliated with or endorsed by GoHighLevel Inc.</p>
-    `,
-    contact: `
-      <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--text-white);margin-bottom:6px;">Contact Us</h2>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:24px;">Usually reply within 1–2 business days.</p>
-      <div style="background:rgba(0,207,255,0.05);border:1px solid rgba(0,207,255,0.2);border-radius:12px;padding:22px;margin-bottom:18px;">
-        <p style="font-size:11px;color:var(--text-muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Email</p>
-        <p style="font-size:15px;color:var(--accent-cyan);font-weight:700;">contact@incomevault.co</p>
-      </div>
-      <div style="background:rgba(0,207,255,0.05);border:1px solid rgba(0,207,255,0.2);border-radius:12px;padding:22px;">
-        <p style="font-size:11px;color:var(--text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">GHL Account Questions?</p>
-        <p style="font-size:14px;color:var(--text-light);line-height:1.7;">For anything related to your GHL account or billing, GoHighLevel's own support team inside your GHL dashboard will help you fastest.</p>
-      </div>
-    `
-  };
-
-  function openFooterModal(key) {
-    document.getElementById('footerModalContent').innerHTML = footerContent[key] || '';
-    document.getElementById('footerModal').classList.add('open');
-  }
-  function closeFooterModal() {
-    document.getElementById('footerModal').classList.remove('open');
-  }
-  document.getElementById('footerModal').addEventListener('click', e => {
-    if (e.target.id === 'footerModal') closeFooterModal();
+  // Trigger 3: Exit intent (desktop)
+  document.addEventListener('mouseleave', function(e){
+    if(e.clientY <= 0 && !popupDismissed){
+      showPopup();
+    }
   });
+
+  // ===== SAVE GCLID =====
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var gclid = params.get('gclid');
+    if(gclid){ try{ localStorage.setItem('gclid', gclid); }catch(e){} }
+  })();
 </script>
 </body>
 </html>
